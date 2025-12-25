@@ -1,4 +1,5 @@
 import { PlusGrid, PlusGridItem, PlusGridRow } from '@/components/plus-grid'
+import { config } from '@/lib/config'
 import { Button } from './button'
 import { Container } from './container'
 import { Gradient } from './gradient'
@@ -19,7 +20,7 @@ function CallToAction() {
         Create your first activity in minutes. No credit card required.
       </p>
       <div className="mt-6">
-        <Button className="w-full sm:w-auto" href="#">
+        <Button className="w-full sm:w-auto" href={`${config.appUrl}/register`}>
           Start for free
         </Button>
       </div>

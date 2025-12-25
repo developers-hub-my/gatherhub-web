@@ -1,6 +1,7 @@
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
+import { config } from '@/lib/config'
 import { Navbar } from '@/components/navbar'
 import { Heading, Subheading } from '@/components/text'
 import {
@@ -87,7 +88,7 @@ function PricingCard() {
           </div>
 
           <div className="mt-8">
-            <Button href="#" className="w-full">
+            <Button href={`${config.appUrl}/register`} className="w-full">
               Get started for free
             </Button>
           </div>
@@ -333,7 +334,7 @@ function CTA() {
           credit card required.
         </p>
         <div className="mt-8 flex justify-center gap-4">
-          <Button href="#">Start for free</Button>
+          <Button href={`${config.appUrl}/register`}>Start for free</Button>
           <Button variant="secondary" href="/contact">
             Talk to sales
           </Button>

@@ -1,6 +1,7 @@
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
+import { config } from '@/lib/config'
 import { Navbar } from '@/components/navbar'
 import { Heading, Lead, Subheading } from '@/components/text'
 import {
@@ -308,7 +309,7 @@ function CTA() {
           Create your first activity in minutes. No credit card required.
         </p>
         <div className="mt-8 flex justify-center gap-4">
-          <Button href="#">Start for free</Button>
+          <Button href={`${config.appUrl}/register`}>Start for free</Button>
           <Button variant="secondary" href="/pricing">
             View pricing
           </Button>

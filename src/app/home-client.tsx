@@ -4,6 +4,7 @@ import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
 import { Gradient } from '@/components/gradient'
+import { config } from '@/lib/config'
 import { Navbar } from '@/components/navbar'
 import { Heading, Subheading } from '@/components/text'
 import {
@@ -56,7 +57,7 @@ function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row"
           >
-            <Button href="#">Start for free</Button>
+            <Button href={`${config.appUrl}/register`}>Start for free</Button>
             <Button variant="secondary" href="#how-it-works">
               See how it works
             </Button>
