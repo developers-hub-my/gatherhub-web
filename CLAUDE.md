@@ -33,9 +33,8 @@ Prettier is configured with:
 ### Next.js App Structure
 
 - **App Router** with TypeScript
-- Routes: `/`, `/features`, `/pricing`, `/contact`, `/help`, `/privacy`, `/terms`, `/blog`, `/company`
+- Routes: `/`, `/features`, `/pricing`, `/contact`, `/help`, `/privacy`, `/terms`
 - Path alias: `@/*` maps to `src/*`
-- Blog is a simple placeholder page (coming soon)
 
 ### Component Organization
 

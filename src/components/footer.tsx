@@ -53,25 +53,15 @@ function Sitemap() {
       <div>
         <SitemapHeading>Product</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="/pricing">Pricing</SitemapLink>
           <SitemapLink href="/features">Features</SitemapLink>
-          <SitemapLink href="#">Documentation</SitemapLink>
+          <SitemapLink href="/pricing">Pricing</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        <SitemapHeading>Company</SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="/company">About</SitemapLink>
-          <SitemapLink href="/blog">Blog</SitemapLink>
-          <SitemapLink href="/contact">Contact</SitemapLink>
-        </SitemapLinks>
-      </div>
-      <div>
-        <SitemapHeading>Support</SitemapHeading>
+        <SitemapHeading>Resources</SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="/help">Help center</SitemapLink>
-          <SitemapLink href="#">Guides</SitemapLink>
-          <SitemapLink href="#">Status</SitemapLink>
+          <SitemapLink href="/contact">Contact</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
