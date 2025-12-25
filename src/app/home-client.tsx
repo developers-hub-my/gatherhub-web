@@ -212,8 +212,9 @@ function HowItWorksSection() {
   ]
 
   return (
-    <Container className="pb-24" id="how-it-works">
-      <div className="text-center">
+    <div id="how-it-works">
+      <Container className="pb-24">
+        <div className="text-center">
         <Subheading>How It Works</Subheading>
         <Heading as="h2" className="mt-2">
           Five steps to cleaner operations.
@@ -258,7 +259,8 @@ function HowItWorksSection() {
           </motion.div>
         ))}
       </div>
-    </Container>
+      </Container>
+    </div>
   )
 }
 
@@ -304,7 +306,7 @@ function FeaturesGrid() {
       <div className="text-center">
         <Subheading>Key Features</Subheading>
         <Heading as="h2" className="mt-2">
-          Everything you need. Nothing you don't.
+          Everything you need. Nothing you don&apos;t.
         </Heading>
       </div>
       <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -370,7 +372,7 @@ function WhoItsForSection() {
   return (
     <Container className="pb-24">
       <div className="text-center">
-        <Subheading>Who It's For</Subheading>
+        <Subheading>Who It&apos;s For</Subheading>
         <Heading as="h2" className="mt-2 max-w-3xl">
           Built for organisations that run activities.
         </Heading>
