@@ -6,6 +6,11 @@
   --radius-4xl: 2rem;
 }
 
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes move-x {
   0% {
     transform: translateX(var(--move-x-from));
