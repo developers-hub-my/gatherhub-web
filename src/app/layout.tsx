@@ -1,13 +1,13 @@
-import { SanityLive } from '@/sanity/live'
-import { revalidateSyncTags } from '@/sanity/revalidateSyncTags'
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Radiant',
-    default: 'Radiant - Close every deal',
+    template: '%s - Gather Hub',
+    default: 'Gather Hub - Run activities with clarity and proof',
   },
+  description:
+    'The operational hub for events and activities — from registration and payment to attendance validation and participation proof.',
 }
 
 export default function RootLayout({
@@ -25,14 +25,11 @@ export default function RootLayout({
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="The Radiant Blog"
+          title="Gather Hub Blog"
           href="/blog/feed.xml"
         />
       </head>
-      <body className="text-gray-950 antialiased">
-        {children}
-        <SanityLive revalidateSyncTags={revalidateSyncTags} />
-      </body>
+      <body className="text-gray-950 antialiased">{children}</body>
     </html>
   )
 }

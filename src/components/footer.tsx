@@ -12,18 +12,15 @@ function CallToAction() {
       <hgroup>
         <Subheading>Get started</Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
-          Ready to dive in?
-          <br />
-          Start your free trial today.
+          Ready to run cleaner operations?
         </p>
       </hgroup>
       <p className="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500">
-        Get the cheat codes for selling and unlock your team&apos;s revenue
-        potential.
+        Create your first activity in minutes. No credit card required.
       </p>
       <div className="mt-6">
         <Button className="w-full sm:w-auto" href="#">
-          Get started
+          Start for free
         </Button>
       </div>
     </div>
@@ -56,30 +53,31 @@ function Sitemap() {
         <SitemapHeading>Product</SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="/pricing">Pricing</SitemapLink>
-          <SitemapLink href="#">Analysis</SitemapLink>
-          <SitemapLink href="#">API</SitemapLink>
+          <SitemapLink href="#">Features</SitemapLink>
+          <SitemapLink href="#">Documentation</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
         <SitemapHeading>Company</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="#">Careers</SitemapLink>
+          <SitemapLink href="/company">About</SitemapLink>
           <SitemapLink href="/blog">Blog</SitemapLink>
-          <SitemapLink href="/company">Company</SitemapLink>
+          <SitemapLink href="#">Contact</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
         <SitemapHeading>Support</SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="#">Help center</SitemapLink>
-          <SitemapLink href="#">Community</SitemapLink>
+          <SitemapLink href="#">Guides</SitemapLink>
+          <SitemapLink href="#">Status</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        <SitemapHeading>Company</SitemapHeading>
+        <SitemapHeading>Legal</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="#">Terms of service</SitemapLink>
           <SitemapLink href="#">Privacy policy</SitemapLink>
+          <SitemapLink href="#">Terms of service</SitemapLink>
         </SitemapLinks>
       </div>
     </>
@@ -148,7 +146,7 @@ function SocialLinks() {
 function Copyright() {
   return (
     <div className="text-sm/6 text-gray-950">
-      &copy; {new Date().getFullYear()} Radiant Inc.
+      &copy; {new Date().getFullYear()} Gather Hub.
     </div>
   )
 }
