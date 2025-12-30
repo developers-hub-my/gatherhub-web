@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 function Hero() {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-gray-950">
       <Container>
         <Navbar />
         <div className="pb-16 pt-8">
@@ -28,7 +28,7 @@ function Hero() {
           <Heading as="h1" className="mt-2 max-w-4xl">
             Simple, transparent pricing.
           </Heading>
-          <p className="mt-4 text-base text-gray-600 max-w-2xl">
+          <p className="mt-4 text-base text-gray-600 dark:text-gray-400 max-w-2xl">
             No monthly fees. No hidden charges. Pay only when you collect
             payments from participants.
           </p>
@@ -56,32 +56,32 @@ function PricingCard() {
   return (
     <Container className="pb-24">
       <div className="mx-auto max-w-2xl">
-        <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-lg">
+        <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-lg dark:border-gray-700 dark:bg-gray-800">
           <div className="text-center">
             <Heading as="h2" className="text-3xl">
               Free Platform
             </Heading>
-            <p className="mt-4 text-base text-gray-600">
+            <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
               Access all features at no monthly cost.
             </p>
           </div>
 
-          <div className="mt-8 rounded-2xl bg-blue-50 p-6">
+          <div className="mt-8 rounded-2xl bg-blue-50 p-6 dark:bg-blue-500/20">
             <div className="text-center">
-              <div className="text-5xl font-semibold text-gray-950">RM 0</div>
-              <p className="mt-2 text-sm text-gray-600">per month</p>
+              <div className="text-5xl font-semibold text-gray-950 dark:text-white">RM 0</div>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">per month</p>
             </div>
           </div>
 
           <div className="mt-8">
-            <h3 className="text-base font-semibold text-gray-950">
+            <h3 className="text-base font-semibold text-gray-950 dark:text-white">
               Everything included:
             </h3>
             <ul className="mt-4 space-y-3">
               {features.map((feature) => (
                 <li key={feature} className="flex items-start gap-3">
-                  <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600" />
-                  <span className="text-sm text-gray-600">{feature}</span>
+                  <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
+                  <span className="text-sm text-gray-600 dark:text-gray-400">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -100,7 +100,7 @@ function PricingCard() {
 
 function TransactionFees() {
   return (
-    <div className="bg-gray-50 py-24">
+    <div className="bg-gray-50 py-24 dark:bg-gray-900">
       <Container>
         <div className="mx-auto max-w-3xl">
           <div className="text-center">
@@ -108,53 +108,53 @@ function TransactionFees() {
             <Heading as="h2" className="mt-2">
               Pay only when you collect payments.
             </Heading>
-            <p className="mt-4 text-base text-gray-600">
+            <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
               We charge a small fee for each paid registration to keep the
               platform running.
             </p>
           </div>
 
-          <div className="mt-12 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+          <div className="mt-12 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-700 dark:bg-gray-800">
             <div className="flex items-center justify-center gap-3">
-              <CreditCardIcon className="size-8 text-blue-600" />
+              <CreditCardIcon className="size-8 text-blue-600 dark:text-blue-400" />
               <div className="text-center">
-                <div className="text-4xl font-semibold text-gray-950">
+                <div className="text-4xl font-semibold text-gray-950 dark:text-white">
                   3% + RM 1
                 </div>
-                <p className="mt-2 text-sm text-gray-600">per transaction</p>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">per transaction</p>
               </div>
             </div>
 
-            <div className="mt-8 space-y-4 border-t border-gray-200 pt-8">
+            <div className="mt-8 space-y-4 border-t border-gray-200 pt-8 dark:border-gray-700">
               <div className="flex items-start gap-3">
-                <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600" />
+                <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
                 <div>
-                  <p className="text-sm font-medium text-gray-950">
+                  <p className="text-sm font-medium text-gray-950 dark:text-white">
                     Only charged on successful payments
                   </p>
-                  <p className="mt-1 text-sm text-gray-600">
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
                     Free registrations have no fees.
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600" />
+                <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
                 <div>
-                  <p className="text-sm font-medium text-gray-950">
+                  <p className="text-sm font-medium text-gray-950 dark:text-white">
                     Transparent pricing
                   </p>
-                  <p className="mt-1 text-sm text-gray-600">
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
                     No hidden fees or surprise charges.
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600" />
+                <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
                 <div>
-                  <p className="text-sm font-medium text-gray-950">
+                  <p className="text-sm font-medium text-gray-950 dark:text-white">
                     Automatic calculation
                   </p>
-                  <p className="mt-1 text-sm text-gray-600">
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
                     Fees are automatically deducted from payouts.
                   </p>
                 </div>
@@ -162,26 +162,26 @@ function TransactionFees() {
             </div>
           </div>
 
-          <div className="mt-8 rounded-2xl bg-blue-50 p-6">
-            <h3 className="text-base font-semibold text-gray-950">
+          <div className="mt-8 rounded-2xl bg-blue-50 p-6 dark:bg-blue-500/20">
+            <h3 className="text-base font-semibold text-gray-950 dark:text-white">
               Example calculation
             </h3>
             <div className="mt-4 space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-600">Ticket price:</span>
-                <span className="font-medium text-gray-950">RM 100.00</span>
+                <span className="text-gray-600 dark:text-gray-400">Ticket price:</span>
+                <span className="font-medium text-gray-950 dark:text-white">RM 100.00</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Transaction fee (3%):</span>
-                <span className="font-medium text-gray-950">RM 3.00</span>
+                <span className="text-gray-600 dark:text-gray-400">Transaction fee (3%):</span>
+                <span className="font-medium text-gray-950 dark:text-white">RM 3.00</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Fixed fee:</span>
-                <span className="font-medium text-gray-950">RM 1.00</span>
+                <span className="text-gray-600 dark:text-gray-400">Fixed fee:</span>
+                <span className="font-medium text-gray-950 dark:text-white">RM 1.00</span>
               </div>
-              <div className="flex justify-between border-t border-gray-200 pt-2">
-                <span className="font-semibold text-gray-950">You receive:</span>
-                <span className="font-semibold text-gray-950">RM 96.00</span>
+              <div className="flex justify-between border-t border-gray-200 pt-2 dark:border-gray-600">
+                <span className="font-semibold text-gray-950 dark:text-white">You receive:</span>
+                <span className="font-semibold text-gray-950 dark:text-white">RM 96.00</span>
               </div>
             </div>
           </div>
@@ -224,13 +224,13 @@ function PaymentMethods() {
           {methods.map((method) => (
             <div
               key={method.name}
-              className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
             >
-              <method.icon className="size-8 text-blue-600" />
-              <h3 className="mt-4 text-base font-semibold text-gray-950">
+              <method.icon className="size-8 text-blue-600 dark:text-blue-400" />
+              <h3 className="mt-4 text-base font-semibold text-gray-950 dark:text-white">
                 {method.name}
               </h3>
-              <p className="mt-2 text-sm text-gray-600">{method.description}</p>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{method.description}</p>
             </div>
           ))}
         </div>
@@ -284,7 +284,7 @@ function FAQ() {
   ]
 
   return (
-    <div className="bg-gray-50 py-24">
+    <div className="bg-gray-50 py-24 dark:bg-gray-900">
       <Container>
         <div className="mx-auto max-w-3xl">
           <div className="text-center">
@@ -297,20 +297,20 @@ function FAQ() {
           <div className="mt-12 space-y-8">
             {faqs.map((faq) => (
               <div key={faq.question}>
-                <h3 className="text-base font-semibold text-gray-950">
+                <h3 className="text-base font-semibold text-gray-950 dark:text-white">
                   {faq.question}
                 </h3>
-                <p className="mt-3 text-sm/6 text-gray-600">{faq.answer}</p>
+                <p className="mt-3 text-sm/6 text-gray-600 dark:text-gray-400">{faq.answer}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-base text-gray-600">
+            <p className="text-base text-gray-600 dark:text-gray-400">
               Have more questions?{' '}
               <a
                 href="/contact"
-                className="font-medium text-blue-600 hover:text-blue-500"
+                className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
               >
                 Contact our team
               </a>
@@ -346,7 +346,7 @@ function CTA() {
 
 export default function Pricing() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-white dark:bg-gray-950">
       <Hero />
       <PricingCard />
       <TransactionFees />

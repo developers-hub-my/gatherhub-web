@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 function Hero() {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-gray-950">
       <Container>
         <Navbar />
         <div className="pb-16 pt-8">
@@ -70,20 +70,20 @@ function FeatureSection({
         <Heading as="h3" className="text-3xl">
           {title}
         </Heading>
-        <p className="mt-4 text-base/7 text-gray-600">{description}</p>
+        <p className="mt-4 text-base/7 text-gray-600 dark:text-gray-400">{description}</p>
       </div>
       <div className={reverse ? 'lg:col-start-1 lg:row-start-1' : ''}>
         <div className="space-y-6">
           {features.map((feature) => (
             <div key={feature.name} className="flex gap-4">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-blue-50">
-                <feature.icon className="size-6 text-blue-600" />
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-500/20">
+                <feature.icon className="size-6 text-blue-600 dark:text-blue-400" />
               </div>
               <div>
-                <h4 className="text-base font-semibold text-gray-950">
+                <h4 className="text-base font-semibold text-gray-950 dark:text-white">
                   {feature.name}
                 </h4>
-                <p className="mt-1 text-sm/6 text-gray-600">
+                <p className="mt-1 text-sm/6 text-gray-600 dark:text-gray-400">
                   {feature.description}
                 </p>
               </div>
@@ -258,7 +258,7 @@ function MainFeatures() {
 
 function SecurityCompliance() {
   return (
-    <div className="bg-gray-50 py-24">
+    <div className="bg-gray-50 py-24 dark:bg-gray-900">
       <Container>
         <div className="text-center">
           <Subheading>Security & Compliance</Subheading>
@@ -267,30 +267,30 @@ function SecurityCompliance() {
           </Heading>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200">
-            <ShieldCheckIcon className="size-8 text-blue-600" />
-            <h3 className="mt-6 text-base font-semibold text-gray-950">
+          <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+            <ShieldCheckIcon className="size-8 text-blue-600 dark:text-blue-400" />
+            <h3 className="mt-6 text-base font-semibold text-gray-950 dark:text-white">
               Data encryption
             </h3>
-            <p className="mt-2 text-sm/6 text-gray-600">
+            <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
               All data is encrypted in transit and at rest using industry-standard protocols.
             </p>
           </div>
-          <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200">
-            <CheckBadgeIcon className="size-8 text-blue-600" />
-            <h3 className="mt-6 text-base font-semibold text-gray-950">
+          <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+            <CheckBadgeIcon className="size-8 text-blue-600 dark:text-blue-400" />
+            <h3 className="mt-6 text-base font-semibold text-gray-950 dark:text-white">
               GDPR compliant
             </h3>
-            <p className="mt-2 text-sm/6 text-gray-600">
+            <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
               Full compliance with GDPR and other data protection regulations.
             </p>
           </div>
-          <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200">
-            <DocumentCheckIcon className="size-8 text-blue-600" />
-            <h3 className="mt-6 text-base font-semibold text-gray-950">
+          <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+            <DocumentCheckIcon className="size-8 text-blue-600 dark:text-blue-400" />
+            <h3 className="mt-6 text-base font-semibold text-gray-950 dark:text-white">
               Audit trails
             </h3>
-            <p className="mt-2 text-sm/6 text-gray-600">
+            <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
               Complete audit logs for all activities, payments, and attendance records.
             </p>
           </div>
@@ -305,7 +305,7 @@ function CTA() {
     <Container className="py-24">
       <div className="text-center">
         <Heading as="h2">Ready to get started?</Heading>
-        <p className="mt-6 text-lg text-gray-600">
+        <p className="mt-6 text-lg text-gray-600 dark:text-gray-400">
           Create your first activity in minutes. No credit card required.
         </p>
         <div className="mt-8 flex justify-center gap-4">
@@ -321,7 +321,7 @@ function CTA() {
 
 export default function Features() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-white dark:bg-gray-950">
       <Hero />
       <MainFeatures />
       <SecurityCompliance />

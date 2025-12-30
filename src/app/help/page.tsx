@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 function Hero() {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-gray-950">
       <Container>
         <Navbar />
         <div className="pb-16 pt-8">
@@ -31,7 +31,7 @@ function Hero() {
           <Heading as="h1" className="mt-2">
             How can we help you?
           </Heading>
-          <p className="mt-4 text-base text-gray-600 max-w-2xl">
+          <p className="mt-4 text-base text-gray-600 dark:text-gray-400 max-w-2xl">
             Find answers to common questions about using Gather Hub. If you
             can&apos;t find what you&apos;re looking for, contact our support
             team.
@@ -56,13 +56,13 @@ function CategoryCard({
   return (
     <Link
       href={href}
-      className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-blue-200 hover:shadow-md"
+      className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-blue-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-500/30"
     >
-      <div className="flex size-12 items-center justify-center rounded-xl bg-blue-50 transition-colors group-hover:bg-blue-100">
-        <Icon className="size-6 text-blue-600" />
+      <div className="flex size-12 items-center justify-center rounded-xl bg-blue-50 transition-colors group-hover:bg-blue-100 dark:bg-blue-500/20 dark:group-hover:bg-blue-500/30">
+        <Icon className="size-6 text-blue-600 dark:text-blue-400" />
       </div>
-      <h3 className="mt-4 text-lg font-semibold text-gray-950">{title}</h3>
-      <p className="mt-2 text-sm/6 text-gray-600">{description}</p>
+      <h3 className="mt-4 text-lg font-semibold text-gray-950 dark:text-white">{title}</h3>
+      <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">{description}</p>
     </Link>
   )
 }
@@ -144,8 +144,8 @@ function FAQSection({
   return (
     <section id={id} className="scroll-mt-16">
       <div className="flex items-center gap-3">
-        <div className="flex size-10 items-center justify-center rounded-lg bg-blue-50">
-          <Icon className="size-5 text-blue-600" />
+        <div className="flex size-10 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-500/20">
+          <Icon className="size-5 text-blue-600 dark:text-blue-400" />
         </div>
         <Heading as="h2" className="text-2xl">
           {title}
@@ -154,10 +154,10 @@ function FAQSection({
       <div className="mt-8 space-y-8">
         {faqs.map((faq, index) => (
           <div key={index}>
-            <h3 className="text-lg font-semibold text-gray-950">
+            <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
               {faq.question}
             </h3>
-            <p className="mt-3 text-base/7 text-gray-600">{faq.answer}</p>
+            <p className="mt-3 text-base/7 text-gray-600 dark:text-gray-400">{faq.answer}</p>
           </div>
         ))}
       </div>
@@ -399,24 +399,24 @@ function FAQContent() {
 
 function StillNeedHelp() {
   return (
-    <div className="bg-gray-50 py-24">
+    <div className="bg-gray-50 py-24 dark:bg-gray-900">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <Heading as="h2">Still need help?</Heading>
-          <p className="mt-6 text-lg text-gray-600">
+          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400">
             Can&apos;t find the answer you&apos;re looking for? Our support
             team is here to help.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <a
               href="/contact"
-              className="inline-flex items-center justify-center rounded-lg bg-gray-950 px-6 py-3 text-base font-medium text-white shadow-sm transition-all hover:bg-gray-800"
+              className="inline-flex items-center justify-center rounded-lg bg-gray-950 px-6 py-3 text-base font-medium text-white shadow-sm transition-all hover:bg-gray-800 dark:bg-blue-600 dark:hover:bg-blue-500"
             >
               Contact Support
             </a>
             <a
               href="mailto:support@gatherhub.app"
-              className="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-950 shadow-sm transition-all hover:bg-gray-50"
+              className="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-950 shadow-sm transition-all hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
             >
               Email Us
             </a>
@@ -429,7 +429,7 @@ function StillNeedHelp() {
 
 export default function Help() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-white dark:bg-gray-950">
       <Hero />
       <Categories />
       <FAQContent />

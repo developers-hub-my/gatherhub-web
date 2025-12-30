@@ -3,7 +3,6 @@
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
-import { Gradient } from '@/components/gradient'
 import { config } from '@/lib/config'
 import { Navbar } from '@/components/navbar'
 import { Heading, Subheading } from '@/components/text'
@@ -34,8 +33,12 @@ import { motion } from 'framer-motion'
 
 function Hero() {
   return (
-    <div className="relative">
-      <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset" />
+    <div className="relative overflow-hidden bg-white dark:bg-gray-950">
+      {/* Modern gradient orbs */}
+      <div className="absolute -top-40 -right-40 size-80 rounded-full bg-blue-100 opacity-60 blur-3xl dark:bg-blue-500/20" />
+      <div className="absolute -bottom-40 -left-40 size-80 rounded-full bg-blue-50 opacity-80 blur-3xl dark:bg-blue-600/10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 rounded-full bg-sky-50 opacity-50 blur-3xl dark:bg-sky-500/10" />
+
       <Container className="relative">
         <Navbar />
         <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
@@ -44,7 +47,7 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="font-display text-6xl/[0.9] font-medium tracking-tight text-balance text-gray-950 sm:text-8xl/[0.8] md:text-9xl/[0.8]">
+            <h1 className="font-display text-5xl/[0.9] font-medium tracking-tight text-balance text-gray-950 dark:text-white sm:text-7xl/[0.85] md:text-8xl/[0.85]">
               The event platform that proves participation.
             </h1>
           </motion.div>
@@ -52,7 +55,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-8 max-w-xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8"
+            className="mt-8 max-w-xl text-lg/7 font-medium text-gray-600 dark:text-gray-300 sm:text-xl/8"
           >
             From registration to QR check-in to verifiable certificates — every
             step is recorded, every participant is tracked, every certificate is
@@ -106,13 +109,13 @@ function TrustIndicators() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="flex flex-col items-center text-center"
           >
-            <div className="mb-3 flex size-12 items-center justify-center rounded-full bg-blue-50">
-              <stat.icon className="size-6 text-blue-600" />
+            <div className="mb-3 flex size-12 items-center justify-center rounded-full bg-blue-50 dark:bg-blue-500/20">
+              <stat.icon className="size-6 text-blue-600 dark:text-blue-400" />
             </div>
-            <div className="text-4xl font-semibold text-gray-950">
+            <div className="text-4xl font-semibold text-gray-950 dark:text-white">
               {stat.value}
             </div>
-            <div className="mt-2 text-sm text-gray-600">{stat.label}</div>
+            <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
           </motion.div>
         ))}
       </div>
@@ -149,10 +152,10 @@ function ProblemSolution() {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 className="flex items-start gap-3"
               >
-                <div className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-red-100">
-                  <div className="size-2 rounded-full bg-red-500" />
+                <div className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-red-100 dark:bg-red-500/20">
+                  <div className="size-2 rounded-full bg-red-500 dark:bg-red-400" />
                 </div>
-                <p className="text-base text-gray-600">{problem}</p>
+                <p className="text-base text-gray-600 dark:text-gray-300">{problem}</p>
               </motion.div>
             ))}
           </div>
@@ -183,8 +186,8 @@ function ProblemSolution() {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 className="flex items-start gap-3"
               >
-                <CheckCircleIcon className="mt-0.5 size-5 shrink-0 text-blue-600" />
-                <p className="text-base text-gray-600">{solution}</p>
+                <CheckCircleIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
+                <p className="text-base text-gray-600 dark:text-gray-300">{solution}</p>
               </motion.div>
             ))}
           </div>
@@ -202,86 +205,88 @@ function HowItWorksSection() {
       description:
         'Set up your event, workshop, or programme with ticketing options.',
       icon: CalendarDaysIcon,
-      color: 'bg-blue-500',
+      color: 'bg-blue-600',
     },
     {
       number: 2,
       title: 'Sell tickets',
       description: 'Participants register and pay online in real time.',
       icon: TicketIcon,
-      color: 'bg-indigo-500',
+      color: 'bg-blue-500',
     },
     {
       number: 3,
       title: 'Validate attendance',
       description: 'Use QR codes or manual check-in to track attendance.',
       icon: QrCodeIcon,
-      color: 'bg-purple-500',
+      color: 'bg-sky-500',
     },
     {
       number: 4,
       title: 'Issue proof',
       description: 'Generate certificates instantly with one click.',
       icon: DocumentCheckIcon,
-      color: 'bg-pink-500',
+      color: 'bg-blue-500',
     },
     {
       number: 5,
       title: 'Export reports',
       description: 'Download complete attendance and payment records.',
       icon: ChartBarIcon,
-      color: 'bg-rose-500',
+      color: 'bg-blue-600',
     },
   ]
 
   return (
-    <div id="how-it-works">
+    <div id="how-it-works" className="scroll-mt-20">
       <Container className="pb-24">
         <div className="text-center">
-        <Subheading>How It Works</Subheading>
-        <Heading as="h2" className="mt-2">
-          Five steps to cleaner operations.
-        </Heading>
-      </div>
-      <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
-        {steps.map((step, index) => (
-          <motion.div
-            key={step.number}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="relative flex flex-col"
-          >
-            <div
-              className={`mb-4 flex size-14 items-center justify-center rounded-2xl ${step.color} shadow-lg`}
+          <Subheading>How It Works</Subheading>
+          <Heading as="h2" className="mt-2">
+            Five steps to cleaner operations.
+          </Heading>
+        </div>
+        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative flex flex-col"
             >
-              <step.icon className="size-7 text-white" />
-            </div>
-            <h3 className="text-base font-semibold text-gray-950">
-              {step.title}
-            </h3>
-            <p className="mt-2 text-sm/6 text-gray-600">{step.description}</p>
-            {index < steps.length - 1 && (
-              <div className="absolute -right-4 top-7 hidden lg:block">
-                <svg
-                  className="size-8 text-gray-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+              <div
+                className={`mb-4 flex size-14 items-center justify-center rounded-2xl ${step.color} shadow-lg`}
+              >
+                <step.icon className="size-7 text-white" />
               </div>
-            )}
-          </motion.div>
-        ))}
-      </div>
+              <h3 className="text-base font-semibold text-gray-950 dark:text-white">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
+                {step.description}
+              </p>
+              {index < steps.length - 1 && (
+                <div className="absolute -right-4 top-7 hidden lg:block">
+                  <svg
+                    className="size-8 text-gray-300 dark:text-gray-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
       </Container>
     </div>
   )
@@ -289,8 +294,12 @@ function HowItWorksSection() {
 
 function CertificateVerification() {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 py-24">
-      <Container>
+    <div className="relative overflow-hidden bg-linear-to-b from-gray-50 to-white py-24 dark:from-gray-900 dark:to-gray-950">
+      {/* Decorative background */}
+      <div className="absolute top-0 right-0 size-96 rounded-full bg-blue-50 opacity-50 blur-3xl dark:bg-blue-500/10" />
+      <div className="absolute bottom-0 left-0 size-80 rounded-full bg-sky-50 opacity-60 blur-3xl dark:bg-sky-500/10" />
+
+      <Container className="relative">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -302,7 +311,7 @@ function CertificateVerification() {
             <Heading as="h2" className="mt-2">
               Every certificate is authentic and verifiable.
             </Heading>
-            <p className="mt-6 text-base/7 text-gray-600">
+            <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-300">
               Each certificate includes a unique QR code that links to a
               verification page. Employers, institutions, and stakeholders can
               instantly verify authenticity — no phone calls or emails needed.
@@ -330,10 +339,10 @@ function CertificateVerification() {
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircleIcon className="mt-0.5 size-5 shrink-0 text-blue-600" />
+                  <CheckCircleIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
                   <div>
-                    <p className="font-medium text-gray-950">{item.title}</p>
-                    <p className="text-sm text-gray-600">{item.description}</p>
+                    <p className="font-medium text-gray-950 dark:text-white">{item.title}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -349,42 +358,42 @@ function CertificateVerification() {
           >
             <div className="relative mx-auto max-w-md">
               {/* Certificate mockup */}
-              <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-xl">
-                <div className="flex items-center justify-between border-b border-gray-100 pb-4">
-                  <div className="text-lg font-semibold text-gray-950">
+              <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-xl ring-1 ring-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:ring-gray-700">
+                <div className="flex items-center justify-between border-b border-gray-100 pb-4 dark:border-gray-700">
+                  <div className="text-lg font-semibold text-gray-950 dark:text-white">
                     Certificate of Completion
                   </div>
-                  <CheckBadgeIcon className="size-8 text-blue-600" />
+                  <CheckBadgeIcon className="size-8 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div className="mt-6 space-y-4 text-center">
-                  <p className="text-sm text-gray-500">This certifies that</p>
-                  <p className="text-xl font-semibold text-gray-950">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">This certifies that</p>
+                  <p className="text-xl font-semibold text-gray-950 dark:text-white">
                     Ahmad bin Abdullah
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
                     has successfully completed
                   </p>
-                  <p className="font-medium text-gray-950">
+                  <p className="font-medium text-gray-950 dark:text-white">
                     Professional Development Workshop
                   </p>
-                  <p className="text-sm text-gray-500">on 15 January 2025</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">on 15 January 2025</p>
                 </div>
-                <div className="mt-6 flex items-center justify-between border-t border-gray-100 pt-4">
+                <div className="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 dark:border-gray-700">
                   <div className="flex items-center gap-2">
-                    <QrCodeIcon className="size-12 text-gray-400" />
-                    <div className="text-xs text-gray-500">
+                    <QrCodeIcon className="size-12 text-gray-400 dark:text-gray-500" />
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
                       <p>Scan to verify</p>
                       <p className="font-mono">GH-2025-00123</p>
                     </div>
                   </div>
-                  <div className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700">
+                  <div className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700 dark:bg-green-500/20 dark:text-green-400">
                     Verified
                   </div>
                 </div>
               </div>
               {/* Decorative elements */}
-              <div className="absolute -right-4 -top-4 size-24 rounded-full bg-blue-100 opacity-50 blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 size-32 rounded-full bg-indigo-100 opacity-50 blur-2xl" />
+              <div className="absolute -right-4 -top-4 size-24 rounded-full bg-blue-100 opacity-40 blur-2xl dark:bg-blue-500/20" />
+              <div className="absolute -bottom-4 -left-4 size-32 rounded-full bg-sky-100 opacity-40 blur-2xl dark:bg-sky-500/20" />
             </div>
           </motion.div>
         </div>
@@ -449,15 +458,15 @@ function FeaturesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:shadow-md"
+            className="group relative rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:shadow-gray-900/50"
           >
-            <div className="flex size-12 items-center justify-center rounded-xl bg-blue-50 transition-colors group-hover:bg-blue-100">
-              <feature.icon className="size-6 text-blue-600" />
+            <div className="flex size-12 items-center justify-center rounded-xl bg-blue-50 transition-colors group-hover:bg-blue-100 dark:bg-blue-500/20 dark:group-hover:bg-blue-500/30">
+              <feature.icon className="size-6 text-blue-600 dark:text-blue-400" />
             </div>
-            <h3 className="mt-6 text-base font-semibold text-gray-950">
+            <h3 className="mt-6 text-base font-semibold text-gray-950 dark:text-white">
               {feature.name}
             </h3>
-            <p className="mt-2 text-sm/6 text-gray-600">
+            <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
               {feature.description}
             </p>
           </motion.div>
@@ -486,7 +495,7 @@ function TeamManagement() {
   ]
 
   return (
-    <div className="bg-gray-50 py-24">
+    <div className="bg-gray-50 py-24 dark:bg-gray-900">
       <Container>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <motion.div
@@ -499,7 +508,7 @@ function TeamManagement() {
             <Heading as="h2" className="mt-2">
               Delegate with confidence.
             </Heading>
-            <p className="mt-6 text-base/7 text-gray-600">
+            <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-300">
               Build your event team with predefined roles or create custom ones.
               Assign granular permissions so everyone has exactly the access they
               need — nothing more, nothing less.
@@ -514,12 +523,12 @@ function TeamManagement() {
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                   className="flex items-center gap-2"
                 >
-                  <CheckCircleIcon className="size-4 text-blue-600" />
-                  <span className="text-sm text-gray-600">{permission}</span>
+                  <CheckCircleIcon className="size-4 text-blue-600 dark:text-blue-400" />
+                  <span className="text-sm text-gray-600 dark:text-gray-400">{permission}</span>
                 </motion.div>
               ))}
             </div>
-            <p className="mt-6 text-sm text-gray-500">
+            <p className="mt-6 text-sm text-gray-500 dark:text-gray-400">
               10 granular permissions available for fine-grained access control
             </p>
           </motion.div>
@@ -538,20 +547,20 @@ function TeamManagement() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm ring-1 ring-gray-200"
+                  className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700"
                 >
-                  <div className="flex size-10 items-center justify-center rounded-full bg-blue-50">
-                    <UserCircleIcon className="size-5 text-blue-600" />
+                  <div className="flex size-10 items-center justify-center rounded-full bg-blue-50 dark:bg-blue-500/20">
+                    <UserCircleIcon className="size-5 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-950">{role.name}</p>
-                    <p className="text-sm text-gray-500">{role.description}</p>
+                    <p className="font-medium text-gray-950 dark:text-white">{role.name}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">{role.description}</p>
                   </div>
                 </motion.div>
               ))}
-              <div className="mt-4 rounded-xl border-2 border-dashed border-gray-200 p-4 text-center">
-                <UserPlusIcon className="mx-auto size-6 text-gray-400" />
-                <p className="mt-2 text-sm text-gray-500">
+              <div className="mt-4 rounded-xl border-2 border-dashed border-gray-200 p-4 text-center dark:border-gray-700">
+                <UserPlusIcon className="mx-auto size-6 text-gray-400 dark:text-gray-500" />
+                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
                   Create custom roles for your specific needs
                 </p>
               </div>
@@ -571,7 +580,6 @@ function UseCasesSection() {
       description:
         'Run professional courses and automatically issue verifiable certificates when participants complete training.',
       icon: AcademicCapIcon,
-      gradient: 'from-blue-500 to-cyan-500',
     },
     {
       name: 'Corporate L&D',
@@ -579,7 +587,6 @@ function UseCasesSection() {
       description:
         'Manage internal training programmes with attendance tracking and completion records for HR compliance.',
       icon: BuildingOffice2Icon,
-      gradient: 'from-indigo-500 to-blue-500',
     },
     {
       name: 'Conferences',
@@ -587,7 +594,6 @@ function UseCasesSection() {
       description:
         'Organize complex events with parallel sessions, speaker management, and real-time attendance tracking.',
       icon: UsersIcon,
-      gradient: 'from-purple-500 to-indigo-500',
     },
     {
       name: 'Universities',
@@ -595,7 +601,6 @@ function UseCasesSection() {
       description:
         'Track student participation in workshops and extracurricular activities with verifiable records.',
       icon: AcademicCapIcon,
-      gradient: 'from-pink-500 to-purple-500',
     },
     {
       name: 'Community Events',
@@ -603,7 +608,6 @@ function UseCasesSection() {
       description:
         'Run meetups and volunteer programmes at no cost. Only pay when you charge for tickets.',
       icon: UserCircleIcon,
-      gradient: 'from-rose-500 to-pink-500',
     },
   ]
 
@@ -614,7 +618,7 @@ function UseCasesSection() {
         <Heading as="h2" className="mt-2 max-w-3xl">
           Built for every type of event.
         </Heading>
-        <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600">
+        <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600 dark:text-gray-400">
           Whether you&apos;re running corporate training, academic workshops, or
           community meetups — GatherHub adapts to your needs.
         </p>
@@ -627,19 +631,18 @@ function UseCasesSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 transition-all hover:shadow-lg"
+            className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 transition-all hover:shadow-md hover:ring-blue-200 dark:bg-gray-800 dark:ring-gray-700 dark:hover:ring-blue-500/30"
           >
-            <div
-              className={`absolute inset-0 bg-gradient-to-br ${useCase.gradient} opacity-0 transition-opacity group-hover:opacity-5`}
-            />
-            <useCase.icon className="size-8 text-gray-700" />
-            <h3 className="mt-6 text-lg font-semibold text-gray-950">
+            <div className="flex size-12 items-center justify-center rounded-xl bg-blue-50 transition-colors group-hover:bg-blue-100 dark:bg-blue-500/20 dark:group-hover:bg-blue-500/30">
+              <useCase.icon className="size-6 text-blue-600 dark:text-blue-400" />
+            </div>
+            <h3 className="mt-6 text-lg font-semibold text-gray-950 dark:text-white">
               {useCase.name}
             </h3>
-            <p className="mt-1 text-sm font-medium text-blue-600">
+            <p className="mt-1 text-sm font-medium text-blue-600 dark:text-blue-400">
               {useCase.tagline}
             </p>
-            <p className="mt-3 text-sm/6 text-gray-600">
+            <p className="mt-3 text-sm/6 text-gray-600 dark:text-gray-400">
               {useCase.description}
             </p>
           </motion.div>
@@ -682,7 +685,7 @@ function Testimonials() {
   ]
 
   return (
-    <div className="bg-gray-50 py-24">
+    <div className="bg-gray-50 py-24 dark:bg-gray-900">
       <Container>
         <div className="text-center">
           <Subheading>Testimonials</Subheading>
@@ -698,23 +701,23 @@ function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200"
+              className="relative rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700"
             >
               <StarIcon className="size-8 text-yellow-400" />
-              <p className="mt-4 text-base/7 text-gray-600">
+              <p className="mt-4 text-base/7 text-gray-600 dark:text-gray-300">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
               <div className="mt-6 flex items-center gap-4">
-                <div className="flex size-12 items-center justify-center rounded-full bg-blue-100">
-                  <span className="text-lg font-semibold text-blue-600">
+                <div className="flex size-12 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-500/20">
+                  <span className="text-lg font-semibold text-blue-600 dark:text-blue-400">
                     {testimonial.author.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-950">
+                  <p className="font-semibold text-gray-950 dark:text-white">
                     {testimonial.author}
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
                     {testimonial.role}, {testimonial.company}
                   </p>
                 </div>
@@ -756,8 +759,12 @@ function WhyGatherHub() {
   ]
 
   return (
-    <div className="relative overflow-hidden bg-gray-950 py-24 sm:py-32">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10" />
+    <div className="relative overflow-hidden bg-gray-900 py-24 sm:py-32">
+      {/* Subtle blue gradient overlay */}
+      <div className="absolute inset-0 bg-linear-to-br from-blue-600/10 via-blue-500/5 to-sky-500/10" />
+      <div className="absolute -top-40 -right-40 size-80 rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="absolute -bottom-40 -left-40 size-80 rounded-full bg-sky-500/10 blur-3xl" />
+
       <Container className="relative">
         <div className="text-center">
           <Subheading dark>Why GatherHub</Subheading>
@@ -773,9 +780,9 @@ function WhyGatherHub() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative rounded-2xl bg-white/5 p-8 backdrop-blur-sm ring-1 ring-white/10 transition-all hover:bg-white/10"
+              className="relative rounded-2xl bg-white/5 p-8 backdrop-blur-sm ring-1 ring-white/10 transition-all hover:bg-white/10 hover:ring-blue-500/20"
             >
-              <div className="flex size-12 items-center justify-center rounded-xl bg-blue-500/10">
+              <div className="flex size-12 items-center justify-center rounded-xl bg-blue-500/20">
                 <reason.icon className="size-6 text-blue-400" />
               </div>
               <h3 className="mt-6 text-lg font-semibold text-white">
@@ -800,20 +807,26 @@ function FinalCTA() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="rounded-3xl bg-gradient-to-br from-blue-600 to-indigo-700 px-8 py-16 text-center sm:px-16"
+        className="relative overflow-hidden rounded-3xl bg-gray-900 px-8 py-16 text-center sm:px-16"
       >
-        <Heading as="h2" dark>
-          Create your first event in 5 minutes.
-        </Heading>
-        <p className="mx-auto mt-6 max-w-xl text-base text-blue-100">
-          No credit card required. No monthly fees. Start managing events with
-          verifiable proof today.
-        </p>
-        <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-          <Button href={`${config.appUrl}/register`}>Start for free</Button>
-          <Button variant="secondary" href="/pricing">
-            View pricing
-          </Button>
+        {/* Decorative elements */}
+        <div className="absolute -top-20 -right-20 size-60 rounded-full bg-blue-500/20 blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 size-60 rounded-full bg-sky-500/20 blur-3xl" />
+
+        <div className="relative">
+          <Heading as="h2" dark>
+            Create your first event in 5 minutes.
+          </Heading>
+          <p className="mx-auto mt-6 max-w-xl text-base text-gray-300">
+            No credit card required. No monthly fees. Start managing events with
+            verifiable proof today.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <Button href={`${config.appUrl}/register`}>Start for free</Button>
+            <Button variant="secondary" href="/pricing">
+              View pricing
+            </Button>
+          </div>
         </div>
       </motion.div>
     </Container>
@@ -825,19 +838,19 @@ export default function HomeClient() {
     <div className="overflow-hidden">
       <Hero />
       <main>
-        <div className="bg-gradient-to-b from-white from-50% to-gray-50 py-24">
+        <div className="bg-linear-to-b from-white from-50% to-gray-50 py-24 dark:from-gray-950 dark:to-gray-900">
           <TrustIndicators />
           <ProblemSolution />
         </div>
-        <div className="bg-white py-24">
+        <div className="bg-white py-24 dark:bg-gray-950">
           <HowItWorksSection />
         </div>
         <CertificateVerification />
-        <div className="bg-white py-24">
+        <div className="bg-white py-24 dark:bg-gray-950">
           <FeaturesGrid />
         </div>
         <TeamManagement />
-        <div className="bg-white py-24">
+        <div className="bg-white py-24 dark:bg-gray-950">
           <UseCasesSection />
         </div>
         <Testimonials />

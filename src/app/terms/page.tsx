@@ -19,24 +19,24 @@ function Section({
 }) {
   return (
     <section className="mt-12">
-      <h2 className="text-2xl font-semibold text-gray-950">{title}</h2>
-      <div className="mt-4 space-y-4 text-base/7 text-gray-600">{children}</div>
+      <h2 className="text-2xl font-semibold text-gray-950 dark:text-white">{title}</h2>
+      <div className="mt-4 space-y-4 text-base/7 text-gray-600 dark:text-gray-400">{children}</div>
     </section>
   )
 }
 
 export default function TermsOfService() {
   return (
-    <main className="overflow-hidden">
-      <div className="bg-white">
+    <main className="overflow-hidden bg-white dark:bg-gray-950">
+      <div className="bg-white dark:bg-gray-950">
         <Container>
           <Navbar />
-          <div className="border-b border-gray-200 pb-8 pt-8">
+          <div className="border-b border-gray-200 pb-8 pt-8 dark:border-gray-700">
             <Subheading>Legal</Subheading>
             <Heading as="h1" className="mt-2">
               Terms of Service
             </Heading>
-            <p className="mt-4 text-sm text-gray-600">
+            <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
               Last updated: December 25, 2025
             </p>
           </div>

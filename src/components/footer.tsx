@@ -2,7 +2,6 @@ import { PlusGrid, PlusGridItem, PlusGridRow } from '@/components/plus-grid'
 import { config } from '@/lib/config'
 import { Button } from './button'
 import { Container } from './container'
-import { Gradient } from './gradient'
 import { Link } from './link'
 import { Logo } from './logo'
 import { Subheading } from './text'
@@ -12,11 +11,11 @@ function CallToAction() {
     <div className="relative pt-20 pb-16 text-center sm:py-24">
       <hgroup>
         <Subheading>Get started</Subheading>
-        <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
+        <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 dark:text-white sm:text-5xl">
           Ready to run cleaner operations?
         </p>
       </hgroup>
-      <p className="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500">
+      <p className="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500 dark:text-gray-400">
         Create your first activity in minutes. No credit card required.
       </p>
       <div className="mt-6">
@@ -29,7 +28,11 @@ function CallToAction() {
 }
 
 function SitemapHeading({ children }: { children: React.ReactNode }) {
-  return <h3 className="text-sm/6 font-medium text-gray-950/50">{children}</h3>
+  return (
+    <h3 className="text-sm/6 font-medium text-gray-950/50 dark:text-white/50">
+      {children}
+    </h3>
+  )
 }
 
 function SitemapLinks({ children }: { children: React.ReactNode }) {
@@ -41,7 +44,7 @@ function SitemapLink(props: React.ComponentPropsWithoutRef<typeof Link>) {
     <li>
       <Link
         {...props}
-        className="font-medium text-gray-950 data-hover:text-gray-950/75"
+        className="font-medium text-gray-950 data-hover:text-gray-950/75 dark:text-white dark:data-hover:text-white/75"
       />
     </li>
   )
@@ -110,7 +113,7 @@ function SocialLinks() {
         href="https://facebook.com"
         target="_blank"
         aria-label="Visit us on Facebook"
-        className="text-gray-950 data-hover:text-gray-950/75"
+        className="text-gray-950 data-hover:text-gray-950/75 dark:text-white dark:data-hover:text-white/75"
       >
         <SocialIconFacebook className="size-4" />
       </Link>
@@ -118,7 +121,7 @@ function SocialLinks() {
         href="https://x.com"
         target="_blank"
         aria-label="Visit us on X"
-        className="text-gray-950 data-hover:text-gray-950/75"
+        className="text-gray-950 data-hover:text-gray-950/75 dark:text-white dark:data-hover:text-white/75"
       >
         <SocialIconX className="size-4" />
       </Link>
@@ -126,7 +129,7 @@ function SocialLinks() {
         href="https://linkedin.com"
         target="_blank"
         aria-label="Visit us on LinkedIn"
-        className="text-gray-950 data-hover:text-gray-950/75"
+        className="text-gray-950 data-hover:text-gray-950/75 dark:text-white dark:data-hover:text-white/75"
       >
         <SocialIconLinkedIn className="size-4" />
       </Link>
@@ -136,7 +139,7 @@ function SocialLinks() {
 
 function Copyright() {
   return (
-    <div className="text-sm/6 text-gray-950">
+    <div className="text-sm/6 text-gray-950 dark:text-white">
       &copy; {new Date().getFullYear()} Gather Hub.
     </div>
   )
@@ -144,39 +147,41 @@ function Copyright() {
 
 export function Footer() {
   return (
-    <footer>
-      <Gradient className="relative">
-        <div className="absolute inset-2 rounded-4xl bg-white/80" />
-        <Container>
-          <CallToAction />
-          <PlusGrid className="pb-16">
-            <PlusGridRow>
-              <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
-                <div className="col-span-2 flex">
-                  <PlusGridItem className="pt-6 lg:pb-6">
-                    <Logo className="h-9" />
-                  </PlusGridItem>
-                </div>
-                <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
-                  <Sitemap />
-                </div>
-              </div>
-            </PlusGridRow>
-            <PlusGridRow className="flex justify-between">
-              <div>
-                <PlusGridItem className="py-3">
-                  <Copyright />
+    <footer className="relative bg-gray-50 dark:bg-gray-900">
+      {/* Decorative gradient */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 left-1/4 size-80 rounded-full bg-blue-50 opacity-50 blur-3xl dark:bg-blue-500/10" />
+        <div className="absolute -bottom-40 right-1/4 size-80 rounded-full bg-sky-50 opacity-50 blur-3xl dark:bg-sky-500/10" />
+      </div>
+      <Container className="relative">
+        <CallToAction />
+        <PlusGrid className="pb-16">
+          <PlusGridRow>
+            <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
+              <div className="col-span-2 flex">
+                <PlusGridItem className="pt-6 lg:pb-6">
+                  <Logo className="h-9" />
                 </PlusGridItem>
               </div>
-              <div className="flex">
-                <PlusGridItem className="flex items-center gap-8 py-3">
-                  <SocialLinks />
-                </PlusGridItem>
+              <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
+                <Sitemap />
               </div>
-            </PlusGridRow>
-          </PlusGrid>
-        </Container>
-      </Gradient>
+            </div>
+          </PlusGridRow>
+          <PlusGridRow className="flex justify-between">
+            <div>
+              <PlusGridItem className="py-3">
+                <Copyright />
+              </PlusGridItem>
+            </div>
+            <div className="flex">
+              <PlusGridItem className="flex items-center gap-8 py-3">
+                <SocialLinks />
+              </PlusGridItem>
+            </div>
+          </PlusGridRow>
+        </PlusGrid>
+      </Container>
     </footer>
   )
 }

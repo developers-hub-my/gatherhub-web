@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 function Hero() {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-gray-950">
       <Container>
         <Navbar />
         <div className="pb-16 pt-8">
@@ -26,7 +26,7 @@ function Hero() {
           <Heading as="h1" className="mt-2">
             We&apos;re here to help.
           </Heading>
-          <p className="mt-4 text-base text-gray-600 max-w-2xl">
+          <p className="mt-4 text-base text-gray-600 dark:text-gray-400 max-w-2xl">
             Have a question about Gather Hub? Need help with your account or
             event setup? Our team is ready to assist you.
           </p>
@@ -70,18 +70,18 @@ function ContactInfo() {
         {contactMethods.map((method) => (
           <div
             key={method.title}
-            className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+            className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
           >
-            <div className="flex size-12 items-center justify-center rounded-xl bg-blue-50">
-              <method.icon className="size-6 text-blue-600" />
+            <div className="flex size-12 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-500/20">
+              <method.icon className="size-6 text-blue-600 dark:text-blue-400" />
             </div>
-            <h3 className="mt-4 text-base font-semibold text-gray-950">
+            <h3 className="mt-4 text-base font-semibold text-gray-950 dark:text-white">
               {method.title}
             </h3>
-            <p className="mt-2 text-sm font-medium text-gray-900">
+            <p className="mt-2 text-sm font-medium text-gray-900 dark:text-gray-200">
               {method.detail}
             </p>
-            <p className="mt-2 text-sm/6 text-gray-600">{method.description}</p>
+            <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">{method.description}</p>
           </div>
         ))}
       </div>
@@ -91,12 +91,12 @@ function ContactInfo() {
 
 function ContactForm() {
   return (
-    <div className="bg-gray-50 py-24">
+    <div className="bg-gray-50 py-24 dark:bg-gray-900">
       <Container>
         <div className="mx-auto max-w-2xl">
           <div className="text-center">
             <Heading as="h2">Send us a message</Heading>
-            <p className="mt-4 text-base text-gray-600">
+            <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
               Fill out the form below and we&apos;ll get back to you as soon as
               possible.
             </p>
@@ -106,7 +106,7 @@ function ContactForm() {
               <div>
                 <label
                   htmlFor="first-name"
-                  className="block text-sm font-medium text-gray-900"
+                  className="block text-sm font-medium text-gray-900 dark:text-gray-200"
                 >
                   First name
                 </label>
@@ -114,14 +114,14 @@ function ContactForm() {
                   type="text"
                   id="first-name"
                   name="first-name"
-                  className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                   required
                 />
               </div>
               <div>
                 <label
                   htmlFor="last-name"
-                  className="block text-sm font-medium text-gray-900"
+                  className="block text-sm font-medium text-gray-900 dark:text-gray-200"
                 >
                   Last name
                 </label>
@@ -129,7 +129,7 @@ function ContactForm() {
                   type="text"
                   id="last-name"
                   name="last-name"
-                  className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                   required
                 />
               </div>
@@ -138,7 +138,7 @@ function ContactForm() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-900"
+                className="block text-sm font-medium text-gray-900 dark:text-gray-200"
               >
                 Email address
               </label>
@@ -146,7 +146,7 @@ function ContactForm() {
                 type="email"
                 id="email"
                 name="email"
-                className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                 required
               />
             </div>
@@ -154,7 +154,7 @@ function ContactForm() {
             <div>
               <label
                 htmlFor="organisation"
-                className="block text-sm font-medium text-gray-900"
+                className="block text-sm font-medium text-gray-900 dark:text-gray-200"
               >
                 Organisation
               </label>
@@ -162,21 +162,21 @@ function ContactForm() {
                 type="text"
                 id="organisation"
                 name="organisation"
-                className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
               />
             </div>
 
             <div>
               <label
                 htmlFor="subject"
-                className="block text-sm font-medium text-gray-900"
+                className="block text-sm font-medium text-gray-900 dark:text-gray-200"
               >
                 Subject
               </label>
               <select
                 id="subject"
                 name="subject"
-                className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                 required
               >
                 <option value="">Select a topic</option>
@@ -191,7 +191,7 @@ function ContactForm() {
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-gray-900"
+                className="block text-sm font-medium text-gray-900 dark:text-gray-200"
               >
                 Message
               </label>
@@ -199,7 +199,7 @@ function ContactForm() {
                 id="message"
                 name="message"
                 rows={6}
-                className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                 required
               />
             </div>
@@ -209,17 +209,17 @@ function ContactForm() {
                 id="privacy-policy"
                 name="privacy-policy"
                 type="checkbox"
-                className="mt-1 size-4 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500"
+                className="mt-1 size-4 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600"
                 required
               />
               <label
                 htmlFor="privacy-policy"
-                className="ml-3 text-sm text-gray-600"
+                className="ml-3 text-sm text-gray-600 dark:text-gray-400"
               >
                 I agree to the{' '}
                 <a
                   href="/privacy"
-                  className="font-medium text-blue-600 hover:text-blue-500"
+                  className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400"
                 >
                   Privacy Policy
                 </a>{' '}
@@ -275,19 +275,19 @@ function FAQ() {
         <div className="mt-12 space-y-8">
           {faqs.map((faq) => (
             <div key={faq.question}>
-              <h3 className="text-lg font-semibold text-gray-950">
+              <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
                 {faq.question}
               </h3>
-              <p className="mt-3 text-base/7 text-gray-600">{faq.answer}</p>
+              <p className="mt-3 text-base/7 text-gray-600 dark:text-gray-400">{faq.answer}</p>
             </div>
           ))}
         </div>
         <div className="mt-12 text-center">
-          <p className="text-base text-gray-600">
+          <p className="text-base text-gray-600 dark:text-gray-400">
             Have more questions?{' '}
             <a
               href="/help"
-              className="font-medium text-blue-600 hover:text-blue-500"
+              className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400"
             >
               Visit our Help Center
             </a>
@@ -300,7 +300,7 @@ function FAQ() {
 
 export default function Contact() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-white dark:bg-gray-950">
       <Hero />
       <ContactInfo />
       <ContactForm />
