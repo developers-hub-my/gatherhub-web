@@ -13,6 +13,10 @@ import {
   QrCodeIcon,
   TicketIcon,
   UserGroupIcon,
+  ShieldCheckIcon,
+  ClockIcon,
+  CurrencyDollarIcon,
+  UserPlusIcon,
 } from '@heroicons/react/24/outline'
 import {
   AcademicCapIcon,
@@ -23,6 +27,8 @@ import {
   SparklesIcon,
   UserCircleIcon,
   UsersIcon,
+  CheckBadgeIcon,
+  StarIcon,
 } from '@heroicons/react/24/solid'
 import { motion } from 'framer-motion'
 
@@ -39,17 +45,18 @@ function Hero() {
             transition={{ duration: 0.5 }}
           >
             <h1 className="font-display text-6xl/[0.9] font-medium tracking-tight text-balance text-gray-950 sm:text-8xl/[0.8] md:text-9xl/[0.8]">
-              Run activities with clarity and proof.
+              The event platform that proves participation.
             </h1>
           </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8"
+            className="mt-8 max-w-xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8"
           >
-            Gather Hub handles registration, payments, attendance, and
-            participation proof — so you can focus on running your events well.
+            From registration to QR check-in to verifiable certificates — every
+            step is recorded, every participant is tracked, every certificate is
+            authentic.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -70,9 +77,21 @@ function Hero() {
 
 function TrustIndicators() {
   const stats = [
-    { label: 'Events managed', value: '10K+' },
-    { label: 'Participants served', value: '500K+' },
-    { label: 'Avg. time saved', value: '12hrs/event' },
+    {
+      label: 'Average check-in time',
+      value: '3 sec',
+      icon: ClockIcon,
+    },
+    {
+      label: 'Verifiable certificates',
+      value: '100%',
+      icon: ShieldCheckIcon,
+    },
+    {
+      label: 'Monthly platform fee',
+      value: 'RM 0',
+      icon: CurrencyDollarIcon,
+    },
   ]
 
   return (
@@ -85,8 +104,11 @@ function TrustIndicators() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="text-center"
+            className="flex flex-col items-center text-center"
           >
+            <div className="mb-3 flex size-12 items-center justify-center rounded-full bg-blue-50">
+              <stat.icon className="size-6 text-blue-600" />
+            </div>
             <div className="text-4xl font-semibold text-gray-950">
               {stat.value}
             </div>
@@ -110,14 +132,14 @@ function ProblemSolution() {
         >
           <Subheading>The Problem</Subheading>
           <Heading as="h2" className="mt-2">
-            Scattered systems create chaos.
+            No proof means no credibility.
           </Heading>
           <div className="mt-8 space-y-4">
             {[
-              'Managing activities across spreadsheets and email threads',
-              'Manual attendance tracking that wastes hours',
-              'Unclear payment records and reconciliation headaches',
-              'Scattered information when you need to audit or report',
+              'Attendance disputes with no verifiable records',
+              'Hours spent manually creating certificates',
+              'Registration scattered across spreadsheets and emails',
+              'No audit trail when stakeholders ask questions',
             ].map((problem, index) => (
               <motion.div
                 key={index}
@@ -144,14 +166,14 @@ function ProblemSolution() {
         >
           <Subheading>The Solution</Subheading>
           <Heading as="h2" className="mt-2">
-            Everything in one place.
+            Proof at every step.
           </Heading>
           <div className="mt-8 space-y-4">
             {[
-              'Centralized activity management and registration',
-              'Automated attendance tracking with QR codes',
-              'Clear payment records and instant reconciliation',
-              'Complete audit trail with one-click reports',
+              'QR-verified attendance that anyone can validate',
+              'One-click certificate generation with unique IDs',
+              'Centralized registration with real-time tracking',
+              'Complete audit trail and exportable reports',
             ].map((solution, index) => (
               <motion.div
                 key={index}
@@ -265,40 +287,149 @@ function HowItWorksSection() {
   )
 }
 
+function CertificateVerification() {
+  return (
+    <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 py-24">
+      <Container>
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Subheading>Verifiable Certificates</Subheading>
+            <Heading as="h2" className="mt-2">
+              Every certificate is authentic and verifiable.
+            </Heading>
+            <p className="mt-6 text-base/7 text-gray-600">
+              Each certificate includes a unique QR code that links to a
+              verification page. Employers, institutions, and stakeholders can
+              instantly verify authenticity — no phone calls or emails needed.
+            </p>
+            <div className="mt-8 space-y-4">
+              {[
+                {
+                  title: 'Unique certificate ID',
+                  description: 'Every certificate has a unique identifier for tracking',
+                },
+                {
+                  title: 'QR code verification',
+                  description: 'Scan to instantly verify certificate authenticity',
+                },
+                {
+                  title: 'Tamper-proof records',
+                  description: 'All certificates are linked to verified attendance data',
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircleIcon className="mt-0.5 size-5 shrink-0 text-blue-600" />
+                  <div>
+                    <p className="font-medium text-gray-950">{item.title}</p>
+                    <p className="text-sm text-gray-600">{item.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            <div className="relative mx-auto max-w-md">
+              {/* Certificate mockup */}
+              <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-xl">
+                <div className="flex items-center justify-between border-b border-gray-100 pb-4">
+                  <div className="text-lg font-semibold text-gray-950">
+                    Certificate of Completion
+                  </div>
+                  <CheckBadgeIcon className="size-8 text-blue-600" />
+                </div>
+                <div className="mt-6 space-y-4 text-center">
+                  <p className="text-sm text-gray-500">This certifies that</p>
+                  <p className="text-xl font-semibold text-gray-950">
+                    Ahmad bin Abdullah
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    has successfully completed
+                  </p>
+                  <p className="font-medium text-gray-950">
+                    Professional Development Workshop
+                  </p>
+                  <p className="text-sm text-gray-500">on 15 January 2025</p>
+                </div>
+                <div className="mt-6 flex items-center justify-between border-t border-gray-100 pt-4">
+                  <div className="flex items-center gap-2">
+                    <QrCodeIcon className="size-12 text-gray-400" />
+                    <div className="text-xs text-gray-500">
+                      <p>Scan to verify</p>
+                      <p className="font-mono">GH-2025-00123</p>
+                    </div>
+                  </div>
+                  <div className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700">
+                    Verified
+                  </div>
+                </div>
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -right-4 -top-4 size-24 rounded-full bg-blue-100 opacity-50 blur-2xl" />
+              <div className="absolute -bottom-4 -left-4 size-32 rounded-full bg-indigo-100 opacity-50 blur-2xl" />
+            </div>
+          </motion.div>
+        </div>
+      </Container>
+    </div>
+  )
+}
+
 function FeaturesGrid() {
   const features = [
     {
-      name: 'Activity Management',
+      name: 'Event Management',
       description:
-        'Create and manage events, workshops, and programmes in one dashboard.',
+        'Create unlimited events with rich descriptions, venue details, and custom scheduling.',
       icon: ClipboardDocumentListIcon,
     },
     {
-      name: 'Ticketing & Payments',
-      description: 'Accept payments and track revenue. Issue tickets automatically.',
-      icon: TicketIcon,
-    },
-    {
-      name: 'Attendance Validation',
+      name: 'QR Code Check-In',
       description:
-        'Check participants in with QR codes. Track attendance in real time.',
+        'Fast, contactless check-in with unique QR codes for each participant.',
       icon: QrCodeIcon,
     },
     {
-      name: 'Participation Proof',
-      description: 'Generate certificates or proof of attendance instantly.',
+      name: 'Sessions & Activities',
+      description:
+        'Organize multi-track events with time-blocked sessions and capacity limits.',
+      icon: CalendarDaysIcon,
+    },
+    {
+      name: 'Certificate Generation',
+      description:
+        'Professional certificates with QR verification, generated in one click.',
       icon: DocumentCheckIcon,
     },
     {
-      name: 'Reports & Exports',
+      name: 'Crew Management',
       description:
-        'Export attendance, payment, and participation data for compliance.',
-      icon: ChartBarIcon,
+        '5 predefined roles plus custom roles with granular permissions for your team.',
+      icon: UserGroupIcon,
     },
     {
-      name: 'Participant Management',
-      description: 'Manage registrations, communications, and participant data.',
-      icon: UserGroupIcon,
+      name: 'Reports & Analytics',
+      description:
+        'Complete attendance reports, revenue tracking, and data export for compliance.',
+      icon: ChartBarIcon,
     },
   ]
 
@@ -307,7 +438,7 @@ function FeaturesGrid() {
       <div className="text-center">
         <Subheading>Key Features</Subheading>
         <Heading as="h2" className="mt-2">
-          Everything you need. Nothing you don&apos;t.
+          Everything you need to run professional events.
         </Heading>
       </div>
       <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -336,35 +467,141 @@ function FeaturesGrid() {
   )
 }
 
-function WhoItsForSection() {
-  const audiences = [
+function TeamManagement() {
+  const roles = [
+    { name: 'Organizer', description: 'Full event control and oversight' },
+    { name: 'Coordinator', description: 'Manage sessions and participants' },
+    { name: 'Staff', description: 'Handle check-in and on-site operations' },
+    { name: 'Volunteer', description: 'Assist with specific tasks' },
+    { name: 'Speaker', description: 'Access to session materials and info' },
+  ]
+
+  const permissions = [
+    'Manage events',
+    'Check in participants',
+    'Generate certificates',
+    'View reports',
+    'Manage crew',
+    'Handle payments',
+  ]
+
+  return (
+    <div className="bg-gray-50 py-24">
+      <Container>
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Subheading>Team Management</Subheading>
+            <Heading as="h2" className="mt-2">
+              Delegate with confidence.
+            </Heading>
+            <p className="mt-6 text-base/7 text-gray-600">
+              Build your event team with predefined roles or create custom ones.
+              Assign granular permissions so everyone has exactly the access they
+              need — nothing more, nothing less.
+            </p>
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              {permissions.map((permission, index) => (
+                <motion.div
+                  key={permission}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  className="flex items-center gap-2"
+                >
+                  <CheckCircleIcon className="size-4 text-blue-600" />
+                  <span className="text-sm text-gray-600">{permission}</span>
+                </motion.div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-gray-500">
+              10 granular permissions available for fine-grained access control
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="space-y-3">
+              {roles.map((role, index) => (
+                <motion.div
+                  key={role.name}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm ring-1 ring-gray-200"
+                >
+                  <div className="flex size-10 items-center justify-center rounded-full bg-blue-50">
+                    <UserCircleIcon className="size-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-950">{role.name}</p>
+                    <p className="text-sm text-gray-500">{role.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+              <div className="mt-4 rounded-xl border-2 border-dashed border-gray-200 p-4 text-center">
+                <UserPlusIcon className="mx-auto size-6 text-gray-400" />
+                <p className="mt-2 text-sm text-gray-500">
+                  Create custom roles for your specific needs
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </Container>
+    </div>
+  )
+}
+
+function UseCasesSection() {
+  const useCases = [
     {
-      name: 'Corporate programmes',
-      description: 'Internal training, workshops, and employee development.',
-      icon: BuildingOffice2Icon,
+      name: 'Training Providers',
+      tagline: 'Issue CPD certificates automatically',
+      description:
+        'Run professional courses and automatically issue verifiable certificates when participants complete training.',
+      icon: AcademicCapIcon,
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
-      name: 'Training providers',
-      description: 'Professional courses, certifications, and skill-building.',
-      icon: AcademicCapIcon,
+      name: 'Corporate L&D',
+      tagline: 'Track employee training completion',
+      description:
+        'Manage internal training programmes with attendance tracking and completion records for HR compliance.',
+      icon: BuildingOffice2Icon,
       gradient: 'from-indigo-500 to-blue-500',
     },
     {
-      name: 'Universities',
-      description: 'Workshops, seminars, and extracurricular activities.',
-      icon: AcademicCapIcon,
+      name: 'Conferences',
+      tagline: 'Manage multi-track sessions',
+      description:
+        'Organize complex events with parallel sessions, speaker management, and real-time attendance tracking.',
+      icon: UsersIcon,
       gradient: 'from-purple-500 to-indigo-500',
     },
     {
-      name: 'Community events',
-      description: 'Meetups, volunteer programmes, and public workshops.',
-      icon: UsersIcon,
+      name: 'Universities',
+      tagline: 'Workshop attendance with proof',
+      description:
+        'Track student participation in workshops and extracurricular activities with verifiable records.',
+      icon: AcademicCapIcon,
       gradient: 'from-pink-500 to-purple-500',
     },
     {
-      name: 'Professional seminars',
-      description: 'Conferences, industry events, and continuing education.',
+      name: 'Community Events',
+      tagline: 'Free events, free platform',
+      description:
+        'Run meetups and volunteer programmes at no cost. Only pay when you charge for tickets.',
       icon: UserCircleIcon,
       gradient: 'from-rose-500 to-pink-500',
     },
@@ -373,15 +610,19 @@ function WhoItsForSection() {
   return (
     <Container className="pb-24">
       <div className="text-center">
-        <Subheading>Who It&apos;s For</Subheading>
+        <Subheading>Use Cases</Subheading>
         <Heading as="h2" className="mt-2 max-w-3xl">
-          Built for organisations that run activities.
+          Built for every type of event.
         </Heading>
+        <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600">
+          Whether you&apos;re running corporate training, academic workshops, or
+          community meetups — GatherHub adapts to your needs.
+        </p>
       </div>
       <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {audiences.map((audience, index) => (
+        {useCases.map((useCase, index) => (
           <motion.div
-            key={audience.name}
+            key={useCase.name}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -389,14 +630,17 @@ function WhoItsForSection() {
             className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 transition-all hover:shadow-lg"
           >
             <div
-              className={`absolute inset-0 bg-linear-to-br ${audience.gradient} opacity-0 transition-opacity group-hover:opacity-5`}
+              className={`absolute inset-0 bg-gradient-to-br ${useCase.gradient} opacity-0 transition-opacity group-hover:opacity-5`}
             />
-            <audience.icon className="size-8 text-gray-700" />
+            <useCase.icon className="size-8 text-gray-700" />
             <h3 className="mt-6 text-lg font-semibold text-gray-950">
-              {audience.name}
+              {useCase.name}
             </h3>
-            <p className="mt-2 text-sm/6 text-gray-600">
-              {audience.description}
+            <p className="mt-1 text-sm font-medium text-blue-600">
+              {useCase.tagline}
+            </p>
+            <p className="mt-3 text-sm/6 text-gray-600">
+              {useCase.description}
             </p>
           </motion.div>
         ))}
@@ -405,38 +649,120 @@ function WhoItsForSection() {
   )
 }
 
+function Testimonials() {
+  const testimonials = [
+    {
+      quote:
+        'We used to spend 3 days creating certificates manually. Now we generate 500+ certificates in one click after each training session.',
+      author: 'Sarah Lim',
+      role: 'Training Manager',
+      company: 'Professional Development Institute',
+    },
+    {
+      quote:
+        'The QR verification feature is a game-changer. Our HR team can instantly verify training completion without digging through files.',
+      author: 'Ahmad Razak',
+      role: 'HR Director',
+      company: 'Tech Solutions Sdn Bhd',
+    },
+    {
+      quote:
+        'Managing a 3-day conference with 12 parallel tracks was seamless. Real-time check-in data helped us make decisions on the fly.',
+      author: 'Dr. Mei Ling',
+      role: 'Conference Chair',
+      company: 'Malaysian Medical Association',
+    },
+    {
+      quote:
+        'Free for our community meetups, and the certificate feature helps our members build their professional portfolios.',
+      author: 'Ravi Kumar',
+      role: 'Community Lead',
+      company: 'KL Tech Community',
+    },
+  ]
+
+  return (
+    <div className="bg-gray-50 py-24">
+      <Container>
+        <div className="text-center">
+          <Subheading>Testimonials</Subheading>
+          <Heading as="h2" className="mt-2">
+            Trusted by event organisers.
+          </Heading>
+        </div>
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.author}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200"
+            >
+              <StarIcon className="size-8 text-yellow-400" />
+              <p className="mt-4 text-base/7 text-gray-600">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+              <div className="mt-6 flex items-center gap-4">
+                <div className="flex size-12 items-center justify-center rounded-full bg-blue-100">
+                  <span className="text-lg font-semibold text-blue-600">
+                    {testimonial.author.charAt(0)}
+                  </span>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-950">
+                    {testimonial.author}
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    {testimonial.role}, {testimonial.company}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </Container>
+    </div>
+  )
+}
+
 function WhyGatherHub() {
   const reasons = [
     {
-      title: 'Built for calm operations',
-      description: 'No clutter. Just what you need to run activities cleanly.',
-      icon: SparklesIcon,
-    },
-    {
       title: 'Proof-first design',
-      description: 'Every action is recorded and auditable.',
+      description:
+        'Every action is recorded and verifiable. Certificates, attendance, payments — all with an audit trail.',
       icon: DocumentCheckIcon,
     },
     {
-      title: 'Made for real organisers',
-      description: 'Designed around how events actually run.',
-      icon: UserGroupIcon,
+      title: 'Free until you charge',
+      description:
+        'No monthly fees. Run unlimited free events at no cost. Only pay when you collect payments.',
+      icon: CurrencyDollarIcon,
     },
     {
-      title: 'No complexity tax',
-      description: 'Simple to use without unnecessary features.',
-      icon: CheckCircleIcon,
+      title: 'Built for teams',
+      description:
+        'Delegate check-in, certificate generation, and reporting to your crew with role-based permissions.',
+      icon: UsersIcon,
+    },
+    {
+      title: 'No clutter, just results',
+      description:
+        'Simple, focused tools that do exactly what you need. No feature bloat or learning curve.',
+      icon: SparklesIcon,
     },
   ]
 
   return (
     <div className="relative overflow-hidden bg-gray-950 py-24 sm:py-32">
-      <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10" />
       <Container className="relative">
         <div className="text-center">
-          <Subheading dark>Why Gather Hub</Subheading>
+          <Subheading dark>Why GatherHub</Subheading>
           <Heading as="h2" dark className="mt-2">
-            Designed for confident operations.
+            Built for organisers who need proof.
           </Heading>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
@@ -466,25 +792,57 @@ function WhyGatherHub() {
   )
 }
 
+function FinalCTA() {
+  return (
+    <Container className="py-24">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="rounded-3xl bg-gradient-to-br from-blue-600 to-indigo-700 px-8 py-16 text-center sm:px-16"
+      >
+        <Heading as="h2" dark>
+          Create your first event in 5 minutes.
+        </Heading>
+        <p className="mx-auto mt-6 max-w-xl text-base text-blue-100">
+          No credit card required. No monthly fees. Start managing events with
+          verifiable proof today.
+        </p>
+        <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+          <Button href={`${config.appUrl}/register`}>Start for free</Button>
+          <Button variant="secondary" href="/pricing">
+            View pricing
+          </Button>
+        </div>
+      </motion.div>
+    </Container>
+  )
+}
+
 export default function HomeClient() {
   return (
     <div className="overflow-hidden">
       <Hero />
       <main>
-        <div className="bg-linear-to-b from-white from-50% to-gray-50 py-24">
+        <div className="bg-gradient-to-b from-white from-50% to-gray-50 py-24">
           <TrustIndicators />
           <ProblemSolution />
         </div>
         <div className="bg-white py-24">
           <HowItWorksSection />
         </div>
-        <div className="bg-gray-50 py-24">
+        <CertificateVerification />
+        <div className="bg-white py-24">
           <FeaturesGrid />
         </div>
+        <TeamManagement />
         <div className="bg-white py-24">
-          <WhoItsForSection />
+          <UseCasesSection />
         </div>
+        <Testimonials />
         <WhyGatherHub />
+        <FinalCTA />
       </main>
       <Footer />
     </div>
