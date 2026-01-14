@@ -5,18 +5,33 @@ import { config } from '@/lib/config'
 import { Navbar } from '@/components/navbar'
 import { Heading, Lead, Subheading } from '@/components/text'
 import {
-  BellAlertIcon,
+  AcademicCapIcon,
+  ArrowDownTrayIcon,
+  BanknotesIcon,
+  BuildingOfficeIcon,
+  CalendarDaysIcon,
   ChartBarIcon,
+  ChartPieIcon,
+  ChatBubbleLeftRightIcon,
   CheckBadgeIcon,
   ClipboardDocumentListIcon,
+  ClockIcon,
   CreditCardIcon,
+  DevicePhoneMobileIcon,
   DocumentCheckIcon,
+  DocumentDuplicateIcon,
   EnvelopeIcon,
-  GlobeAltIcon,
+  GiftIcon,
+  MegaphoneIcon,
+  MicrophoneIcon,
+  PresentationChartLineIcon,
   QrCodeIcon,
   ShieldCheckIcon,
   TicketIcon,
+  TrophyIcon,
   UserGroupIcon,
+  UserPlusIcon,
+  UsersIcon,
 } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 
@@ -37,9 +52,8 @@ function Hero() {
             Everything you need to run professional events.
           </Heading>
           <Lead className="mt-4 max-w-3xl">
-            From registration to participation proof, Gather Hub provides all
-            the tools you need to manage activities efficiently and
-            professionally.
+            From event creation to certificates, Gather Hub provides all the
+            tools you need to manage activities efficiently and professionally.
           </Lead>
         </div>
       </Container>
@@ -70,7 +84,9 @@ function FeatureSection({
         <Heading as="h3" className="text-3xl">
           {title}
         </Heading>
-        <p className="mt-4 text-base/7 text-gray-600 dark:text-gray-400">{description}</p>
+        <p className="mt-4 text-base/7 text-gray-600 dark:text-gray-400">
+          {description}
+        </p>
       </div>
       <div className={reverse ? 'lg:col-start-1 lg:row-start-1' : ''}>
         <div className="space-y-6">
@@ -99,155 +115,229 @@ function MainFeatures() {
   return (
     <Container className="py-24">
       <div className="space-y-32">
+        {/* Section 1: Event Creation & Scheduling */}
         <FeatureSection
-          title="Activity Management"
-          description="Create and manage all types of events from a single dashboard. Set up registration forms, ticket tiers, and capacity limits in minutes."
+          title="Event Creation & Scheduling"
+          description="Build comprehensive events with sessions, activities, and venue management. From one-day workshops to multi-day conferences."
           features={[
             {
-              name: 'Multiple activity types',
+              name: 'Rich event builder',
               description:
-                'Support for workshops, seminars, conferences, training sessions, and community events.',
-              icon: ClipboardDocumentListIcon,
+                'Create events with descriptions, custom fields, images, and all the details your participants need.',
+              icon: CalendarDaysIcon,
             },
             {
-              name: 'Custom registration forms',
+              name: 'Session & activity scheduling',
               description:
-                'Collect exactly the information you need with customizable registration fields.',
-              icon: DocumentCheckIcon,
+                'Organize time-blocked sessions and parallel activities with capacity limits and speaker assignments.',
+              icon: ClockIcon,
             },
             {
-              name: 'Capacity management',
+              name: 'Venue library',
               description:
-                'Set attendance limits and manage waitlists automatically.',
-              icon: UserGroupIcon,
+                'Save and reuse venues across events with address, capacity, and amenity information.',
+              icon: BuildingOfficeIcon,
+            },
+            {
+              name: 'Event cloning',
+              description:
+                'Duplicate events for recurring programs with one click, including all settings and configurations.',
+              icon: DocumentDuplicateIcon,
             },
           ]}
         />
 
+        {/* Section 2: Registration & Ticketing */}
         <FeatureSection
-          title="Ticketing & Payments"
-          description="Sell tickets and accept payments seamlessly. Support for multiple ticket types, early bird pricing, and promotional codes."
+          title="Registration & Ticketing"
+          description="Flexible registration options for free and paid events. Collect the information you need with customizable forms."
           reverse
           features={[
             {
               name: 'Multiple ticket types',
               description:
-                'Create different ticket tiers with varying prices and benefits.',
+                'Create different ticket tiers with varying prices, benefits, and availability windows.',
               icon: TicketIcon,
             },
             {
-              name: 'Secure payment processing',
+              name: 'Custom registration forms',
               description:
-                'Accept credit cards, bank transfers, and other payment methods securely.',
-              icon: CreditCardIcon,
+                'Collect buyer and participant details with customizable fields for any information you need.',
+              icon: ClipboardDocumentListIcon,
             },
             {
-              name: 'Automated invoicing',
+              name: 'Bulk participant import',
               description:
-                'Generate and send invoices automatically upon registration.',
-              icon: DocumentCheckIcon,
+                'Import participants from CSV or Excel for corporate events and pre-registered attendees.',
+              icon: UserPlusIcon,
+            },
+            {
+              name: 'Capacity & waitlists',
+              description:
+                'Set attendance limits and automatically manage waitlists when events fill up.',
+              icon: UsersIcon,
             },
           ]}
         />
 
+        {/* Section 3: Payment Processing */}
         <FeatureSection
-          title="Attendance Validation"
-          description="Track attendance accurately with QR code scanning or manual check-in. Real-time attendance monitoring and reports."
+          title="Payment Processing"
+          description="Accept payments securely with multiple payment options. Support for Malaysian payment methods and manual bank transfers."
           features={[
             {
-              name: 'QR code check-in',
+              name: 'Online banking (FPX)',
               description:
-                'Generate unique QR codes for each participant for fast, contactless check-in.',
+                'Accept instant payments from all major Malaysian banks through secure FPX integration.',
+              icon: BanknotesIcon,
+            },
+            {
+              name: 'DuitNow QR',
+              description:
+                'Let participants pay instantly by scanning a QR code with their banking app.',
               icon: QrCodeIcon,
             },
             {
-              name: 'Manual attendance tracking',
+              name: 'Manual bank transfer',
               description:
-                'Mark attendance manually when needed with an easy-to-use interface.',
-              icon: CheckBadgeIcon,
-            },
-            {
-              name: 'Real-time monitoring',
-              description:
-                'See who has checked in and who is still expected in real time.',
-              icon: ChartBarIcon,
-            },
-          ]}
-        />
-
-        <FeatureSection
-          title="Participation Proof & Certificates"
-          description="Generate professional certificates and proof of attendance instantly. Customizable templates with your branding."
-          reverse
-          features={[
-            {
-              name: 'Instant certificate generation',
-              description:
-                'Create and distribute certificates with one click after the event.',
-              icon: DocumentCheckIcon,
-            },
-            {
-              name: 'Custom templates',
-              description:
-                'Design certificate templates with your logo, colors, and branding.',
-              icon: GlobeAltIcon,
-            },
-            {
-              name: 'Automated distribution',
-              description:
-                'Certificates are automatically sent to participants who met attendance requirements.',
-              icon: EnvelopeIcon,
-            },
-          ]}
-        />
-
-        <FeatureSection
-          title="Reports & Analytics"
-          description="Get complete visibility into your events with detailed reports and analytics. Export data for compliance and auditing."
-          features={[
-            {
-              name: 'Attendance reports',
-              description:
-                'Detailed reports showing who attended, when they checked in, and participation duration.',
-              icon: ChartBarIcon,
-            },
-            {
-              name: 'Revenue tracking',
-              description:
-                'Track ticket sales, revenue by ticket type, and payment status.',
+                'Accept bank transfers with receipt upload and admin approval workflow.',
               icon: CreditCardIcon,
             },
             {
-              name: 'Export capabilities',
+              name: 'Transaction tracking',
               description:
-                'Export all data to CSV or PDF for your records and compliance needs.',
-              icon: DocumentCheckIcon,
+                'Monitor all payments with detailed transaction history and status updates.',
+              icon: ChartBarIcon,
             },
           ]}
         />
 
+        {/* Section 4: Check-in & Attendance */}
         <FeatureSection
-          title="Communication & Notifications"
-          description="Keep participants informed with automated emails and notifications. Send updates, reminders, and important information."
+          title="Check-in & Attendance"
+          description="Track attendance accurately at every level. From event-wide check-in to individual session and activity tracking."
           reverse
           features={[
             {
-              name: 'Automated email confirmations',
+              name: 'QR code scanning',
               description:
-                'Send registration confirmations, payment receipts, and tickets automatically.',
+                'Fast, contactless check-in with unique QR codes for each participant.',
+              icon: QrCodeIcon,
+            },
+            {
+              name: 'Multi-level tracking',
+              description:
+                'Track attendance at the event, session, and activity level for detailed participation records.',
+              icon: CheckBadgeIcon,
+            },
+            {
+              name: 'Mobile check-in',
+              description:
+                'Check in participants from any device with our mobile-friendly interface.',
+              icon: DevicePhoneMobileIcon,
+            },
+            {
+              name: 'Real-time dashboards',
+              description:
+                'Monitor check-in progress and attendance rates as your event unfolds.',
+              icon: PresentationChartLineIcon,
+            },
+          ]}
+        />
+
+        {/* Section 5: Certificates & Recognition */}
+        <FeatureSection
+          title="Certificates & Recognition"
+          description="Generate professional certificates with flexible eligibility rules. Reward participation with verified credentials."
+          features={[
+            {
+              name: 'Customizable templates',
+              description:
+                'Design certificate templates with your branding, colors, and layout preferences.',
+              icon: AcademicCapIcon,
+            },
+            {
+              name: 'Eligibility rules',
+              description:
+                'Set attendance requirements, activity completion, and other criteria for certificate issuance.',
+              icon: DocumentCheckIcon,
+            },
+            {
+              name: 'Point-based scoring',
+              description:
+                'Award points for sessions, activities, and achievements to recognize top participants.',
+              icon: TrophyIcon,
+            },
+            {
+              name: 'QR verification',
+              description:
+                'Each certificate includes a QR code for instant authenticity verification.',
+              icon: ShieldCheckIcon,
+            },
+          ]}
+        />
+
+        {/* Section 6: Team & Collaboration */}
+        <FeatureSection
+          title="Team & Collaboration"
+          description="Work together to deliver great events. Assign roles, manage speakers and sponsors, and coordinate your crew."
+          reverse
+          features={[
+            {
+              name: 'Crew management',
+              description:
+                'Assign team members with specific roles and permissions for check-in, certificates, and more.',
+              icon: UserGroupIcon,
+            },
+            {
+              name: 'Speaker profiles',
+              description:
+                'Showcase your speakers with photos, bios, expertise tags, and social links.',
+              icon: MicrophoneIcon,
+            },
+            {
+              name: 'Sponsor management',
+              description:
+                'Organize sponsors by tier with logos, benefits tracking, and visibility options.',
+              icon: MegaphoneIcon,
+            },
+            {
+              name: 'Kit distribution',
+              description:
+                'Track swag and kit item collection with variant support and collection status.',
+              icon: GiftIcon,
+            },
+          ]}
+        />
+
+        {/* Section 7: Communication & Insights */}
+        <FeatureSection
+          title="Communication & Insights"
+          description="Keep participants informed and gain valuable insights. Send targeted emails and access detailed analytics."
+          features={[
+            {
+              name: 'Blast email campaigns',
+              description:
+                'Send targeted emails to all participants or specific groups with personalization.',
               icon: EnvelopeIcon,
             },
             {
-              name: 'Event reminders',
+              name: 'Email templates',
               description:
-                'Schedule reminder emails to reduce no-shows and keep participants engaged.',
-              icon: BellAlertIcon,
+                'Use pre-built templates for reminders, confirmations, and post-event follow-ups.',
+              icon: ChatBubbleLeftRightIcon,
             },
             {
-              name: 'Broadcast messages',
+              name: 'Analytics dashboard',
               description:
-                'Send announcements and updates to all participants or specific groups.',
-              icon: GlobeAltIcon,
+                'Track registrations, attendance rates, revenue, and participant engagement.',
+              icon: ChartPieIcon,
+            },
+            {
+              name: 'Data export',
+              description:
+                'Export participant lists, attendance records, and reports to CSV or Excel.',
+              icon: ArrowDownTrayIcon,
             },
           ]}
         />
@@ -273,7 +363,8 @@ function SecurityCompliance() {
               Data encryption
             </h3>
             <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
-              All data is encrypted in transit and at rest using industry-standard protocols.
+              All data is encrypted in transit and at rest using
+              industry-standard protocols.
             </p>
           </div>
           <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
@@ -291,7 +382,8 @@ function SecurityCompliance() {
               Audit trails
             </h3>
             <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
-              Complete audit logs for all activities, payments, and attendance records.
+              Complete audit logs for all activities, payments, and attendance
+              records.
             </p>
           </div>
         </div>
@@ -306,7 +398,7 @@ function CTA() {
       <div className="text-center">
         <Heading as="h2">Ready to get started?</Heading>
         <p className="mt-6 text-lg text-gray-600 dark:text-gray-400">
-          Create your first activity in minutes. No credit card required.
+          Create your first event in minutes. No credit card required.
         </p>
         <div className="mt-8 flex justify-center gap-4">
           <Button href={`${config.appUrl}/register`}>Start for free</Button>
