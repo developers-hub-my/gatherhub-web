@@ -88,10 +88,30 @@ These are configured in `.env.local` (not committed to git).
 
 ## Pricing Model
 
-GatherHub is free to use with transaction fees:
-- **Platform**: RM 0 per month
-- **Transaction fees**: 3% + RM 1 per transaction
-- Only charged on successful payments
+GatherHub offers a free platform with optional paid add-ons:
+
+**Free Platform (RM 0/month):**
+- Unlimited activities and events
+- QR code check-in and attendance tracking
+- Email notifications
+- Registration forms and capacity management
+- Basic reports and data export
+
+**Free Add-ons:**
+- Kit Collection, Crew Management, Custom Fields, Partners, Certificates
+
+**Paid Add-ons (One-Time):**
+- Event Sessions: RM 29
+- Event Activities: RM 29
+- Custom Branding: RM 99 (Coming Soon)
+
+**Paid Add-ons (Recurring):**
+- Advanced Reporting: RM 19/month
+- Blast Emails: RM 29/month
+- API Access: RM 199/year (Coming Soon)
+
+**Transaction Fees:**
+- 3% + RM 1 per transaction (only on paid registrations)
 - Free events have no fees
 
 ## Key Features
@@ -99,7 +119,7 @@ GatherHub is free to use with transaction fees:
 The platform provides:
 - Unlimited activities and events
 - QR code check-in and attendance tracking
-- Certificate generation
+- Certificate generation (free add-on)
 - Email notifications
 - Registration forms and capacity management
 - Reports and data export
