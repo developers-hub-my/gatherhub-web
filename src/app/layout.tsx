@@ -19,20 +19,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Preconnect to external origins for faster resource loading */}
-        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="" />
-        <link rel="dns-prefetch" href="https://api.fontshare.com" />
-        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="" />
-        <link rel="dns-prefetch" href="https://cdn.fontshare.com" />
-        {/* Font preload for faster loading - display=swap ensures text remains visible */}
+        {/* Preload critical font weights for faster text rendering */}
         <link
           rel="preload"
-          as="style"
-          href="https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&display=swap"
+          href="/fonts/switzer-400.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin=""
         />
         <link
-          rel="stylesheet"
-          href="https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&display=swap"
+          rel="preload"
+          href="/fonts/switzer-600.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin=""
         />
         <link
           rel="alternate"
