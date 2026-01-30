@@ -1,4 +1,3 @@
-import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
 import { Navbar } from '@/components/navbar'
@@ -9,6 +8,7 @@ import {
   MapPinIcon,
 } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
+import { ContactForm } from './contact-form'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -86,156 +86,6 @@ function ContactInfo() {
         ))}
       </div>
     </Container>
-  )
-}
-
-function ContactForm() {
-  return (
-    <div className="bg-gray-50 py-24 dark:bg-gray-900">
-      <Container>
-        <div className="mx-auto max-w-2xl">
-          <div className="text-center">
-            <Heading as="h2">Send us a message</Heading>
-            <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
-              Fill out the form below and we&apos;ll get back to you as soon as
-              possible.
-            </p>
-          </div>
-          <form className="mt-12 space-y-6">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div>
-                <label
-                  htmlFor="first-name"
-                  className="block text-sm font-medium text-gray-900 dark:text-gray-200"
-                >
-                  First name
-                </label>
-                <input
-                  type="text"
-                  id="first-name"
-                  name="first-name"
-                  className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="last-name"
-                  className="block text-sm font-medium text-gray-900 dark:text-gray-200"
-                >
-                  Last name
-                </label>
-                <input
-                  type="text"
-                  id="last-name"
-                  name="last-name"
-                  className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-                  required
-                />
-              </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-900 dark:text-gray-200"
-              >
-                Email address
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-                required
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="organisation"
-                className="block text-sm font-medium text-gray-900 dark:text-gray-200"
-              >
-                Organisation
-              </label>
-              <input
-                type="text"
-                id="organisation"
-                name="organisation"
-                className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="subject"
-                className="block text-sm font-medium text-gray-900 dark:text-gray-200"
-              >
-                Subject
-              </label>
-              <select
-                id="subject"
-                name="subject"
-                className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-                required
-              >
-                <option value="">Select a topic</option>
-                <option value="general">General inquiry</option>
-                <option value="support">Technical support</option>
-                <option value="sales">Sales and pricing</option>
-                <option value="partnership">Partnership opportunities</option>
-                <option value="feedback">Feedback and suggestions</option>
-              </select>
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-900 dark:text-gray-200"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={6}
-                className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-                required
-              />
-            </div>
-
-            <div className="flex items-start">
-              <input
-                id="privacy-policy"
-                name="privacy-policy"
-                type="checkbox"
-                className="mt-1 size-4 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600"
-                required
-              />
-              <label
-                htmlFor="privacy-policy"
-                className="ml-3 text-sm text-gray-600 dark:text-gray-400"
-              >
-                I agree to the{' '}
-                <a
-                  href="/privacy"
-                  className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400"
-                >
-                  Privacy Policy
-                </a>{' '}
-                and consent to Gather Hub contacting me about this inquiry.
-              </label>
-            </div>
-
-            <div>
-              <Button type="submit" className="w-full">
-                Send message
-              </Button>
-            </div>
-          </form>
-        </div>
-      </Container>
-    </div>
   )
 }
 
