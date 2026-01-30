@@ -310,10 +310,49 @@ function MainFeatures() {
           ]}
         />
 
-        {/* Section 7: Communication & Insights */}
+        {/* Section 7: Engagement & Interaction */}
+        <FeatureSection
+          title="Engagement & Interaction"
+          description="Boost attendee participation with interactive tools. Collect feedback, run live polls, and foster networking."
+          features={[
+            {
+              name: 'Event Surveys',
+              description:
+                'Create and send post-event surveys to collect feedback with NPS scoring and analytics.',
+              icon: ClipboardDocumentListIcon,
+            },
+            {
+              name: 'Live Polling',
+              description:
+                'Create real-time polls during events with instant results display and audience engagement.',
+              icon: ChartBarIcon,
+            },
+            {
+              name: 'Q&A Sessions',
+              description:
+                'Enable attendees to submit questions with upvoting, moderation, and real-time display.',
+              icon: ChatBubbleLeftRightIcon,
+            },
+            {
+              name: 'Social Wall',
+              description:
+                'Display a social media wall aggregating posts with your event hashtag.',
+              icon: MegaphoneIcon,
+            },
+            {
+              name: 'Gamification',
+              description:
+                'Award points, badges, and track leaderboards to boost participant engagement.',
+              icon: TrophyIcon,
+            },
+          ]}
+        />
+
+        {/* Section 8: Communication & Insights */}
         <FeatureSection
           title="Communication & Insights"
           description="Keep participants informed and gain valuable insights. Send targeted emails and access detailed analytics."
+          reverse
           features={[
             {
               name: 'Blast email campaigns',

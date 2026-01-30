@@ -187,7 +187,7 @@ function FAQContent() {
             {
               question: 'Is there a trial period?',
               answer:
-                'Yes, you can start with a free account to explore the platform. Paid plans are available for organisations that need advanced features like custom branding, higher capacity limits, and priority support.',
+                'The core platform is completely free with no monthly fees. You get unlimited events, participants, and free add-ons like Kit Collection, Crew Management, Custom Fields, Partners, Certificates, Event Surveys, Live Polling, Q&A Sessions, Social Wall, and Gamification. Optional paid add-ons are available for advanced capabilities like Event Sessions, Event Activities, Custom Branding, Attendee Networking, Advanced Reporting, Blast Emails, and API Access.',
             },
             {
               question: 'How long does setup take?',
@@ -388,7 +388,7 @@ function FAQContent() {
             {
               question: 'Do you have an API?',
               answer:
-                'Yes, we offer an API for enterprise customers who need to integrate Gather Hub with other systems. Contact our sales team to learn more about API access and documentation.',
+                'API Access is a paid add-on currently coming soon. It will provide REST API integration for connecting Gather Hub with external systems. Sign up to be notified when it launches.',
             },
           ]}
         />

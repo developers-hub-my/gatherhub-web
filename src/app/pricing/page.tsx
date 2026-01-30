@@ -16,6 +16,7 @@ import {
   ChartBarIcon,
   EnvelopeIcon,
   CodeBracketIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 
@@ -62,23 +63,43 @@ function FreeFeatures() {
   const freeAddons = [
     {
       name: 'Kit Collection',
-      description: 'Kit item distribution and tracking',
+      description: 'Track event kit distribution to participants.',
     },
     {
       name: 'Crew Management',
-      description: 'Team members and role assignments',
+      description: 'Manage team members and assign roles for events.',
     },
     {
       name: 'Custom Fields',
-      description: 'Advanced form builder for registrations',
+      description: 'Create custom registration forms with advanced field types.',
     },
     {
       name: 'Partners',
-      description: 'Speakers and sponsors management',
+      description: 'Manage speakers, sponsors and other event partners.',
     },
     {
       name: 'Certificates',
-      description: 'Certificate issuance for participants',
+      description: 'Generate and issue participation certificates with customizable templates.',
+    },
+    {
+      name: 'Event Surveys',
+      description: 'Create and send post-event surveys to collect feedback with NPS scoring and analytics.',
+    },
+    {
+      name: 'Live Polling',
+      description: 'Create real-time polls during events with instant results display and audience engagement.',
+    },
+    {
+      name: 'Q&A Sessions',
+      description: 'Enable attendees to submit questions with upvoting, moderation, and real-time display.',
+    },
+    {
+      name: 'Social Wall',
+      description: 'Display a social media wall aggregating posts with your event hashtag.',
+    },
+    {
+      name: 'Gamification',
+      description: 'Award points, badges, and track leaderboards to boost participant engagement.',
     },
   ]
 
@@ -163,24 +184,35 @@ function PaidAddons() {
       slug: 'event-sessions',
       price: 'RM 29',
       period: 'one-time',
-      description: 'Multi-day and session tracking for complex events',
+      description: 'Create and manage sessions within events with attendance tracking.',
       icon: CalendarDaysIcon,
+      comingSoon: true,
     },
     {
       name: 'Event Activities',
       slug: 'event-activities',
       price: 'RM 29',
       period: 'one-time',
-      description: 'Activities, workshops, and breakout sessions',
+      description: 'Manage activities and workshops with participant registration.',
       icon: PuzzlePieceIcon,
+      comingSoon: true,
     },
     {
       name: 'Custom Branding',
       slug: 'custom-branding',
       price: 'RM 99',
       period: 'one-time',
-      description: 'Organization branding on event pages',
+      description: 'Customize event pages with organization branding.',
       icon: PaintBrushIcon,
+      comingSoon: true,
+    },
+    {
+      name: 'Attendee Networking',
+      slug: 'attendee-networking',
+      price: 'RM 99',
+      period: 'one-time',
+      description: 'Enable attendee directory and networking profiles for professional connections.',
+      icon: UserGroupIcon,
       comingSoon: true,
     },
   ]
@@ -191,23 +223,25 @@ function PaidAddons() {
       slug: 'advanced-reporting',
       price: 'RM 19',
       period: '/month',
-      description: 'Detailed reports and earnings analytics',
+      description: 'Access detailed analytics and export capabilities for events.',
       icon: ChartBarIcon,
+      comingSoon: true,
     },
     {
       name: 'Blast Emails',
       slug: 'blast-emails',
       price: 'RM 29',
       period: '/month',
-      description: 'Bulk email campaigns to participants',
+      description: 'Send bulk emails to event participants with tracking and analytics.',
       icon: EnvelopeIcon,
+      comingSoon: true,
     },
     {
       name: 'API Access',
       slug: 'api-access',
       price: 'RM 199',
       period: '/year',
-      description: 'REST API integration for developers',
+      description: 'Access REST API for integrations with external systems.',
       icon: CodeBracketIcon,
       comingSoon: true,
     },
@@ -232,7 +266,7 @@ function PaidAddons() {
             <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
               One-Time Purchase
             </h3>
-            <div className="mt-6 grid gap-6 sm:grid-cols-3">
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {oneTimeAddons.map((addon) => (
                 <div
                   key={addon.slug}
@@ -251,13 +285,21 @@ function PaidAddons() {
                     {addon.description}
                   </p>
                   <div className="mt-4">
-                    <span className="text-2xl font-semibold text-gray-950 dark:text-white">
-                      {addon.price}
-                    </span>
-                    <span className="text-sm text-gray-600 dark:text-gray-400">
-                      {' '}
-                      {addon.period}
-                    </span>
+                    {addon.comingSoon ? (
+                      <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                        Coming Soon
+                      </span>
+                    ) : (
+                      <>
+                        <span className="text-2xl font-semibold text-gray-950 dark:text-white">
+                          {addon.price}
+                        </span>
+                        <span className="text-sm text-gray-600 dark:text-gray-400">
+                          {' '}
+                          {addon.period}
+                        </span>
+                      </>
+                    )}
                   </div>
                 </div>
               ))}
@@ -287,12 +329,20 @@ function PaidAddons() {
                     {addon.description}
                   </p>
                   <div className="mt-4">
-                    <span className="text-2xl font-semibold text-gray-950 dark:text-white">
-                      {addon.price}
-                    </span>
-                    <span className="text-sm text-gray-600 dark:text-gray-400">
-                      {addon.period}
-                    </span>
+                    {addon.comingSoon ? (
+                      <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                        Coming Soon
+                      </span>
+                    ) : (
+                      <>
+                        <span className="text-2xl font-semibold text-gray-950 dark:text-white">
+                          {addon.price}
+                        </span>
+                        <span className="text-sm text-gray-600 dark:text-gray-400">
+                          {addon.period}
+                        </span>
+                      </>
+                    )}
                   </div>
                 </div>
               ))}
@@ -485,7 +535,7 @@ function FAQ() {
     {
       question: 'What does "Coming Soon" mean for add-ons?',
       answer:
-        'Features marked as "Coming Soon" are currently in development. Custom Branding and API Access will be available in future updates. Sign up to be notified when they launch.',
+        'Features marked as "Coming Soon" are currently in development. Event Sessions, Event Activities, Custom Branding, Attendee Networking, Advanced Reporting, Blast Emails, and API Access will be available in future updates. Sign up to be notified when they launch.',
     },
   ]
 
