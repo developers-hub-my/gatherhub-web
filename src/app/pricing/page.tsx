@@ -17,6 +17,8 @@ import {
   EnvelopeIcon,
   CodeBracketIcon,
   UserGroupIcon,
+  ChatBubbleLeftRightIcon,
+  FilmIcon,
 } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 
@@ -36,7 +38,7 @@ function Hero() {
           <Heading as="h1" className="mt-2 max-w-4xl">
             Simple, transparent pricing.
           </Heading>
-          <p className="mt-4 text-base text-gray-600 dark:text-gray-400 max-w-2xl">
+          <p className="mt-4 max-w-2xl text-base text-gray-600 dark:text-gray-400">
             Start free with essential features. Add powerful capabilities as you
             grow. Transaction fees only when you collect payments.
           </p>
@@ -54,52 +56,73 @@ function FreeFeatures() {
     'Attendance tracking and validation',
     'Email notifications and reminders',
     'Registration forms',
-    'Capacity management',
+    'Capacity management and waitlists',
     'Participant management',
     'Basic reports and data export',
+    'Public event directory',
     'Email support',
   ]
 
   const freeAddons = [
     {
       name: 'Kit Collection',
-      description: 'Track event kit distribution to participants.',
+      description:
+        'Track event kit distribution with variants, eligibility rules, and collection statistics.',
     },
     {
       name: 'Crew Management',
-      description: 'Manage team members and assign roles for events.',
+      description:
+        'Manage team members with 5 roles, 10 permissions, custom overrides, and invitations.',
     },
     {
       name: 'Custom Fields',
-      description: 'Create custom registration forms with advanced field types.',
+      description:
+        'Create custom registration forms with advanced field types.',
     },
     {
       name: 'Partners',
-      description: 'Manage speakers, sponsors and other event partners.',
+      description:
+        'Manage speakers and sponsors with profiles, self-service portals, and event assignments.',
     },
     {
       name: 'Certificates',
-      description: 'Generate and issue participation certificates with customizable templates.',
+      description:
+        'Generate participation certificates with customizable templates, eligibility rules, and QR verification.',
     },
     {
       name: 'Event Surveys',
-      description: 'Create and send post-event surveys to collect feedback with NPS scoring and analytics.',
-    },
-    {
-      name: 'Live Polling',
-      description: 'Create real-time polls during events with instant results display and audience engagement.',
-    },
-    {
-      name: 'Q&A Sessions',
-      description: 'Enable attendees to submit questions with upvoting, moderation, and real-time display.',
+      description:
+        'Create post-event surveys with multiple question types, NPS scoring, analytics, and CSV export.',
     },
     {
       name: 'Social Wall',
-      description: 'Display a social media wall aggregating posts with your event hashtag.',
+      description:
+        'Display a moderated social media wall with masonry layout aggregating posts with your event hashtag.',
     },
     {
       name: 'Gamification',
-      description: 'Award points, badges, and track leaderboards to boost participant engagement.',
+      description:
+        'Award points, badges, and track leaderboards with streaks to boost participant engagement.',
+    },
+    {
+      name: 'Event Templates',
+      description:
+        'Save event configurations as reusable templates to speed up future event setup.',
+    },
+    {
+      name: 'Virtual Business Cards',
+      description:
+        'Exchange digital business cards via QR codes with vCard download and contacts management.',
+    },
+    {
+      name: 'Call for Papers',
+      description:
+        'Accept session proposals from speakers with a submission and review workflow.',
+    },
+    {
+      name: 'Bundle Discounts',
+      description:
+        'Offer buy-X-get-Y-free deals combinable with discount codes and early bird pricing.',
     },
   ]
 
@@ -184,25 +207,48 @@ function PaidAddons() {
       slug: 'event-sessions',
       price: 'RM 29',
       period: 'one-time',
-      description: 'Create and manage sessions within events with attendance tracking.',
+      description:
+        'Create and manage sessions within events with speaker assignments and attendance tracking.',
       icon: CalendarDaysIcon,
-      comingSoon: true,
+      comingSoon: false,
     },
     {
       name: 'Event Activities',
       slug: 'event-activities',
       price: 'RM 29',
       period: 'one-time',
-      description: 'Manage activities and workshops with participant registration.',
+      description:
+        'Manage activities and workshops with participant registration and capacity limits.',
       icon: PuzzlePieceIcon,
-      comingSoon: true,
+      comingSoon: false,
+    },
+    {
+      name: 'Live Polling',
+      slug: 'live-polling',
+      price: 'RM 29',
+      period: 'one-time',
+      description:
+        'Create real-time polls with instant results display and presenter mode.',
+      icon: ChartBarIcon,
+      comingSoon: false,
+    },
+    {
+      name: 'Q&A Sessions',
+      slug: 'qa-sessions',
+      price: 'RM 29',
+      period: 'one-time',
+      description:
+        'Enable attendee questions with upvoting, moderation, and presenter view.',
+      icon: ChatBubbleLeftRightIcon,
+      comingSoon: false,
     },
     {
       name: 'Custom Branding',
       slug: 'custom-branding',
       price: 'RM 99',
       period: 'one-time',
-      description: 'Customize event pages with organization branding.',
+      description:
+        'Customize event pages with organization branding and colors.',
       icon: PaintBrushIcon,
       comingSoon: true,
     },
@@ -211,7 +257,8 @@ function PaidAddons() {
       slug: 'attendee-networking',
       price: 'RM 99',
       period: 'one-time',
-      description: 'Enable attendee directory and networking profiles for professional connections.',
+      description:
+        'Enable attendee directory and networking profiles for professional connections.',
       icon: UserGroupIcon,
       comingSoon: true,
     },
@@ -223,25 +270,38 @@ function PaidAddons() {
       slug: 'advanced-reporting',
       price: 'RM 19',
       period: '/month',
-      description: 'Access detailed analytics and export capabilities for events.',
+      description:
+        'Access detailed analytics, financial reports, and export capabilities for events.',
       icon: ChartBarIcon,
       comingSoon: true,
     },
     {
-      name: 'Blast Emails',
+      name: 'Blast Emails & WhatsApp',
       slug: 'blast-emails',
       price: 'RM 29',
       period: '/month',
-      description: 'Send bulk emails to event participants with tracking and analytics.',
+      description:
+        'Send bulk emails and WhatsApp messages to participants with templates, scheduling, and delivery tracking.',
       icon: EnvelopeIcon,
-      comingSoon: true,
+      comingSoon: false,
+    },
+    {
+      name: 'Recordings & Materials',
+      slug: 'recordings-materials',
+      price: 'RM 49',
+      period: '/month',
+      description:
+        'Upload session recordings and materials with paid access, purchase flow, and viewer page.',
+      icon: FilmIcon,
+      comingSoon: false,
     },
     {
       name: 'API Access',
       slug: 'api-access',
       price: 'RM 199',
       period: '/year',
-      description: 'Access REST API for integrations with external systems.',
+      description:
+        'Access REST API for integrations with external systems and webhooks.',
       icon: CodeBracketIcon,
       comingSoon: true,
     },
@@ -250,7 +310,7 @@ function PaidAddons() {
   return (
     <div className="bg-gray-50 py-24 dark:bg-gray-900">
       <Container>
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-5xl">
           <div className="text-center">
             <Subheading>Paid Add-ons</Subheading>
             <Heading as="h2" className="mt-2">
@@ -266,7 +326,7 @@ function PaidAddons() {
             <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
               One-Time Purchase
             </h3>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {oneTimeAddons.map((addon) => (
                 <div
                   key={addon.slug}
@@ -310,7 +370,7 @@ function PaidAddons() {
             <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
               Monthly / Annual Subscriptions
             </h3>
-            <div className="mt-6 grid gap-6 sm:grid-cols-3">
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {recurringAddons.map((addon) => (
                 <div
                   key={addon.slug}
@@ -377,7 +437,9 @@ function TransactionFees() {
                 <div className="text-4xl font-semibold text-gray-950 dark:text-white">
                   3% + RM 1
                 </div>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">per transaction</p>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                  per transaction
+                </p>
               </div>
             </div>
 
@@ -424,20 +486,36 @@ function TransactionFees() {
             </h3>
             <div className="mt-4 space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">Ticket price:</span>
-                <span className="font-medium text-gray-950 dark:text-white">RM 100.00</span>
+                <span className="text-gray-600 dark:text-gray-400">
+                  Ticket price:
+                </span>
+                <span className="font-medium text-gray-950 dark:text-white">
+                  RM 100.00
+                </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">Transaction fee (3%):</span>
-                <span className="font-medium text-gray-950 dark:text-white">RM 3.00</span>
+                <span className="text-gray-600 dark:text-gray-400">
+                  Transaction fee (3%):
+                </span>
+                <span className="font-medium text-gray-950 dark:text-white">
+                  RM 3.00
+                </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">Fixed fee:</span>
-                <span className="font-medium text-gray-950 dark:text-white">RM 1.00</span>
+                <span className="text-gray-600 dark:text-gray-400">
+                  Fixed fee:
+                </span>
+                <span className="font-medium text-gray-950 dark:text-white">
+                  RM 1.00
+                </span>
               </div>
               <div className="flex justify-between border-t border-gray-200 pt-2 dark:border-gray-600">
-                <span className="font-semibold text-gray-950 dark:text-white">You receive:</span>
-                <span className="font-semibold text-gray-950 dark:text-white">RM 96.00</span>
+                <span className="font-semibold text-gray-950 dark:text-white">
+                  You receive:
+                </span>
+                <span className="font-semibold text-gray-950 dark:text-white">
+                  RM 96.00
+                </span>
               </div>
             </div>
           </div>
@@ -486,7 +564,9 @@ function PaymentMethods() {
               <h3 className="mt-4 text-base font-semibold text-gray-950 dark:text-white">
                 {method.name}
               </h3>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{method.description}</p>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                {method.description}
+              </p>
             </div>
           ))}
         </div>
@@ -505,7 +585,7 @@ function FAQ() {
     {
       question: 'What are paid add-ons?',
       answer:
-        'Paid add-ons are optional features that extend your event management capabilities. Some are one-time purchases (like Event Sessions and Activities), while others are subscriptions (like Advanced Reporting and Blast Emails). You only pay for what you need.',
+        'Paid add-ons are optional features that extend your event management capabilities. Some are one-time purchases (like Event Sessions, Activities, Live Polling, and Q&A Sessions), while others are subscriptions (like Blast Emails & WhatsApp and Recordings & Materials). You only pay for what you need.',
     },
     {
       question: 'What if I run free events?',
@@ -520,22 +600,22 @@ function FAQ() {
     {
       question: 'Can I pass the fees to participants?',
       answer:
-        'Yes, you can choose to include transaction fees in your ticket price, or you can enable a setting that adds the fees to the participant\'s total at checkout. This is entirely your choice.',
+        "Yes, you can choose to include transaction fees in your ticket price, or you can enable a setting that adds the fees to the participant's total at checkout. This is entirely your choice.",
     },
     {
       question: 'Are there refund fees?',
       answer:
-        'When you issue a refund, the transaction fees are also refunded to you. There are no additional fees for processing refunds.',
+        'When you issue a refund, the transaction fees are also refunded to you. There are no additional fees for processing refunds. Refund requests go through a multi-stage approval workflow for full transparency.',
     },
     {
       question: 'How do I receive my payments?',
       answer:
-        'Payments are processed through our secure payment partners and deposited directly to your bank account. Payouts are typically processed within 3-5 business days after the transaction.',
+        'Payments are processed through our secure payment partners and deposited directly to your bank account. You can request payouts through the earnings dashboard, which are processed after admin approval.',
     },
     {
       question: 'What does "Coming Soon" mean for add-ons?',
       answer:
-        'Features marked as "Coming Soon" are currently in development. Event Sessions, Event Activities, Custom Branding, Attendee Networking, Advanced Reporting, Blast Emails, and API Access will be available in future updates. Sign up to be notified when they launch.',
+        'Features marked as "Coming Soon" are currently in development. Custom Branding, Attendee Networking, Advanced Reporting, and API Access will be available in future updates. Sign up to be notified when they launch.',
     },
   ]
 
@@ -556,7 +636,9 @@ function FAQ() {
                 <h3 className="text-base font-semibold text-gray-950 dark:text-white">
                   {faq.question}
                 </h3>
-                <p className="mt-3 text-sm/6 text-gray-600 dark:text-gray-400">{faq.answer}</p>
+                <p className="mt-3 text-sm/6 text-gray-600 dark:text-gray-400">
+                  {faq.answer}
+                </p>
               </div>
             ))}
           </div>
@@ -586,8 +668,8 @@ function CTA() {
           Ready to get started?
         </Heading>
         <p className="mx-auto mt-6 max-w-xl text-base text-gray-300">
-          Create your account today and run your first event for free. No
-          credit card required.
+          Create your account today and run your first event for free. No credit
+          card required.
         </p>
         <div className="mt-8 flex justify-center gap-4">
           <Button href={`${config.appUrl}/register`}>Start for free</Button>

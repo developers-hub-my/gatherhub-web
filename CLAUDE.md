@@ -92,22 +92,31 @@ GatherHub offers a free platform with optional paid add-ons:
 
 **Free Platform (RM 0/month):**
 - Unlimited activities and events
-- QR code check-in and attendance tracking
-- Email notifications
-- Registration forms and capacity management
+- Unlimited participants
+- QR code check-in and multi-level attendance tracking
+- Email notifications and reminders
+- Registration forms and capacity management with waitlists
+- Participant management and bulk import
 - Basic reports and data export
+- Public event directory
 
 **Free Add-ons:**
 - Kit Collection, Crew Management, Custom Fields, Partners, Certificates
+- Event Surveys, Social Wall, Gamification, Event Templates
+- Virtual Business Cards, Call for Papers, Bundle Discounts
 
 **Paid Add-ons (One-Time):**
 - Event Sessions: RM 29
 - Event Activities: RM 29
+- Live Polling: RM 29
+- Q&A Sessions: RM 29
 - Custom Branding: RM 99 (Coming Soon)
+- Attendee Networking: RM 99 (Coming Soon)
 
 **Paid Add-ons (Recurring):**
-- Advanced Reporting: RM 19/month
-- Blast Emails: RM 29/month
+- Advanced Reporting: RM 19/month (Coming Soon)
+- Blast Emails & WhatsApp: RM 29/month
+- Recordings & Materials: RM 49/month
 - API Access: RM 199/year (Coming Soon)
 
 **Transaction Fees:**
@@ -117,9 +126,23 @@ GatherHub offers a free platform with optional paid add-ons:
 ## Key Features
 
 The platform provides:
-- Unlimited activities and events
-- QR code check-in and attendance tracking
-- Certificate generation (free add-on)
-- Email notifications
-- Registration forms and capacity management
-- Reports and data export
+- Unlimited activities and events with event cloning and reusable templates
+- QR code check-in and multi-level attendance tracking (event/session/activity)
+- Online QR and secret codes for virtual events
+- Certificate generation with QR verification and eligibility rules (free add-on)
+- Email and WhatsApp blast campaigns with scheduling and delivery tracking
+- Marketing content studio for event promotion
+- Registration forms with capacity management and waitlists
+- Bundle discounts, early bird pricing, and flash sale timers
+- Refund management with multi-stage approval workflow
+- Organizer payout management with earnings dashboard
+- Speaker and sponsor self-service portals
+- Call for papers for session proposal submission
+- Live polling, Q&A sessions, surveys, social wall, and gamification
+- Virtual business card exchange
+- Vendor marketplace with 16 service types
+- Recordings and materials with paid access
+- Public event directory
+- Reports, analytics dashboard, and data export
+- Webhooks for external integrations
+- Two-factor authentication and audit logging

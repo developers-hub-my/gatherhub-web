@@ -8,6 +8,7 @@ import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
   BanknotesIcon,
+  BoltIcon,
   BuildingOfficeIcon,
   CalendarDaysIcon,
   ChartBarIcon,
@@ -21,12 +22,17 @@ import {
   DocumentCheckIcon,
   DocumentDuplicateIcon,
   EnvelopeIcon,
+  FilmIcon,
   GiftIcon,
+  GlobeAltIcon,
+  IdentificationIcon,
+  KeyIcon,
   MegaphoneIcon,
   MicrophoneIcon,
-  PresentationChartLineIcon,
   QrCodeIcon,
   ShieldCheckIcon,
+  ShoppingCartIcon,
+  SparklesIcon,
   TicketIcon,
   TrophyIcon,
   UserGroupIcon,
@@ -118,31 +124,37 @@ function MainFeatures() {
         {/* Section 1: Event Creation & Scheduling */}
         <FeatureSection
           title="Event Creation & Scheduling"
-          description="Build comprehensive events with sessions, activities, and venue management. From one-day workshops to multi-day conferences."
+          description="Build comprehensive events with sessions, activities, and venue management. From one-day workshops to multi-day conferences, with reusable templates and a public event directory."
           features={[
             {
               name: 'Rich event builder',
               description:
-                'Create events with descriptions, custom fields, images, and all the details your participants need.',
+                'Create events with rich text descriptions, SEO settings, custom fields, images, visibility controls, and capacity with waitlists.',
               icon: CalendarDaysIcon,
             },
             {
               name: 'Session & activity scheduling',
               description:
-                'Organize time-blocked sessions and parallel activities with capacity limits and speaker assignments.',
+                'Organize time-blocked sessions and parallel activities with capacity limits, speaker assignments, and individual attendance tracking.',
               icon: ClockIcon,
             },
             {
               name: 'Venue library',
               description:
-                'Save and reuse venues across events with address, capacity, and amenity information.',
+                'Save and reuse venues across events with address, geolocation, capacity, amenities, and photos.',
               icon: BuildingOfficeIcon,
             },
             {
-              name: 'Event cloning',
+              name: 'Event cloning & templates',
               description:
-                'Duplicate events for recurring programs with one click, including all settings and configurations.',
+                'Duplicate events with selective data copying, or save event configurations as reusable templates for faster setup.',
               icon: DocumentDuplicateIcon,
+            },
+            {
+              name: 'Public event directory',
+              description:
+                'List your events on a discoverable public directory so participants can find and register directly.',
+              icon: GlobeAltIcon,
             },
           ]}
         />
@@ -150,13 +162,13 @@ function MainFeatures() {
         {/* Section 2: Registration & Ticketing */}
         <FeatureSection
           title="Registration & Ticketing"
-          description="Flexible registration options for free and paid events. Collect the information you need with customizable forms."
+          description="Flexible registration options for free and paid events. Collect the information you need with customizable forms, discount codes, and promotional pricing."
           reverse
           features={[
             {
               name: 'Multiple ticket types',
               description:
-                'Create different ticket tiers with varying prices, benefits, and availability windows.',
+                'Create different ticket tiers with varying prices, benefits, discount codes, and availability windows.',
               icon: TicketIcon,
             },
             {
@@ -168,8 +180,14 @@ function MainFeatures() {
             {
               name: 'Bulk participant import',
               description:
-                'Import participants from CSV or Excel for corporate events and pre-registered attendees.',
+                'Import participants from CSV or paste for corporate events and pre-registered attendees with validation and error reporting.',
               icon: UserPlusIcon,
+            },
+            {
+              name: 'Bundle discounts & flash sales',
+              description:
+                'Offer buy-X-get-Y-free bundle deals, early bird pricing, and flash sale countdown timers to drive registrations.',
+              icon: BoltIcon,
             },
             {
               name: 'Capacity & waitlists',
@@ -183,19 +201,13 @@ function MainFeatures() {
         {/* Section 3: Payment Processing */}
         <FeatureSection
           title="Payment Processing"
-          description="Accept payments securely with multiple payment options. Support for Malaysian payment methods and manual bank transfers."
+          description="Accept payments securely with multiple Malaysian payment methods. Full refund management and organizer payout workflows built in."
           features={[
             {
-              name: 'Online banking (FPX)',
+              name: 'Online banking (FPX) & DuitNow QR',
               description:
-                'Accept instant payments from all major Malaysian banks through secure FPX integration.',
+                'Accept instant payments from all major Malaysian banks through FPX or let participants scan a DuitNow QR code.',
               icon: BanknotesIcon,
-            },
-            {
-              name: 'DuitNow QR',
-              description:
-                'Let participants pay instantly by scanning a QR code with their banking app.',
-              icon: QrCodeIcon,
             },
             {
               name: 'Manual bank transfer',
@@ -204,9 +216,15 @@ function MainFeatures() {
               icon: CreditCardIcon,
             },
             {
-              name: 'Transaction tracking',
+              name: 'Refund management',
               description:
-                'Monitor all payments with detailed transaction history and status updates.',
+                'Handle refund requests with a multi-stage approval workflow, bank detail collection, proof uploads, and finance processing.',
+              icon: DocumentCheckIcon,
+            },
+            {
+              name: 'Organizer payouts',
+              description:
+                'Request payouts with admin approval, bulk processing, commission tracking, and earnings dashboard.',
               icon: ChartBarIcon,
             },
           ]}
@@ -215,13 +233,13 @@ function MainFeatures() {
         {/* Section 4: Check-in & Attendance */}
         <FeatureSection
           title="Check-in & Attendance"
-          description="Track attendance accurately at every level. From event-wide check-in to individual session and activity tracking."
+          description="Track attendance accurately at every level with QR codes, manual check-in, and virtual event support with secret codes."
           reverse
           features={[
             {
               name: 'QR code scanning',
               description:
-                'Fast, contactless check-in with unique QR codes for each participant.',
+                'Fast, contactless check-in with unique QR codes for each participant. Supports time validation and grace periods.',
               icon: QrCodeIcon,
             },
             {
@@ -231,16 +249,16 @@ function MainFeatures() {
               icon: CheckBadgeIcon,
             },
             {
-              name: 'Mobile check-in',
+              name: 'Online QR & secret codes',
               description:
-                'Check in participants from any device with our mobile-friendly interface.',
-              icon: DevicePhoneMobileIcon,
+                'Support virtual events with online QR check-in and secret code redemption for remote participation.',
+              icon: KeyIcon,
             },
             {
-              name: 'Real-time dashboards',
+              name: 'Mobile check-in',
               description:
-                'Monitor check-in progress and attendance rates as your event unfolds.',
-              icon: PresentationChartLineIcon,
+                'Check in participants from any device with our mobile-friendly interface and real-time dashboards.',
+              icon: DevicePhoneMobileIcon,
             },
           ]}
         />
@@ -248,7 +266,7 @@ function MainFeatures() {
         {/* Section 5: Certificates & Recognition */}
         <FeatureSection
           title="Certificates & Recognition"
-          description="Generate professional certificates with flexible eligibility rules. Reward participation with verified credentials."
+          description="Generate professional certificates with flexible eligibility rules. Reward participation with verified, QR-verifiable credentials."
           features={[
             {
               name: 'Customizable templates',
@@ -257,22 +275,22 @@ function MainFeatures() {
               icon: AcademicCapIcon,
             },
             {
-              name: 'Eligibility rules',
+              name: 'Eligibility rules & scoring',
               description:
-                'Set attendance requirements, activity completion, and other criteria for certificate issuance.',
+                'Set attendance requirements, activity completion, and point-based scoring criteria for certificate issuance.',
               icon: DocumentCheckIcon,
-            },
-            {
-              name: 'Point-based scoring',
-              description:
-                'Award points for sessions, activities, and achievements to recognize top participants.',
-              icon: TrophyIcon,
             },
             {
               name: 'QR verification',
               description:
-                'Each certificate includes a QR code for instant authenticity verification.',
+                'Each certificate includes a unique QR code for instant authenticity verification by employers and institutions.',
               icon: ShieldCheckIcon,
+            },
+            {
+              name: 'Gamification',
+              description:
+                'Award points, badges, and track leaderboards with streaks to boost participant engagement and recognize top participants.',
+              icon: TrophyIcon,
             },
           ]}
         />
@@ -280,31 +298,31 @@ function MainFeatures() {
         {/* Section 6: Team & Collaboration */}
         <FeatureSection
           title="Team & Collaboration"
-          description="Work together to deliver great events. Assign roles, manage speakers and sponsors, and coordinate your crew."
+          description="Work together to deliver great events. Assign roles, manage speakers and sponsors with self-service portals, and accept session proposals."
           reverse
           features={[
             {
               name: 'Crew management',
               description:
-                'Assign team members with specific roles and permissions for check-in, certificates, and more.',
+                'Assign team members with 5 predefined roles, 10 granular permissions, custom overrides, and invitation workflows.',
               icon: UserGroupIcon,
             },
             {
-              name: 'Speaker profiles',
+              name: 'Speaker & sponsor portals',
               description:
-                'Showcase your speakers with photos, bios, expertise tags, and social links.',
+                'Speakers and sponsors manage their own profiles, upload materials, and view assignments through self-service portals.',
               icon: MicrophoneIcon,
             },
             {
-              name: 'Sponsor management',
+              name: 'Call for papers',
               description:
-                'Organize sponsors by tier with logos, benefits tracking, and visibility options.',
-              icon: MegaphoneIcon,
+                'Accept session proposals from speakers with a submission and review workflow for conference planning.',
+              icon: ClipboardDocumentListIcon,
             },
             {
               name: 'Kit distribution',
               description:
-                'Track swag and kit item collection with variant support and collection status.',
+                'Track swag and kit item collection with variant support, eligibility rules, and collection statistics.',
               icon: GiftIcon,
             },
           ]}
@@ -313,37 +331,37 @@ function MainFeatures() {
         {/* Section 7: Engagement & Interaction */}
         <FeatureSection
           title="Engagement & Interaction"
-          description="Boost attendee participation with interactive tools. Collect feedback, run live polls, and foster networking."
+          description="Boost attendee participation with interactive polls, Q&A, surveys, social sharing, and networking tools during and after your events."
           features={[
             {
-              name: 'Event Surveys',
+              name: 'Live polling',
               description:
-                'Create and send post-event surveys to collect feedback with NPS scoring and analytics.',
-              icon: ClipboardDocumentListIcon,
-            },
-            {
-              name: 'Live Polling',
-              description:
-                'Create real-time polls during events with instant results display and audience engagement.',
+                'Create real-time polls with single or multiple choice options, instant results display, and presenter mode.',
               icon: ChartBarIcon,
             },
             {
-              name: 'Q&A Sessions',
+              name: 'Q&A sessions',
               description:
-                'Enable attendees to submit questions with upvoting, moderation, and real-time display.',
+                'Enable attendees to submit questions with upvoting, moderation, featured questions, and presenter view.',
               icon: ChatBubbleLeftRightIcon,
             },
             {
-              name: 'Social Wall',
+              name: 'Post-event surveys',
               description:
-                'Display a social media wall aggregating posts with your event hashtag.',
+                'Collect feedback with multiple question types, NPS scoring, analytics, and CSV export.',
+              icon: ClipboardDocumentListIcon,
+            },
+            {
+              name: 'Social wall & sharing',
+              description:
+                'Display a moderated social media wall with masonry layout, plus share buttons for 6 platforms.',
               icon: MegaphoneIcon,
             },
             {
-              name: 'Gamification',
+              name: 'Virtual business cards',
               description:
-                'Award points, badges, and track leaderboards to boost participant engagement.',
-              icon: TrophyIcon,
+                'Exchange digital business cards via QR codes with vCard download and a contacts management page.',
+              icon: IdentificationIcon,
             },
           ]}
         />
@@ -351,32 +369,64 @@ function MainFeatures() {
         {/* Section 8: Communication & Insights */}
         <FeatureSection
           title="Communication & Insights"
-          description="Keep participants informed and gain valuable insights. Send targeted emails and access detailed analytics."
+          description="Keep participants informed with email and WhatsApp campaigns. Access detailed analytics, generate marketing content, and export comprehensive reports."
           reverse
           features={[
             {
-              name: 'Blast email campaigns',
+              name: 'Blast email & WhatsApp',
               description:
-                'Send targeted emails to all participants or specific groups with personalization.',
+                'Send targeted emails and WhatsApp messages to participants with templates, scheduling, personalization, and delivery tracking.',
               icon: EnvelopeIcon,
             },
             {
-              name: 'Email templates',
+              name: 'Marketing content studio',
               description:
-                'Use pre-built templates for reminders, confirmations, and post-event follow-ups.',
-              icon: ChatBubbleLeftRightIcon,
+                'Generate promotional content for your events to share across channels and drive registrations.',
+              icon: SparklesIcon,
             },
             {
               name: 'Analytics dashboard',
               description:
-                'Track registrations, attendance rates, revenue, and participant engagement.',
+                'Track registrations, attendance rates, revenue, email open rates, and participant engagement with tabbed charts and reports.',
               icon: ChartPieIcon,
             },
             {
               name: 'Data export',
               description:
-                'Export participant lists, attendance records, and reports to CSV or Excel.',
+                'Export participant lists, attendance records, financial reports, and analytics to Excel or CSV.',
               icon: ArrowDownTrayIcon,
+            },
+          ]}
+        />
+
+        {/* Section 9: Recordings & Vendor Marketplace */}
+        <FeatureSection
+          title="Recordings & Vendor Marketplace"
+          description="Monetize event content with recordings and materials, and connect with vendors for services like catering, AV, and photography."
+          features={[
+            {
+              name: 'Recordings & materials',
+              description:
+                'Upload session recordings and materials with paid access, purchase flow, and a dedicated viewer page.',
+              icon: FilmIcon,
+            },
+            {
+              name: 'Vendor marketplace',
+              description:
+                'Browse a directory of 16 vendor service types, request itemized quotations, and communicate through built-in messaging.',
+              icon: ShoppingCartIcon,
+            },
+            {
+              name: 'Sponsor management',
+              description:
+                'Organize sponsors by tier with logos, benefits tracking, display ordering, and self-service portal access.',
+              icon: MegaphoneIcon,
+            },
+            {
+              name: 'Webhooks',
+              description:
+                'Integrate with external systems using managed webhook endpoints with retries and signature verification.',
+              icon: BoltIcon,
             },
           ]}
         />
@@ -399,6 +449,16 @@ function SecurityCompliance() {
           <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
             <ShieldCheckIcon className="size-8 text-blue-600 dark:text-blue-400" />
             <h3 className="mt-6 text-base font-semibold text-gray-950 dark:text-white">
+              Two-factor authentication
+            </h3>
+            <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
+              Secure accounts with TOTP-based two-factor authentication and
+              recovery codes.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+            <CheckBadgeIcon className="size-8 text-blue-600 dark:text-blue-400" />
+            <h3 className="mt-6 text-base font-semibold text-gray-950 dark:text-white">
               Data encryption
             </h3>
             <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
@@ -407,22 +467,13 @@ function SecurityCompliance() {
             </p>
           </div>
           <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
-            <CheckBadgeIcon className="size-8 text-blue-600 dark:text-blue-400" />
-            <h3 className="mt-6 text-base font-semibold text-gray-950 dark:text-white">
-              GDPR compliant
-            </h3>
-            <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
-              Full compliance with GDPR and other data protection regulations.
-            </p>
-          </div>
-          <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
             <DocumentCheckIcon className="size-8 text-blue-600 dark:text-blue-400" />
             <h3 className="mt-6 text-base font-semibold text-gray-950 dark:text-white">
               Audit trails
             </h3>
             <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
-              Complete audit logs for all activities, payments, and attendance
-              records.
+              Complete audit logs for all activities, payments, attendance
+              records, and API rate limiting.
             </p>
           </div>
         </div>

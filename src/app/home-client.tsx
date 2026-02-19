@@ -11,7 +11,6 @@ import {
   ClipboardDocumentListIcon,
   QrCodeIcon,
   TicketIcon,
-  UserGroupIcon,
   ShieldCheckIcon,
   ClockIcon,
   CurrencyDollarIcon,
@@ -57,9 +56,9 @@ function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-8 max-w-xl text-lg/7 font-medium text-gray-600 dark:text-gray-300 sm:text-xl/8"
           >
-            From registration to QR check-in to verifiable certificates — every
-            step is recorded, every participant is tracked, every certificate is
-            authentic.
+            From registration to QR check-in to verifiable certificates —
+            with engagement tools, vendor marketplace, and self-service portals.
+            Every step recorded, every participant tracked.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -407,37 +406,37 @@ function FeaturesGrid() {
     {
       name: 'Event Management',
       description:
-        'Create unlimited events with rich descriptions, venue details, and custom scheduling.',
+        'Create unlimited events with rich descriptions, venue library, event cloning, reusable templates, and a public event directory.',
       icon: ClipboardDocumentListIcon,
     },
     {
       name: 'QR Code Check-In',
       description:
-        'Fast, contactless check-in with unique QR codes for each participant.',
+        'Fast, contactless check-in with unique QR codes, multi-level tracking, and virtual event support with secret codes.',
       icon: QrCodeIcon,
     },
     {
       name: 'Sessions & Activities',
       description:
-        'Organize multi-track events with time-blocked sessions and capacity limits.',
+        'Organize multi-track events with time-blocked sessions, speaker assignments, call for papers, and per-session attendance.',
       icon: CalendarDaysIcon,
     },
     {
       name: 'Certificate Generation',
       description:
-        'Professional certificates with QR verification, generated in one click.',
+        'Professional certificates with QR verification, eligibility rules, point-based scoring, and gamification.',
       icon: DocumentCheckIcon,
     },
     {
-      name: 'Crew Management',
+      name: 'Engagement Tools',
       description:
-        '5 predefined roles plus custom roles with granular permissions for your team.',
-      icon: UserGroupIcon,
+        'Live polling, Q&A sessions, post-event surveys, social wall, virtual business cards, and gamification.',
+      icon: SparklesIcon,
     },
     {
       name: 'Reports & Analytics',
       description:
-        'Complete attendance reports, revenue tracking, and data export for compliance.',
+        'Detailed analytics dashboard, financial reports, email tracking, data export, and organizer payout management.',
       icon: ChartBarIcon,
     },
   ]
@@ -510,8 +509,9 @@ function TeamManagement() {
             </Heading>
             <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-300">
               Build your event team with predefined roles or create custom ones.
-              Assign granular permissions so everyone has exactly the access they
-              need — nothing more, nothing less.
+              Speakers and sponsors manage their own profiles through
+              self-service portals. Assign granular permissions so everyone has
+              exactly the access they need.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-4">
               {permissions.map((permission, index) => (
