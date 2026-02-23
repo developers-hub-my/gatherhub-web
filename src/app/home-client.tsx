@@ -56,9 +56,9 @@ function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-8 max-w-xl text-lg/7 font-medium text-gray-600 dark:text-gray-300 sm:text-xl/8"
           >
-            From registration to QR check-in to verifiable certificates —
-            with engagement tools, vendor marketplace, and self-service portals.
-            Every step recorded, every participant tracked.
+            Run activities with clarity and proof — from registration to QR
+            check-in to verifiable certificates. Track every participant,
+            validate attendance, and prove participation at every step.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -134,7 +134,7 @@ function ProblemSolution() {
         >
           <Subheading>The Problem</Subheading>
           <Heading as="h2" className="mt-2">
-            No proof means no credibility.
+            Without proof, participation means nothing.
           </Heading>
           <div className="mt-8 space-y-4">
             {[
@@ -168,7 +168,7 @@ function ProblemSolution() {
         >
           <Subheading>The Solution</Subheading>
           <Heading as="h2" className="mt-2">
-            Proof at every step.
+            Run activities with clarity at every step.
           </Heading>
           <div className="mt-8 space-y-4">
             {[
@@ -242,7 +242,7 @@ function HowItWorksSection() {
         <div className="text-center">
           <Subheading>How It Works</Subheading>
           <Heading as="h2" className="mt-2">
-            Five steps to cleaner operations.
+            Five steps to run activities and prove participation.
           </Heading>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
@@ -769,7 +769,7 @@ function WhyGatherHub() {
         <div className="text-center">
           <Subheading dark>Why GatherHub</Subheading>
           <Heading as="h2" dark className="mt-2">
-            Built for organisers who need proof.
+            Built for organisers who run activities and need proof.
           </Heading>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
@@ -818,8 +818,9 @@ function FinalCTA() {
             Create your first event in 5 minutes.
           </Heading>
           <p className="mx-auto mt-6 max-w-xl text-base text-gray-300">
-            No credit card required. No monthly fees. Start managing events with
-            verifiable proof today.
+            No credit card required. No monthly fees. Run your first activity
+            with clarity, prove participation, and manage events with verifiable
+            proof today.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Button href={`${config.appUrl}/register`}>Start for free</Button>
