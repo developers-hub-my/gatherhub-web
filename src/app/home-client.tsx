@@ -56,9 +56,10 @@ function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-8 max-w-xl text-lg/7 font-medium text-gray-600 dark:text-gray-300 sm:text-xl/8"
           >
-            Run activities with clarity and proof — from registration to QR
-            check-in to verifiable certificates. Track every participant,
-            validate attendance, and prove participation at every step.
+            The event platform that proves participation at every step — from
+            registration to QR check-in to verifiable certificates. Run
+            activities with clarity, track every participant, and validate
+            attendance with proof.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -446,7 +447,7 @@ function FeaturesGrid() {
       <div className="text-center">
         <Subheading>Key Features</Subheading>
         <Heading as="h2" className="mt-2">
-          Everything you need to run professional events.
+          An event platform built to prove every interaction.
         </Heading>
       </div>
       <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -620,7 +621,7 @@ function UseCasesSection() {
         </Heading>
         <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600 dark:text-gray-400">
           Whether you&apos;re running corporate training, academic workshops, or
-          community meetups — GatherHub adapts to your needs.
+          community meetups — this event platform proves participation for all.
         </p>
       </div>
       <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -799,6 +800,79 @@ function WhyGatherHub() {
   )
 }
 
+function SocialShare() {
+  const shareUrl = 'https://gatherhub.app'
+  const shareText =
+    'Gather Hub — the event platform that proves participation. QR check-in, verifiable certificates, and attendance tracking.'
+
+  const shareLinks = [
+    {
+      name: 'Facebook',
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
+        <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M16 8.05C16 3.603 12.418 0 8 0S0 3.604 0 8.05c0 4.016 2.926 7.346 6.75 7.95v-5.624H4.718V8.05H6.75V6.276c0-2.017 1.194-3.131 3.022-3.131.875 0 1.79.157 1.79.157v1.98h-1.008c-.994 0-1.304.62-1.304 1.257v1.51h2.219l-.355 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.95z"
+          />
+        </svg>
+      ),
+    },
+    {
+      name: 'X',
+      href: `https://x.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`,
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
+        <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
+          <path d="M12.6 0h2.454l-5.36 6.778L16 16h-4.937l-3.867-5.594L2.771 16H.316l5.733-7.25L0 0h5.063l3.495 5.114L12.6 0zm-.86 14.376h1.36L4.323 1.539H2.865l8.875 12.837z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'LinkedIn',
+      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
+        <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
+          <path d="M14.82 0H1.18A1.169 1.169 0 000 1.154v13.694A1.168 1.168 0 001.18 16h13.64A1.17 1.17 0 0016 14.845V1.15A1.171 1.171 0 0014.82 0zM4.744 13.64H2.369V5.996h2.375v7.644zm-1.18-8.684a1.377 1.377 0 11.52-.106 1.377 1.377 0 01-.527.103l.007.003zm10.075 8.683h-2.375V9.921c0-.885-.015-2.025-1.234-2.025-1.218 0-1.425.966-1.425 1.968v3.775H6.233V5.997H8.51v1.05h.032c.317-.601 1.09-1.235 2.246-1.235 2.405-.005 2.851 1.578 2.851 3.63v4.197z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'WhatsApp',
+      href: `https://wa.me/?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`,
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
+        <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
+          <path d="M13.601 2.326A7.854 7.854 0 008.002 0C3.632 0 .068 3.558.064 7.926a7.9 7.9 0 001.06 3.956L0 16l4.204-1.102a7.933 7.933 0 003.79.965h.004c4.368 0 7.933-3.558 7.937-7.93a7.862 7.862 0 00-2.334-5.607zm-5.6 12.2a6.56 6.56 0 01-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 01-1.007-3.505c0-3.626 2.957-6.579 6.591-6.579a6.56 6.56 0 014.66 1.931 6.557 6.557 0 011.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.644-.182-.066-.315-.099-.448.099-.133.197-.514.644-.63.777-.116.132-.232.148-.43.05-.197-.1-.833-.307-1.587-.98-.587-.523-.983-1.17-1.098-1.367-.115-.198-.012-.305.087-.403.089-.088.197-.231.296-.347.099-.116.132-.198.198-.33.066-.133.033-.248-.016-.348-.05-.099-.449-1.082-.615-1.482-.162-.389-.327-.336-.449-.342l-.382-.007a.733.733 0 00-.529.248c-.182.198-.694.678-.694 1.653s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.472.204.84.326 1.129.418.474.151.906.13 1.247.079.38-.057 1.17-.478 1.335-.94.166-.462.166-.858.116-.94-.05-.084-.182-.133-.38-.232z" />
+        </svg>
+      ),
+    },
+  ]
+
+  return (
+    <Container className="pb-12">
+      <div className="flex flex-col items-center gap-4 text-center">
+        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+          Share Gather Hub with your network
+        </p>
+        <div className="flex items-center gap-4">
+          {shareLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Share on ${link.name}`}
+              className="flex size-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-colors hover:bg-blue-100 hover:text-blue-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-400"
+            >
+              <link.icon className="size-4" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </Container>
+  )
+}
+
 function FinalCTA() {
   return (
     <Container className="py-24">
@@ -859,6 +933,7 @@ export default function HomeClient() {
         <Testimonials />
         <WhyGatherHub />
         <FinalCTA />
+        <SocialShare />
       </main>
       <Footer />
     </div>

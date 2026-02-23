@@ -2,13 +2,31 @@ import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
 import { ThemeProvider } from '@/components/theme-provider'
 
+const siteUrl = 'https://gatherhub.app'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     template: '%s - Gather Hub',
-    default: 'Gather Hub - Run activities with clarity and proof',
+    default: 'Gather Hub - Event Platform That Proves Participation',
   },
   description:
-    'The operational hub for events and activities — from registration and payment to attendance validation and participation proof.',
+    'Run events with clarity and proof. QR check-in, verifiable certificates, and attendance tracking — all free to start.',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Gather Hub',
+    title: 'Gather Hub - Event Platform That Proves Participation',
+    description:
+      'Run events with clarity and proof. QR check-in, verifiable certificates, and attendance tracking — all free to start.',
+    url: siteUrl,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gather Hub - Event Platform That Proves Participation',
+    description:
+      'Run events with clarity and proof. QR check-in, verifiable certificates, and attendance tracking — all free to start.',
+  },
 }
 
 export default function RootLayout({
