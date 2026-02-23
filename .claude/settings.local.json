@@ -4,7 +4,10 @@
       "Bash(npm run dev:*)",
       "Bash(npm run build:*)",
       "Bash(npm run lint:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(magick:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)"
     ]
   }
 }
