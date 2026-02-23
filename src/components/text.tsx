@@ -7,6 +7,11 @@ type HeadingProps = {
   'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 >
 
+type SubheadingProps = {
+  as?: 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
+  dark?: boolean
+} & React.ComponentPropsWithoutRef<'span'>
+
 export function Heading({
   className,
   as: Element = 'h2',
@@ -27,10 +32,10 @@ export function Heading({
 
 export function Subheading({
   className,
-  as: Element = 'h2',
+  as: Element = 'span',
   dark = false,
   ...props
-}: HeadingProps) {
+}: SubheadingProps) {
   return (
     <Element
       {...props}

@@ -20,7 +20,7 @@ function CallToAction() {
       </p>
       <div className="mt-6">
         <Button className="w-full sm:w-auto" href={`${config.appUrl}/register`}>
-          Start for free
+          Create your free account
         </Button>
       </div>
     </div>

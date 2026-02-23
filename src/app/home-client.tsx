@@ -260,9 +260,9 @@ function HowItWorksSection() {
               >
                 <step.icon className="size-7 text-white" />
               </div>
-              <h3 className="text-base font-semibold text-gray-950 dark:text-white">
+              <p className="text-base font-semibold text-gray-950 dark:text-white">
                 {step.title}
-              </h3>
+              </p>
               <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
                 {step.description}
               </p>
@@ -462,9 +462,9 @@ function FeaturesGrid() {
             <div className="flex size-12 items-center justify-center rounded-xl bg-blue-50 transition-colors group-hover:bg-blue-100 dark:bg-blue-500/20 dark:group-hover:bg-blue-500/30">
               <feature.icon className="size-6 text-blue-600 dark:text-blue-400" />
             </div>
-            <h3 className="mt-6 text-base font-semibold text-gray-950 dark:text-white">
+            <p className="mt-6 text-base font-semibold text-gray-950 dark:text-white">
               {feature.name}
-            </h3>
+            </p>
             <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
               {feature.description}
             </p>
@@ -636,9 +636,9 @@ function UseCasesSection() {
             <div className="flex size-12 items-center justify-center rounded-xl bg-blue-50 transition-colors group-hover:bg-blue-100 dark:bg-blue-500/20 dark:group-hover:bg-blue-500/30">
               <useCase.icon className="size-6 text-blue-600 dark:text-blue-400" />
             </div>
-            <h3 className="mt-6 text-lg font-semibold text-gray-950 dark:text-white">
+            <p className="mt-6 text-lg font-semibold text-gray-950 dark:text-white">
               {useCase.name}
-            </h3>
+            </p>
             <p className="mt-1 text-sm font-medium text-blue-600 dark:text-blue-400">
               {useCase.tagline}
             </p>
@@ -785,9 +785,9 @@ function WhyGatherHub() {
               <div className="flex size-12 items-center justify-center rounded-xl bg-blue-500/20">
                 <reason.icon className="size-6 text-blue-400" />
               </div>
-              <h3 className="mt-6 text-lg font-semibold text-white">
+              <p className="mt-6 text-lg font-semibold text-white">
                 {reason.title}
-              </h3>
+              </p>
               <p className="mt-2 text-sm/6 text-gray-300">
                 {reason.description}
               </p>
@@ -823,9 +823,11 @@ function FinalCTA() {
             proof today.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <Button href={`${config.appUrl}/register`}>Start for free</Button>
+            <Button href={`${config.appUrl}/register`}>
+              Get started for free
+            </Button>
             <Button variant="secondary" href="/pricing">
-              View pricing
+              See pricing plans
             </Button>
           </div>
         </div>

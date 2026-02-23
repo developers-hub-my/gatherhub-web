@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Disable X-Powered-By header for security and SEO
+  poweredByHeader: false,
+
   // Enable gzip/brotli compression
   compress: true,
 
