@@ -58,6 +58,7 @@ function Sitemap() {
         <SitemapLinks>
           <SitemapLink href="/features">Features</SitemapLink>
           <SitemapLink href="/pricing">Pricing</SitemapLink>
+          <SitemapLink href="/enterprise">Enterprise</SitemapLink>
         </SitemapLinks>
       </div>
       <div>

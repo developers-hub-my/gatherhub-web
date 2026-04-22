@@ -14,6 +14,7 @@ import {
   EnvelopeIcon,
   CodeBracketIcon,
   UserGroupIcon,
+  BuildingOffice2Icon,
 } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 
@@ -57,9 +58,20 @@ function FreeFeatures() {
     'Email support',
   ]
 
+  const enterpriseHighlights = [
+    'Single-tenant on-premise deployment',
+    'PDPA compliant, SOC 2 aligned controls',
+    'SSO via SAML, OIDC, or LDAP / AD',
+    'Comprehensive audit logging',
+    'Custom branding and integrations',
+    'Dedicated implementation engineer',
+    'Priority support with SLA',
+    'Air-gapped install supported',
+  ]
+
   return (
     <Container className="pb-24">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
         <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-lg dark:border-gray-700 dark:bg-gray-800">
           <div className="text-center">
             <Heading as="h2" className="text-3xl">
@@ -85,7 +97,7 @@ function FreeFeatures() {
             <h3 className="text-base font-semibold text-gray-950 dark:text-white">
               Core Features:
             </h3>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+            <ul className="mt-4 space-y-3">
               {coreFeatures.map((feature) => (
                 <li key={feature} className="flex items-start gap-3">
                   <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
@@ -100,6 +112,55 @@ function FreeFeatures() {
           <div className="mt-8">
             <Button href={`${config.appUrl}/register`} className="w-full">
               Get started for free
+            </Button>
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-lg dark:border-gray-700 dark:bg-gray-800">
+          <div className="text-center">
+            <BuildingOffice2Icon className="mx-auto size-8 text-blue-600 dark:text-blue-400" />
+            <Heading as="h2" className="mt-2 text-3xl">
+              Enterprise
+            </Heading>
+            <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
+              On-premise deployment for organisations with strict compliance,
+              data residency, and integration needs.
+            </p>
+          </div>
+
+          <div className="mt-8 rounded-2xl bg-gray-100 p-6 dark:bg-gray-700/40">
+            <div className="text-center">
+              <div className="text-5xl font-semibold text-gray-950 dark:text-white">
+                Custom
+              </div>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                annual licence + setup
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-base font-semibold text-gray-950 dark:text-white">
+              Includes:
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {enterpriseHighlights.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button href="/contact" className="w-full">
+              Contact sales
+            </Button>
+            <Button variant="secondary" href="/enterprise" className="w-full">
+              Learn more
             </Button>
           </div>
         </div>

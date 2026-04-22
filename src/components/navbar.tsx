@@ -16,6 +16,7 @@ import { ThemeToggle } from './theme-toggle'
 const links = [
   { href: '/features', label: 'Features' },
   { href: '/pricing', label: 'Pricing' },
+  { href: '/enterprise', label: 'Enterprise' },
   { href: '/help', label: 'Help' },
   { href: `${config.appUrl}/login`, label: 'Login', external: true },
 ]
