@@ -10,22 +10,17 @@ import {
   ShieldCheckIcon,
   BanknotesIcon,
   SparklesIcon,
-  CalendarDaysIcon,
-  PuzzlePieceIcon,
   PaintBrushIcon,
-  ChartBarIcon,
   EnvelopeIcon,
   CodeBracketIcon,
   UserGroupIcon,
-  ChatBubbleLeftRightIcon,
-  FilmIcon,
 } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Pricing',
   description:
-    'GatherHub offers free core features with optional paid add-ons. Transaction fees only when you collect payments.',
+    'GatherHub gives you all current features for free. Transaction fees only when you collect payments.',
 }
 
 function Hero() {
@@ -39,8 +34,8 @@ function Hero() {
             Simple, transparent pricing.
           </Heading>
           <p className="mt-4 max-w-2xl text-base text-gray-600 dark:text-gray-400">
-            Start free with essential features. Add powerful capabilities as you
-            grow. Transaction fees only when you collect payments.
+            Every current feature is free, including all add-ons. Transaction
+            fees only apply when you collect payments from participants.
           </p>
         </div>
       </Container>
@@ -58,72 +53,8 @@ function FreeFeatures() {
     'Registration forms',
     'Capacity management and waitlists',
     'Participant management',
-    'Basic reports and data export',
     'Public event directory',
     'Email support',
-  ]
-
-  const freeAddons = [
-    {
-      name: 'Kit Collection',
-      description:
-        'Track event kit distribution with variants, eligibility rules, and collection statistics.',
-    },
-    {
-      name: 'Crew Management',
-      description:
-        'Manage team members with 5 roles, 10 permissions, custom overrides, and invitations.',
-    },
-    {
-      name: 'Custom Fields',
-      description:
-        'Create custom registration forms with advanced field types.',
-    },
-    {
-      name: 'Partners',
-      description:
-        'Manage speakers and sponsors with profiles, self-service portals, and event assignments.',
-    },
-    {
-      name: 'Certificates',
-      description:
-        'Generate participation certificates with customizable templates, eligibility rules, and QR verification.',
-    },
-    {
-      name: 'Event Surveys',
-      description:
-        'Create post-event surveys with multiple question types, NPS scoring, analytics, and CSV export.',
-    },
-    {
-      name: 'Social Wall',
-      description:
-        'Display a moderated social media wall with masonry layout aggregating posts with your event hashtag.',
-    },
-    {
-      name: 'Gamification',
-      description:
-        'Award points, badges, and track leaderboards with streaks to boost participant engagement.',
-    },
-    {
-      name: 'Event Templates',
-      description:
-        'Save event configurations as reusable templates to speed up future event setup.',
-    },
-    {
-      name: 'Virtual Business Cards',
-      description:
-        'Exchange digital business cards via QR codes with vCard download and contacts management.',
-    },
-    {
-      name: 'Call for Papers',
-      description:
-        'Accept session proposals from speakers with a submission and review workflow.',
-    },
-    {
-      name: 'Bundle Discounts',
-      description:
-        'Offer buy-X-get-Y-free deals combinable with discount codes and early bird pricing.',
-    },
   ]
 
   return (
@@ -150,43 +81,20 @@ function FreeFeatures() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-8 md:grid-cols-2">
-            <div>
-              <h3 className="text-base font-semibold text-gray-950 dark:text-white">
-                Core Features:
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {coreFeatures.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
-                    <span className="text-sm text-gray-600 dark:text-gray-400">
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-base font-semibold text-gray-950 dark:text-white">
-                Free Add-ons:
-              </h3>
-              <ul className="mt-4 space-y-4">
-                {freeAddons.map((addon) => (
-                  <li key={addon.name} className="flex items-start gap-3">
-                    <SparklesIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
-                    <div>
-                      <span className="text-sm font-medium text-gray-950 dark:text-white">
-                        {addon.name}
-                      </span>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        {addon.description}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="mt-8">
+            <h3 className="text-base font-semibold text-gray-950 dark:text-white">
+              Core Features:
+            </h3>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+              {coreFeatures.map((feature) => (
+                <li key={feature} className="flex items-start gap-3">
+                  <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                    {feature}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="mt-8">
@@ -200,110 +108,92 @@ function FreeFeatures() {
   )
 }
 
-function PaidAddons() {
-  const oneTimeAddons = [
+function FreeAddons() {
+  const freeAddons = [
     {
       name: 'Event Sessions',
-      slug: 'event-sessions',
-      price: 'RM 29',
-      period: 'one-time',
       description:
         'Create and manage sessions within events with speaker assignments and attendance tracking.',
-      icon: CalendarDaysIcon,
-      comingSoon: false,
     },
     {
       name: 'Event Activities',
-      slug: 'event-activities',
-      price: 'RM 29',
-      period: 'one-time',
       description:
         'Manage activities and workshops with participant registration and capacity limits.',
-      icon: PuzzlePieceIcon,
-      comingSoon: false,
+    },
+    {
+      name: 'Kit Collection',
+      description:
+        'Track event kit distribution with variants, eligibility rules, and collection statistics.',
+    },
+    {
+      name: 'Certificates',
+      description:
+        'Generate participation certificates with customizable templates, eligibility rules, and QR verification.',
+    },
+    {
+      name: 'Crew Management',
+      description:
+        'Manage team members with roles, permissions, custom overrides, and invitations.',
+    },
+    {
+      name: 'Custom Fields',
+      description:
+        'Create custom registration forms with advanced field types.',
+    },
+    {
+      name: 'Partners',
+      description:
+        'Manage speakers and sponsors with profiles, self-service portals, and event assignments.',
     },
     {
       name: 'Live Polling',
-      slug: 'live-polling',
-      price: 'RM 29',
-      period: 'one-time',
       description:
-        'Create real-time polls with instant results display and presenter mode.',
-      icon: ChartBarIcon,
-      comingSoon: false,
+        'Run real-time polls with instant results display and presenter mode.',
     },
     {
       name: 'Q&A Sessions',
-      slug: 'qa-sessions',
-      price: 'RM 29',
-      period: 'one-time',
       description:
         'Enable attendee questions with upvoting, moderation, and presenter view.',
-      icon: ChatBubbleLeftRightIcon,
-      comingSoon: false,
     },
     {
-      name: 'Custom Branding',
-      slug: 'custom-branding',
-      price: 'RM 99',
-      period: 'one-time',
+      name: 'Social Wall',
       description:
-        'Customize event pages with organization branding and colors.',
-      icon: PaintBrushIcon,
-      comingSoon: true,
+        'Display a moderated social wall with masonry layout aggregating posts with your event hashtag.',
     },
     {
-      name: 'Attendee Networking',
-      slug: 'attendee-networking',
-      price: 'RM 99',
-      period: 'one-time',
+      name: 'Gamification',
       description:
-        'Enable attendee directory and networking profiles for professional connections.',
-      icon: UserGroupIcon,
-      comingSoon: true,
+        'Award points, badges, and leaderboards with streaks to boost participant engagement.',
     },
-  ]
-
-  const recurringAddons = [
+    {
+      name: 'Event Surveys',
+      description:
+        'Send post-event surveys with multiple question types, NPS scoring, analytics, and CSV export.',
+    },
     {
       name: 'Advanced Reporting',
-      slug: 'advanced-reporting',
-      price: 'RM 19',
-      period: '/month',
       description:
-        'Access detailed analytics, financial reports, and export capabilities for events.',
-      icon: ChartBarIcon,
-      comingSoon: true,
+        'Detailed analytics, financial reports, and export capabilities for every event.',
     },
     {
-      name: 'Blast Emails & WhatsApp',
-      slug: 'blast-emails',
-      price: 'RM 29',
-      period: '/month',
+      name: 'Event Templates',
       description:
-        'Send bulk emails and WhatsApp messages to participants with templates, scheduling, and delivery tracking.',
-      icon: EnvelopeIcon,
-      comingSoon: false,
+        'Save event configurations as reusable templates to speed up future event setup.',
     },
     {
-      name: 'Recordings & Materials',
-      slug: 'recordings-materials',
-      price: 'RM 49',
-      period: '/month',
+      name: 'Virtual Business Cards',
       description:
-        'Upload session recordings and materials with paid access, purchase flow, and viewer page.',
-      icon: FilmIcon,
-      comingSoon: false,
+        'Exchange digital business cards via QR codes with vCard download and contacts management.',
     },
     {
-      name: 'API Access',
-      slug: 'api-access',
-      price: 'RM 199',
-      period: '/year',
+      name: 'Call for Papers',
       description:
-        'Access REST API for integrations with external systems and webhooks.',
-      icon: CodeBracketIcon,
-      comingSoon: true,
+        'Accept session proposals from speakers with a submission and review workflow.',
+    },
+    {
+      name: 'Bundle Discounts',
+      description:
+        'Offer buy-X-get-Y-free deals combinable with discount codes and early bird pricing.',
     },
   ]
 
@@ -312,105 +202,106 @@ function PaidAddons() {
       <Container>
         <div className="mx-auto max-w-5xl">
           <div className="text-center">
-            <Subheading>Paid Add-ons</Subheading>
+            <Subheading>Free Add-ons</Subheading>
             <Heading as="h2" className="mt-2">
-              Extend your capabilities.
+              All add-ons included at no cost.
             </Heading>
             <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
-              Add powerful features as your needs grow. Pay once or subscribe
-              monthly.
+              Enable any of these capabilities anytime. No upgrades, no
+              surprises, no extra fees.
             </p>
           </div>
 
-          <div className="mt-12">
-            <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
-              One-Time Purchase
-            </h3>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {oneTimeAddons.map((addon) => (
-                <div
-                  key={addon.slug}
-                  className="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
-                >
-                  {addon.comingSoon && (
-                    <span className="absolute right-4 top-4 rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
-                      Coming Soon
-                    </span>
-                  )}
-                  <addon.icon className="size-8 text-blue-600 dark:text-blue-400" />
-                  <h4 className="mt-4 text-base font-semibold text-gray-950 dark:text-white">
-                    {addon.name}
-                  </h4>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                    {addon.description}
-                  </p>
-                  <div className="mt-4">
-                    {addon.comingSoon ? (
-                      <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                        Coming Soon
-                      </span>
-                    ) : (
-                      <>
-                        <span className="text-2xl font-semibold text-gray-950 dark:text-white">
-                          {addon.price}
-                        </span>
-                        <span className="text-sm text-gray-600 dark:text-gray-400">
-                          {' '}
-                          {addon.period}
-                        </span>
-                      </>
-                    )}
-                  </div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {freeAddons.map((addon) => (
+              <div
+                key={addon.name}
+                className="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+              >
+                <SparklesIcon className="size-8 text-blue-600 dark:text-blue-400" />
+                <h4 className="mt-4 text-base font-semibold text-gray-950 dark:text-white">
+                  {addon.name}
+                </h4>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                  {addon.description}
+                </p>
+                <div className="mt-4">
+                  <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                    Free
+                  </span>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-12">
-            <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
-              Monthly / Annual Subscriptions
-            </h3>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {recurringAddons.map((addon) => (
-                <div
-                  key={addon.slug}
-                  className="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
-                >
-                  {addon.comingSoon && (
-                    <span className="absolute right-4 top-4 rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
-                      Coming Soon
-                    </span>
-                  )}
-                  <addon.icon className="size-8 text-blue-600 dark:text-blue-400" />
-                  <h4 className="mt-4 text-base font-semibold text-gray-950 dark:text-white">
-                    {addon.name}
-                  </h4>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                    {addon.description}
-                  </p>
-                  <div className="mt-4">
-                    {addon.comingSoon ? (
-                      <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                        Coming Soon
-                      </span>
-                    ) : (
-                      <>
-                        <span className="text-2xl font-semibold text-gray-950 dark:text-white">
-                          {addon.price}
-                        </span>
-                        <span className="text-sm text-gray-600 dark:text-gray-400">
-                          {addon.period}
-                        </span>
-                      </>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </Container>
     </div>
+  )
+}
+
+function ComingSoonAddons() {
+  const addons = [
+    {
+      name: 'Blast Emails & WhatsApp',
+      description:
+        'Send bulk emails and WhatsApp messages to participants with templates, scheduling, and delivery tracking.',
+      icon: EnvelopeIcon,
+    },
+    {
+      name: 'Attendee Networking',
+      description:
+        'Enable attendee directory and networking profiles for professional connections.',
+      icon: UserGroupIcon,
+    },
+    {
+      name: 'Custom Branding',
+      description:
+        'Customize event pages with organization branding and colors.',
+      icon: PaintBrushIcon,
+    },
+    {
+      name: 'API Access',
+      description:
+        'Access REST API for integrations with external systems and webhooks.',
+      icon: CodeBracketIcon,
+    },
+  ]
+
+  return (
+    <Container className="py-24">
+      <div className="mx-auto max-w-5xl">
+        <div className="text-center">
+          <Subheading>Coming Soon</Subheading>
+          <Heading as="h2" className="mt-2">
+            On the way.
+          </Heading>
+          <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
+            New capabilities currently in development. Pricing will be announced
+            closer to launch.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {addons.map((addon) => (
+            <div
+              key={addon.name}
+              className="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+            >
+              <span className="absolute right-4 top-4 rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
+                Coming Soon
+              </span>
+              <addon.icon className="size-8 text-blue-600 dark:text-blue-400" />
+              <h4 className="mt-4 text-base font-semibold text-gray-950 dark:text-white">
+                {addon.name}
+              </h4>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                {addon.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Container>
   )
 }
 
@@ -580,12 +471,17 @@ function FAQ() {
     {
       question: 'Are there any monthly fees for the platform?',
       answer:
-        'No. GatherHub core platform is completely free to use with no monthly subscription fees. You get unlimited events, participants, and all core features at no cost. Paid add-ons are optional and only for advanced capabilities.',
+        'No. GatherHub is completely free to use with no monthly subscription fees. You get unlimited events, unlimited participants, and every currently available add-on at no cost.',
     },
     {
-      question: 'What are paid add-ons?',
+      question: 'What add-ons do I get for free?',
       answer:
-        'Paid add-ons are optional features that extend your event management capabilities. Some are one-time purchases (like Event Sessions, Activities, Live Polling, and Q&A Sessions), while others are subscriptions (like Blast Emails & WhatsApp and Recordings & Materials). You only pay for what you need.',
+        'All currently available add-ons are free, including Event Sessions, Event Activities, Live Polling, Q&A Sessions, Social Wall, Gamification, Event Surveys, Advanced Reporting, Certificates, Kit Collection, Crew Management, Custom Fields, and Partners. Enable any of them anytime with no extra charges.',
+    },
+    {
+      question: 'Will any of these free add-ons become paid later?',
+      answer:
+        'We have no plans to convert currently free add-ons into paid features. If pricing ever changes for a specific module, existing organizations using it will be notified well in advance.',
     },
     {
       question: 'What if I run free events?',
@@ -615,7 +511,7 @@ function FAQ() {
     {
       question: 'What does "Coming Soon" mean for add-ons?',
       answer:
-        'Features marked as "Coming Soon" are currently in development. Custom Branding, Attendee Networking, Advanced Reporting, and API Access will be available in future updates. Sign up to be notified when they launch.',
+        'Features marked as "Coming Soon" are currently in development. Blast Emails & WhatsApp, Attendee Networking, Custom Branding, and API Access will be available in future updates. Pricing for these add-ons will be announced closer to launch.',
     },
   ]
 
@@ -687,7 +583,8 @@ export default function Pricing() {
     <main className="overflow-hidden bg-white dark:bg-gray-950">
       <Hero />
       <FreeFeatures />
-      <PaidAddons />
+      <FreeAddons />
+      <ComingSoonAddons />
       <TransactionFees />
       <PaymentMethods />
       <FAQ />

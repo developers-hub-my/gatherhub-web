@@ -88,7 +88,7 @@ These are configured in `.env.local` (not committed to git).
 
 ## Pricing Model
 
-GatherHub offers a free platform with optional paid add-ons:
+GatherHub is a free platform. Every currently available add-on is included at no cost; a few new capabilities are in development with pricing to be announced.
 
 **Free Platform (RM 0/month):**
 - Unlimited activities and events
@@ -97,27 +97,21 @@ GatherHub offers a free platform with optional paid add-ons:
 - Email notifications and reminders
 - Registration forms and capacity management with waitlists
 - Participant management and bulk import
-- Basic reports and data export
 - Public event directory
 
-**Free Add-ons:**
-- Kit Collection, Crew Management, Custom Fields, Partners, Certificates
-- Event Surveys, Social Wall, Gamification, Event Templates
-- Virtual Business Cards, Call for Papers, Bundle Discounts
+**Free Add-ons (all currently available):**
+- Event Sessions, Event Activities
+- Live Polling, Q&A Sessions, Social Wall, Gamification
+- Event Surveys, Advanced Reporting
+- Certificates, Kit Collection, Crew Management
+- Custom Fields, Partners
+- Event Templates, Virtual Business Cards, Call for Papers, Bundle Discounts
 
-**Paid Add-ons (One-Time):**
-- Event Sessions: RM 29
-- Event Activities: RM 29
-- Live Polling: RM 29
-- Q&A Sessions: RM 29
-- Custom Branding: RM 99 (Coming Soon)
-- Attendee Networking: RM 99 (Coming Soon)
-
-**Paid Add-ons (Recurring):**
-- Advanced Reporting: RM 19/month (Coming Soon)
-- Blast Emails & WhatsApp: RM 29/month
-- Recordings & Materials: RM 49/month
-- API Access: RM 199/year (Coming Soon)
+**Coming Soon (pricing TBA):**
+- Blast Emails & WhatsApp
+- Attendee Networking
+- Custom Branding
+- API Access
 
 **Transaction Fees:**
 - 3% + RM 1 per transaction (only on paid registrations)
@@ -130,7 +124,7 @@ The platform provides:
 - QR code check-in and multi-level attendance tracking (event/session/activity)
 - Online QR and secret codes for virtual events
 - Certificate generation with QR verification and eligibility rules (free add-on)
-- Email and WhatsApp blast campaigns with scheduling and delivery tracking
+- Email and WhatsApp blast campaigns with scheduling and delivery tracking (coming soon)
 - Marketing content studio for event promotion
 - Registration forms with capacity management and waitlists
 - Bundle discounts, early bird pricing, and flash sale timers
@@ -141,7 +135,6 @@ The platform provides:
 - Live polling, Q&A sessions, surveys, social wall, and gamification
 - Virtual business card exchange
 - Vendor marketplace with 16 service types
-- Recordings and materials with paid access
 - Public event directory
 - Reports, analytics dashboard, and data export
 - Webhooks for external integrations
