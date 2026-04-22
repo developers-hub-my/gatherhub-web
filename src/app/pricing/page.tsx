@@ -5,16 +5,31 @@ import { config } from '@/lib/config'
 import { Navbar } from '@/components/navbar'
 import { Heading, Subheading } from '@/components/text'
 import {
-  CheckIcon,
-  CreditCardIcon,
-  ShieldCheckIcon,
+  AdjustmentsHorizontalIcon,
   BanknotesIcon,
-  SparklesIcon,
-  PaintBrushIcon,
-  EnvelopeIcon,
-  CodeBracketIcon,
-  UserGroupIcon,
+  BriefcaseIcon,
   BuildingOffice2Icon,
+  CalendarDaysIcon,
+  ChartBarIcon,
+  ChatBubbleLeftRightIcon,
+  CheckIcon,
+  ClipboardDocumentCheckIcon,
+  CodeBracketIcon,
+  CreditCardIcon,
+  DocumentCheckIcon,
+  DocumentDuplicateIcon,
+  DocumentTextIcon,
+  EnvelopeIcon,
+  HashtagIcon,
+  IdentificationIcon,
+  PaintBrushIcon,
+  PresentationChartLineIcon,
+  PuzzlePieceIcon,
+  ShieldCheckIcon,
+  ShoppingBagIcon,
+  TagIcon,
+  TrophyIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 
@@ -175,86 +190,103 @@ function FreeAddons() {
       name: 'Event Sessions',
       description:
         'Create and manage sessions within events with speaker assignments and attendance tracking.',
+      icon: CalendarDaysIcon,
     },
     {
       name: 'Event Activities',
       description:
         'Manage activities and workshops with participant registration and capacity limits.',
+      icon: PuzzlePieceIcon,
     },
     {
       name: 'Kit Collection',
       description:
         'Track event kit distribution with variants, eligibility rules, and collection statistics.',
+      icon: ShoppingBagIcon,
     },
     {
       name: 'Certificates',
       description:
         'Generate participation certificates with customizable templates, eligibility rules, and QR verification.',
+      icon: DocumentCheckIcon,
     },
     {
       name: 'Crew Management',
       description:
         'Manage team members with roles, permissions, custom overrides, and invitations.',
+      icon: UserGroupIcon,
     },
     {
       name: 'Custom Fields',
       description:
         'Create custom registration forms with advanced field types.',
+      icon: AdjustmentsHorizontalIcon,
     },
     {
       name: 'Partners',
       description:
         'Manage speakers and sponsors with profiles, self-service portals, and event assignments.',
+      icon: BriefcaseIcon,
     },
     {
       name: 'Live Polling',
       description:
         'Run real-time polls with instant results display and presenter mode.',
+      icon: ChartBarIcon,
     },
     {
       name: 'Q&A Sessions',
       description:
         'Enable attendee questions with upvoting, moderation, and presenter view.',
+      icon: ChatBubbleLeftRightIcon,
     },
     {
       name: 'Social Wall',
       description:
         'Display a moderated social wall with masonry layout aggregating posts with your event hashtag.',
+      icon: HashtagIcon,
     },
     {
       name: 'Gamification',
       description:
         'Award points, badges, and leaderboards with streaks to boost participant engagement.',
+      icon: TrophyIcon,
     },
     {
       name: 'Event Surveys',
       description:
         'Send post-event surveys with multiple question types, NPS scoring, analytics, and CSV export.',
+      icon: ClipboardDocumentCheckIcon,
     },
     {
       name: 'Advanced Reporting',
       description:
         'Detailed analytics, financial reports, and export capabilities for every event.',
+      icon: PresentationChartLineIcon,
     },
     {
       name: 'Event Templates',
       description:
         'Save event configurations as reusable templates to speed up future event setup.',
+      icon: DocumentDuplicateIcon,
     },
     {
       name: 'Virtual Business Cards',
       description:
         'Exchange digital business cards via QR codes with vCard download and contacts management.',
+      icon: IdentificationIcon,
     },
     {
       name: 'Call for Papers',
       description:
         'Accept session proposals from speakers with a submission and review workflow.',
+      icon: DocumentTextIcon,
     },
     {
       name: 'Bundle Discounts',
       description:
         'Offer buy-X-get-Y-free deals combinable with discount codes and early bird pricing.',
+      icon: TagIcon,
     },
   ]
 
@@ -279,7 +311,7 @@ function FreeAddons() {
                 key={addon.name}
                 className="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
               >
-                <SparklesIcon className="size-8 text-blue-600 dark:text-blue-400" />
+                <addon.icon className="size-8 text-blue-600 dark:text-blue-400" />
                 <h4 className="mt-4 text-base font-semibold text-gray-950 dark:text-white">
                   {addon.name}
                 </h4>
