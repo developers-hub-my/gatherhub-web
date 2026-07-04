@@ -1,6 +1,7 @@
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
+import { PlanComparison } from '@/components/plan-comparison'
 import { config } from '@/lib/config'
 import { Navbar } from '@/components/navbar'
 import { Heading, Subheading } from '@/components/text'
@@ -675,6 +676,7 @@ export default function Pricing() {
   return (
     <main className="overflow-hidden bg-white dark:bg-gray-950">
       <Hero />
+      <PlanComparison />
       <FreeFeatures />
       <FreeAddons />
       <ComingSoonAddons />
