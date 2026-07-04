@@ -1,43 +1,22 @@
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
-import { PlanComparison } from '@/components/plan-comparison'
-import { config } from '@/lib/config'
 import { Navbar } from '@/components/navbar'
+import { PlanComparison } from '@/components/plan-comparison'
 import { Heading, Subheading } from '@/components/text'
+import { config } from '@/lib/config'
 import {
-  AdjustmentsHorizontalIcon,
   BanknotesIcon,
-  BriefcaseIcon,
   BuildingOffice2Icon,
-  CalendarDaysIcon,
-  ChartBarIcon,
-  ChatBubbleLeftRightIcon,
   CheckIcon,
-  ClipboardDocumentCheckIcon,
-  CodeBracketIcon,
-  CreditCardIcon,
-  DocumentCheckIcon,
-  DocumentDuplicateIcon,
-  DocumentTextIcon,
-  EnvelopeIcon,
-  HashtagIcon,
-  IdentificationIcon,
-  PaintBrushIcon,
-  PresentationChartLineIcon,
-  PuzzlePieceIcon,
-  ShieldCheckIcon,
-  ShoppingBagIcon,
-  TagIcon,
-  TrophyIcon,
-  UserGroupIcon,
+  QrCodeIcon,
 } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Pricing',
   description:
-    'GatherHub gives you all current features for free. Transaction fees only when you collect payments.',
+    'Start free and upgrade as you grow. Free, Pro, and Business plans with a platform fee that only applies to paid tickets.',
 }
 
 function Hero() {
@@ -48,11 +27,13 @@ function Hero() {
         <div className="pb-16 pt-8">
           <Subheading>Pricing</Subheading>
           <Heading as="h1" className="mt-2 max-w-4xl">
-            Simple, transparent pricing.
+            Start free, upgrade as you grow.
           </Heading>
           <p className="mt-4 max-w-2xl text-base text-gray-600 dark:text-gray-400">
-            Every current feature is free, including all add-ons. Transaction
-            fees only apply when you collect payments from participants.
+            Every plan runs an event end to end. Paid plans add more events, a
+            lower platform fee, included email credits, and advanced features.
+            The platform fee applies only when you collect payments — free events
+            never incur a fee.
           </p>
         </div>
       </Container>
@@ -60,269 +41,71 @@ function Hero() {
   )
 }
 
-function FreeFeatures() {
-  const coreFeatures = [
-    'Unlimited activities and events',
-    'Unlimited participants',
-    'QR code check-in',
-    'Attendance tracking and validation',
-    'Email notifications and reminders',
-    'Registration forms',
-    'Capacity management and waitlists',
-    'Participant management',
-    'Public event directory',
-    'Email support',
-  ]
-
-  const enterpriseHighlights = [
-    'Single-tenant on-premise deployment',
-    'PDPA compliant, SOC 2 aligned controls',
-    'SSO via SAML, OIDC, or LDAP / AD',
-    'Comprehensive audit logging',
-    'Custom branding and integrations',
-    'Dedicated implementation engineer',
-    'Priority support with SLA',
-    'Air-gapped install supported',
-  ]
-
-  return (
-    <Container className="pb-24">
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
-        <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-lg dark:border-gray-700 dark:bg-gray-800">
-          <div className="text-center">
-            <Heading as="h2" className="text-3xl">
-              Free Platform
-            </Heading>
-            <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
-              Everything you need to run successful events at no cost.
-            </p>
-          </div>
-
-          <div className="mt-8 rounded-2xl bg-blue-50 p-6 dark:bg-blue-500/20">
-            <div className="text-center">
-              <div className="text-5xl font-semibold text-gray-950 dark:text-white">
-                RM 0
-              </div>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                per month, forever
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-base font-semibold text-gray-950 dark:text-white">
-              Core Features:
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {coreFeatures.map((feature) => (
-                <li key={feature} className="flex items-start gap-3">
-                  <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
-                  <span className="text-sm text-gray-600 dark:text-gray-400">
-                    {feature}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mt-8">
-            <Button href={`${config.appUrl}/register`} className="w-full">
-              Get started for free
-            </Button>
-          </div>
-        </div>
-
-        <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-lg dark:border-gray-700 dark:bg-gray-800">
-          <div className="text-center">
-            <BuildingOffice2Icon className="mx-auto size-8 text-blue-600 dark:text-blue-400" />
-            <Heading as="h2" className="mt-2 text-3xl">
-              Enterprise
-            </Heading>
-            <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
-              On-premise deployment for organisations with strict compliance,
-              data residency, and integration needs.
-            </p>
-          </div>
-
-          <div className="mt-8 rounded-2xl bg-gray-100 p-6 dark:bg-gray-700/40">
-            <div className="text-center">
-              <div className="text-5xl font-semibold text-gray-950 dark:text-white">
-                Custom
-              </div>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                annual licence + setup
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-base font-semibold text-gray-950 dark:text-white">
-              Includes:
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {enterpriseHighlights.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
-                  <span className="text-sm text-gray-600 dark:text-gray-400">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href="/contact" className="w-full">
-              Contact sales
-            </Button>
-            <Button variant="secondary" href="/enterprise" className="w-full">
-              Learn more
-            </Button>
-          </div>
-        </div>
-      </div>
-    </Container>
-  )
-}
-
-function FreeAddons() {
-  const freeAddons = [
+function TransactionFees() {
+  const points = [
     {
-      name: 'Event Sessions',
-      description:
-        'Create and manage sessions within events with speaker assignments and attendance tracking.',
-      icon: CalendarDaysIcon,
+      title: 'Only on successful paid tickets',
+      body: 'Free registrations and free events have no fee at all.',
     },
     {
-      name: 'Event Activities',
-      description:
-        'Manage activities and workshops with participant registration and capacity limits.',
-      icon: PuzzlePieceIcon,
+      title: 'Your plan lowers the rate',
+      body: 'Free is 3%, Pro is 2%, and Business is 1.5% — plus RM 1 per paid ticket.',
     },
     {
-      name: 'Kit Collection',
-      description:
-        'Track event kit distribution with variants, eligibility rules, and collection statistics.',
-      icon: ShoppingBagIcon,
-    },
-    {
-      name: 'Certificates',
-      description:
-        'Generate participation certificates with customizable templates, eligibility rules, and QR verification.',
-      icon: DocumentCheckIcon,
-    },
-    {
-      name: 'Crew Management',
-      description:
-        'Manage team members with roles, permissions, custom overrides, and invitations.',
-      icon: UserGroupIcon,
-    },
-    {
-      name: 'Custom Fields',
-      description:
-        'Create custom registration forms with advanced field types.',
-      icon: AdjustmentsHorizontalIcon,
-    },
-    {
-      name: 'Partners',
-      description:
-        'Manage speakers and sponsors with profiles, self-service portals, and event assignments.',
-      icon: BriefcaseIcon,
-    },
-    {
-      name: 'Live Polling',
-      description:
-        'Run real-time polls with instant results display and presenter mode.',
-      icon: ChartBarIcon,
-    },
-    {
-      name: 'Q&A Sessions',
-      description:
-        'Enable attendee questions with upvoting, moderation, and presenter view.',
-      icon: ChatBubbleLeftRightIcon,
-    },
-    {
-      name: 'Social Wall',
-      description:
-        'Display a moderated social wall with masonry layout aggregating posts with your event hashtag.',
-      icon: HashtagIcon,
-    },
-    {
-      name: 'Gamification',
-      description:
-        'Award points, badges, and leaderboards with streaks to boost participant engagement.',
-      icon: TrophyIcon,
-    },
-    {
-      name: 'Event Surveys',
-      description:
-        'Send post-event surveys with multiple question types, NPS scoring, analytics, and CSV export.',
-      icon: ClipboardDocumentCheckIcon,
-    },
-    {
-      name: 'Advanced Reporting',
-      description:
-        'Detailed analytics, financial reports, and export capabilities for every event.',
-      icon: PresentationChartLineIcon,
-    },
-    {
-      name: 'Event Templates',
-      description:
-        'Save event configurations as reusable templates to speed up future event setup.',
-      icon: DocumentDuplicateIcon,
-    },
-    {
-      name: 'Virtual Business Cards',
-      description:
-        'Exchange digital business cards via QR codes with vCard download and contacts management.',
-      icon: IdentificationIcon,
-    },
-    {
-      name: 'Call for Papers',
-      description:
-        'Accept session proposals from speakers with a submission and review workflow.',
-      icon: DocumentTextIcon,
-    },
-    {
-      name: 'Bundle Discounts',
-      description:
-        'Offer buy-X-get-Y-free deals combinable with discount codes and early bird pricing.',
-      icon: TagIcon,
+      title: 'Automatic and transparent',
+      body: 'The fee is calculated and deducted from your payout automatically. No hidden charges.',
     },
   ]
 
   return (
     <div className="bg-gray-50 py-24 dark:bg-gray-900">
       <Container>
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-3xl">
           <div className="text-center">
-            <Subheading>Free Add-ons</Subheading>
+            <Subheading>Platform fee</Subheading>
             <Heading as="h2" className="mt-2">
-              All add-ons included at no cost.
+              Pay a small fee only when you get paid.
             </Heading>
             <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
-              Enable any of these capabilities anytime. No upgrades, no
-              surprises, no extra fees.
+              On top of your plan, a per-ticket platform fee applies to paid
+              registrations. Your plan sets the rate.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {freeAddons.map((addon) => (
+          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+            {[
+              { name: 'Free', fee: '3% + RM 1' },
+              { name: 'Pro', fee: '2% + RM 1' },
+              { name: 'Business', fee: '1.5% + RM 1' },
+            ].map((tier) => (
               <div
-                key={addon.name}
-                className="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+                key={tier.name}
+                className="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm dark:border-gray-700 dark:bg-gray-800"
               >
-                <addon.icon className="size-8 text-blue-600 dark:text-blue-400" />
-                <h4 className="mt-4 text-base font-semibold text-gray-950 dark:text-white">
-                  {addon.name}
-                </h4>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                  {addon.description}
+                <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                  {tier.name}
                 </p>
-                <div className="mt-4">
-                  <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                    Free
-                  </span>
+                <p className="mt-2 text-2xl font-semibold text-gray-950 dark:text-white">
+                  {tier.fee}
+                </p>
+                <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                  per paid ticket
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 space-y-4 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+            {points.map((point) => (
+              <div key={point.title} className="flex items-start gap-3">
+                <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
+                <div>
+                  <p className="text-sm font-medium text-gray-950 dark:text-white">
+                    {point.title}
+                  </p>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                    {point.body}
+                  </p>
                 </div>
               </div>
             ))}
@@ -333,199 +116,22 @@ function FreeAddons() {
   )
 }
 
-function ComingSoonAddons() {
-  const addons = [
-    {
-      name: 'Blast Emails & WhatsApp',
-      description:
-        'Send bulk emails and WhatsApp messages to participants with templates, scheduling, and delivery tracking.',
-      icon: EnvelopeIcon,
-    },
-    {
-      name: 'Attendee Networking',
-      description:
-        'Enable attendee directory and networking profiles for professional connections.',
-      icon: UserGroupIcon,
-    },
-    {
-      name: 'Custom Branding',
-      description:
-        'Customize event pages with organization branding and colors.',
-      icon: PaintBrushIcon,
-    },
-    {
-      name: 'API Access',
-      description:
-        'Access REST API for integrations with external systems and webhooks.',
-      icon: CodeBracketIcon,
-    },
-  ]
-
-  return (
-    <Container className="py-24">
-      <div className="mx-auto max-w-5xl">
-        <div className="text-center">
-          <Subheading>Coming Soon</Subheading>
-          <Heading as="h2" className="mt-2">
-            On the way.
-          </Heading>
-          <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
-            New capabilities currently in development. Pricing will be announced
-            closer to launch.
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {addons.map((addon) => (
-            <div
-              key={addon.name}
-              className="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
-            >
-              <span className="absolute right-4 top-4 rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
-                Coming Soon
-              </span>
-              <addon.icon className="size-8 text-blue-600 dark:text-blue-400" />
-              <h4 className="mt-4 text-base font-semibold text-gray-950 dark:text-white">
-                {addon.name}
-              </h4>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                {addon.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </Container>
-  )
-}
-
-function TransactionFees() {
-  return (
-    <div className="bg-gray-50 py-24 dark:bg-gray-900">
-      <Container>
-        <div className="mx-auto max-w-3xl">
-          <div className="text-center">
-            <Subheading>Transaction Fees</Subheading>
-            <Heading as="h2" className="mt-2">
-              Pay only when you collect payments.
-            </Heading>
-            <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
-              We charge a small fee for each paid registration to keep the
-              platform running.
-            </p>
-          </div>
-
-          <div className="mt-12 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-            <div className="flex items-center justify-center gap-3">
-              <CreditCardIcon className="size-8 text-blue-600 dark:text-blue-400" />
-              <div className="text-center">
-                <div className="text-4xl font-semibold text-gray-950 dark:text-white">
-                  3% + RM 1
-                </div>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                  per transaction
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-8 space-y-4 border-t border-gray-200 pt-8 dark:border-gray-700">
-              <div className="flex items-start gap-3">
-                <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
-                <div>
-                  <p className="text-sm font-medium text-gray-950 dark:text-white">
-                    Only charged on successful payments
-                  </p>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                    Free registrations have no fees.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
-                <div>
-                  <p className="text-sm font-medium text-gray-950 dark:text-white">
-                    Transparent pricing
-                  </p>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                    No hidden fees or surprise charges.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
-                <div>
-                  <p className="text-sm font-medium text-gray-950 dark:text-white">
-                    Automatic calculation
-                  </p>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                    Fees are automatically deducted from payouts.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-8 rounded-2xl bg-blue-50 p-6 dark:bg-blue-500/20">
-            <h3 className="text-base font-semibold text-gray-950 dark:text-white">
-              Example calculation
-            </h3>
-            <div className="mt-4 space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">
-                  Ticket price:
-                </span>
-                <span className="font-medium text-gray-950 dark:text-white">
-                  RM 100.00
-                </span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">
-                  Transaction fee (3%):
-                </span>
-                <span className="font-medium text-gray-950 dark:text-white">
-                  RM 3.00
-                </span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">
-                  Fixed fee:
-                </span>
-                <span className="font-medium text-gray-950 dark:text-white">
-                  RM 1.00
-                </span>
-              </div>
-              <div className="flex justify-between border-t border-gray-200 pt-2 dark:border-gray-600">
-                <span className="font-semibold text-gray-950 dark:text-white">
-                  You receive:
-                </span>
-                <span className="font-semibold text-gray-950 dark:text-white">
-                  RM 96.00
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </div>
-  )
-}
-
 function PaymentMethods() {
   const methods = [
     {
-      name: 'Credit & Debit Cards',
-      description: 'Visa, Mastercard, and other major cards',
-      icon: CreditCardIcon,
-    },
-    {
-      name: 'Secure Processing',
-      description: 'PCI-compliant payment processing',
-      icon: ShieldCheckIcon,
-    },
-    {
-      name: 'Bank Transfers',
-      description: 'Direct bank transfers and FPX',
+      name: 'Online banking (FPX)',
+      description: 'Pay directly from any Malaysian bank account.',
       icon: BanknotesIcon,
+    },
+    {
+      name: 'DuitNow QR',
+      description: 'Scan-to-pay with any DuitNow-enabled wallet or bank app.',
+      icon: QrCodeIcon,
+    },
+    {
+      name: 'Manual bank transfer',
+      description: 'Upload a transfer receipt for organizer approval.',
+      icon: BuildingOffice2Icon,
     },
   ]
 
@@ -533,10 +139,14 @@ function PaymentMethods() {
     <Container className="pb-24">
       <div className="mx-auto max-w-3xl">
         <div className="text-center">
-          <Subheading>Payment Methods</Subheading>
+          <Subheading>Payment methods</Subheading>
           <Heading as="h2" className="mt-2">
-            Accept payments your way.
+            How participants pay.
           </Heading>
+          <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
+            Powered by BayarCash. Participants pay with Malaysian rails — no card
+            details are handled by GatherHub.
+          </p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
@@ -560,57 +170,94 @@ function PaymentMethods() {
   )
 }
 
-function FAQ() {
-  const faqs = [
-    {
-      question: 'Are there any monthly fees for the platform?',
-      answer:
-        'No. GatherHub is completely free to use with no monthly subscription fees. You get unlimited events, unlimited participants, and every currently available add-on at no cost.',
-    },
-    {
-      question: 'What add-ons do I get for free?',
-      answer:
-        'All currently available add-ons are free, including Event Sessions, Event Activities, Live Polling, Q&A Sessions, Social Wall, Gamification, Event Surveys, Advanced Reporting, Certificates, Kit Collection, Crew Management, Custom Fields, and Partners. Enable any of them anytime with no extra charges.',
-    },
-    {
-      question: 'Will any of these free add-ons become paid later?',
-      answer:
-        'We have no plans to convert currently free add-ons into paid features. If pricing ever changes for a specific module, existing organizations using it will be notified well in advance.',
-    },
-    {
-      question: 'What if I run free events?',
-      answer:
-        'Free events have no transaction fees at all. You can create unlimited free events and registrations without any charges. Transaction fees only apply when you collect payments from participants.',
-    },
-    {
-      question: 'When are transaction fees charged?',
-      answer:
-        'Transaction fees are automatically deducted when participants pay for registration. The fee is calculated as 3% of the transaction amount plus RM 1, and is deducted before funds are transferred to your account.',
-    },
-    {
-      question: 'Can I pass the fees to participants?',
-      answer:
-        "Yes, you can choose to include transaction fees in your ticket price, or you can enable a setting that adds the fees to the participant's total at checkout. This is entirely your choice.",
-    },
-    {
-      question: 'Are there refund fees?',
-      answer:
-        'When you issue a refund, the transaction fees are also refunded to you. There are no additional fees for processing refunds. Refund requests go through a multi-stage approval workflow for full transparency.',
-    },
-    {
-      question: 'How do I receive my payments?',
-      answer:
-        'Payments are processed through our secure payment partners and deposited directly to your bank account. You can request payouts through the earnings dashboard, which are processed after admin approval.',
-    },
-    {
-      question: 'What does "Coming Soon" mean for add-ons?',
-      answer:
-        'Features marked as "Coming Soon" are currently in development. Blast Emails & WhatsApp, Attendee Networking, Custom Branding, and API Access will be available in future updates. Pricing for these add-ons will be announced closer to launch.',
-    },
+function Enterprise() {
+  const highlights = [
+    'Self-hosted / on-premise deployment',
+    'Dedicated infrastructure and custom SLAs',
+    'Custom integrations and onboarding support',
   ]
 
   return (
     <div className="bg-gray-50 py-24 dark:bg-gray-900">
+      <Container>
+        <div className="mx-auto max-w-3xl rounded-3xl border border-gray-200 bg-white p-10 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+          <BuildingOffice2Icon className="size-8 text-blue-600 dark:text-blue-400" />
+          <Heading as="h2" className="mt-3 text-3xl">
+            Enterprise
+          </Heading>
+          <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
+            Running at scale or need to host GatherHub yourself? Enterprise is a
+            tailored engagement — pricing and scope are scoped with our team.
+          </p>
+          <ul className="mt-6 space-y-3">
+            {highlights.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <CheckIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
+                <span className="text-sm text-gray-600 dark:text-gray-400">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
+            Single sign-on (SAML / OIDC) is on the enterprise roadmap — ask us
+            about timelines for your deployment.
+          </p>
+          <div className="mt-8">
+            <Button href="/contact">Talk to sales</Button>
+          </div>
+        </div>
+      </Container>
+    </div>
+  )
+}
+
+function FAQ() {
+  const faqs = [
+    {
+      question: 'Is there a free plan?',
+      answer:
+        'Yes. The Free plan runs an event end to end — up to 2 active events with every core feature and the free add-ons. Upgrade to Pro or Business when you need more events, a lower platform fee, or advanced features.',
+    },
+    {
+      question: 'What do the paid plans cost?',
+      answer:
+        'Pro is RM 99/month and Business is RM 299/month. They bundle more events, additional features, included email credits, and a lower per-ticket platform fee (2% on Pro, 1.5% on Business).',
+    },
+    {
+      question: 'Can I buy a single feature without a plan?',
+      answer:
+        'Features come with plans rather than being sold individually — pick the plan that includes what you need. This keeps pricing simple and predictable.',
+    },
+    {
+      question: 'What if I run free events?',
+      answer:
+        'Free events have no platform fee at all, on any plan. The per-ticket fee only applies when a participant pays for a ticket.',
+    },
+    {
+      question: 'How is the platform fee charged?',
+      answer:
+        'It is calculated per paid ticket as your plan’s percentage plus RM 1, and deducted automatically before funds are transferred to you.',
+    },
+    {
+      question: 'Can I pass the fee to participants?',
+      answer:
+        'Yes. You can absorb the fee or add it to the participant’s total at checkout — it’s your choice per event.',
+    },
+    {
+      question: 'Are refunds charged a fee?',
+      answer:
+        'No. When you issue a refund the platform fee is returned too, and refunds go through a multi-stage approval workflow for transparency.',
+    },
+    {
+      question: 'How do participants pay, and how do I get paid?',
+      answer:
+        'Participants pay via FPX online banking, DuitNow QR, or manual bank transfer (powered by BayarCash). You request payouts from the earnings dashboard, deposited to your bank account after approval.',
+    },
+  ]
+
+  return (
+    <div className="bg-white py-24 dark:bg-gray-950">
       <Container>
         <div className="mx-auto max-w-3xl">
           <div className="text-center">
@@ -658,8 +305,8 @@ function CTA() {
           Ready to get started?
         </Heading>
         <p className="mx-auto mt-6 max-w-xl text-base text-gray-300">
-          Create your account today and run your first event for free. No credit
-          card required.
+          Create your account today and run your first event on the free plan. No
+          credit card required.
         </p>
         <div className="mt-8 flex justify-center gap-4">
           <Button href={`${config.appUrl}/register`}>Start for free</Button>
@@ -677,11 +324,9 @@ export default function Pricing() {
     <main className="overflow-hidden bg-white dark:bg-gray-950">
       <Hero />
       <PlanComparison />
-      <FreeFeatures />
-      <FreeAddons />
-      <ComingSoonAddons />
       <TransactionFees />
       <PaymentMethods />
+      <Enterprise />
       <FAQ />
       <CTA />
       <Footer />

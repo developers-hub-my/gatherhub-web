@@ -88,34 +88,35 @@ These are configured in `.env.local` (not committed to git).
 
 ## Pricing Model
 
-GatherHub is a free platform. Every currently available add-on is included at no cost; a few new capabilities are in development with pricing to be announced.
+GatherHub uses a **plans-only** model — Free, Pro, and Business. Paid features come
+bundled with a plan; they are **not** sold individually (à la carte). The single
+source of truth is `src/lib/plans.ts` (which mirrors the app's `PlanSeeder` /
+`FeatureSeeder`); the `<PlanComparison />` component renders the full matrix on
+`/pricing`. Keep `plans.ts` in sync with the app when plans change.
 
-**Free Platform (RM 0/month):**
-- Unlimited activities and events
-- Unlimited participants
-- QR code check-in and multi-level attendance tracking
-- Email notifications and reminders
-- Registration forms and capacity management with waitlists
-- Participant management and bulk import
-- Public event directory
+**Plans:**
+- **Free — RM 0**: run events end to end, up to 2 active events + 2 staff seats, all
+  free features. Platform fee 3% + RM 1 per paid ticket.
+- **Pro — RM 99/month**: 20 active events, 10 staff, 10,000 email credits/mo, and the
+  Pro feature bundle (sessions, activities, blast emails, advanced reporting, flash
+  sales, attendee networking, call for papers, unlimited events). Fee **2% + RM 1**.
+- **Business — RM 299/month**: unlimited events + staff, 50,000 email credits/mo, every
+  Pro feature plus sponsor analytics, community templates, vendor listing, and API
+  access. Fee **1.5% + RM 1**.
 
-**Free Add-ons (all currently available):**
-- Event Sessions, Event Activities
-- Live Polling, Q&A Sessions, Social Wall, Gamification
-- Event Surveys, Advanced Reporting
-- Certificates, Kit Collection, Crew Management
-- Custom Fields, Partners
-- Event Templates, Virtual Business Cards, Call for Papers, Bundle Discounts
+**Free features (every plan):** QR check-in & multi-level attendance, participant
+management + bulk import, registration forms + waitlists, refunds & payouts, public
+directory, certificates, live polling, Q&A, surveys, social wall, gamification, kit
+collection, crew management, custom fields, speakers & sponsors.
 
-**Coming Soon (pricing TBA):**
-- Blast Emails & WhatsApp
-- Attendee Networking
-- Custom Branding
-- API Access
+**Not yet built:** Custom Branding (roadmap).
 
-**Transaction Fees:**
-- 3% + RM 1 per transaction (only on paid registrations)
-- Free events have no fees
+**Platform fee:** per paid ticket, varies by plan (3% / 2% / 1.5% + RM 1). Free events
+never incur a fee.
+
+**Payments:** BayarCash — FPX online banking, DuitNow QR, and manual bank transfer.
+**No credit-card processing.** Do not advertise Visa/Mastercard/PCI. Enterprise SSO
+(SAML/OIDC) is **roadmap, not shipped** — never list it as "included".
 
 ## Key Features
 

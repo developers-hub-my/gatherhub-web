@@ -91,7 +91,7 @@ function TrustIndicators() {
       icon: ShieldCheckIcon,
     },
     {
-      label: 'Monthly platform fee',
+      label: 'Free plan',
       value: 'RM 0',
       icon: CurrencyDollarIcon,
     },
@@ -740,9 +740,9 @@ function WhyGatherHub() {
       icon: DocumentCheckIcon,
     },
     {
-      title: 'Free until you charge',
+      title: 'Start free',
       description:
-        'No monthly fees. Run unlimited free events at no cost. Only pay when you collect payments.',
+        'A free plan runs your events end to end. Upgrade to Pro or Business for more events, advanced features, and a lower platform fee.',
       icon: CurrencyDollarIcon,
     },
     {
@@ -892,9 +892,9 @@ function FinalCTA() {
             Create your first event in 5 minutes.
           </Heading>
           <p className="mx-auto mt-6 max-w-xl text-base text-gray-300">
-            No credit card required. No monthly fees. Run your first activity
-            with clarity, prove participation, and manage events with verifiable
-            proof today.
+            No credit card required. Start on the free plan. Run your first
+            activity with clarity, prove participation, and manage events with
+            verifiable proof today.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Button href={`${config.appUrl}/register`}>

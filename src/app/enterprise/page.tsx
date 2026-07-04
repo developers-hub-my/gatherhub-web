@@ -518,13 +518,13 @@ function ComparisonTable() {
   const rows = [
     { feature: 'Hosting', saas: 'Multi-tenant (managed)', enterprise: 'Single-tenant (your infrastructure)' },
     { feature: 'Data residency', saas: 'GatherHub region', enterprise: 'Your choice' },
-    { feature: 'SSO (SAML/OIDC/LDAP)', saas: 'Not available', enterprise: 'Included' },
+    { feature: 'SSO (SAML/OIDC)', saas: 'Not available', enterprise: 'On the roadmap' },
     { feature: 'Audit log export', saas: 'Limited', enterprise: 'Full export to SIEM' },
-    { feature: 'Custom branding', saas: 'Coming soon', enterprise: 'Included' },
+    { feature: 'Custom branding', saas: 'On the roadmap', enterprise: 'On the roadmap' },
     { feature: 'Air-gapped install', saas: 'Not applicable', enterprise: 'Supported' },
     { feature: 'Implementation support', saas: 'Self-serve', enterprise: 'Dedicated delivery engineer' },
     { feature: 'Support SLA', saas: 'Email support', enterprise: 'Contracted SLA with escalation' },
-    { feature: 'Pricing', saas: 'Free + transaction fees', enterprise: 'Annual licence + setup' },
+    { feature: 'Pricing', saas: 'Free / Pro / Business plans', enterprise: 'Annual licence + setup' },
   ]
 
   return (
@@ -594,7 +594,7 @@ function FAQ() {
     {
       question: 'Can we integrate with our existing identity provider?',
       answer:
-        'Yes. SAML 2.0, OpenID Connect, and LDAP / Active Directory are supported with just-in-time user provisioning and group-to-role mapping.',
+        'Single sign-on (SAML 2.0 / OpenID Connect) is on the enterprise roadmap. Talk to us about your identity-provider requirements and timelines for your deployment.',
     },
     {
       question: 'How long does implementation take?',
@@ -646,8 +646,8 @@ function CTA() {
   const highlights = [
     'PDPA compliant',
     'SOC 2 aligned controls',
-    'SSO included',
     'Dedicated delivery engineer',
+    'Self-hosted deployment',
   ]
 
   return (

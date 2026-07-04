@@ -167,9 +167,8 @@ export function PlanComparison() {
         </div>
 
         <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-gray-500 dark:text-gray-400">
-          Free features are included on every plan. Individual paid features can
-          also be bought on their own without a plan. The platform fee applies
-          only to paid tickets — free events never incur a fee.
+          Free features are included on every plan. The platform fee applies only
+          to paid tickets — free events never incur a fee.
         </p>
       </Container>
     </div>
