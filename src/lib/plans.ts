@@ -141,7 +141,7 @@ export const featureGroups: FeatureGroup[] = [
     rows: [
       { name: 'Advanced reporting & exports', values: proUp },
       { name: 'REST API access', values: businessOnly },
-      { name: 'Webhooks', values: all },
+      { name: 'Webhooks', values: businessOnly },
     ],
   },
 ]
