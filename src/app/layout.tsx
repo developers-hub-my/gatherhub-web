@@ -1,5 +1,6 @@
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
+import { GoogleAnalytics } from '@/components/google-analytics'
 import { ThemeProvider } from '@/components/theme-provider'
 
 const siteUrl = 'https://gatherhub.app'
@@ -76,6 +77,7 @@ export default function RootLayout({
       </head>
       <body className="bg-white text-gray-950 antialiased transition-colors dark:bg-gray-950 dark:text-gray-50">
         <ThemeProvider>{children}</ThemeProvider>
+        <GoogleAnalytics />
       </body>
     </html>
   )
