@@ -1,7 +1,7 @@
-import '@/styles/tailwind.css'
-import type { Metadata } from 'next'
 import { GoogleAnalytics } from '@/components/google-analytics'
 import { ThemeProvider } from '@/components/theme-provider'
+import '@/styles/tailwind.css'
+import type { Metadata } from 'next'
 
 const siteUrl = 'https://gatherhub.app'
 
@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   },
   description:
     'Run events with clarity and proof. QR check-in, verifiable certificates, and attendance tracking — all free to start.',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -52,12 +55,6 @@ export default function RootLayout({
           as="font"
           type="font/woff2"
           crossOrigin=""
-        />
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="Gather Hub Blog"
-          href="/blog/feed.xml"
         />
         <script
           dangerouslySetInnerHTML={{

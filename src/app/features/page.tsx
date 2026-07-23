@@ -42,6 +42,9 @@ import {
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/features',
+  },
   title: 'Features',
   description:
     'Discover all the features that make Gather Hub the best platform for managing events, workshops, and activities.',

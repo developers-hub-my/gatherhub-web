@@ -5,6 +5,9 @@ import { Heading, Subheading } from '@/components/text'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/privacy',
+  },
   title: 'Privacy Policy',
   description:
     'Learn how Gather Hub collects, uses, and protects your personal information.',

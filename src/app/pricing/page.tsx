@@ -1,6 +1,7 @@
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
+import { JsonLd } from '@/components/json-ld'
 import { Navbar } from '@/components/navbar'
 import { PlanComparison } from '@/components/plan-comparison'
 import { Heading, Subheading } from '@/components/text'
@@ -14,6 +15,9 @@ import {
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/pricing',
+  },
   title: 'Pricing',
   description:
     'Start free and upgrade as you grow. Free, Pro, and Business plans with a platform fee that only applies to paid tickets.',
@@ -24,7 +28,7 @@ function Hero() {
     <div className="bg-white dark:bg-gray-950">
       <Container>
         <Navbar />
-        <div className="pb-16 pt-8">
+        <div className="pt-8 pb-16">
           <Subheading>Pricing</Subheading>
           <Heading as="h1" className="mt-2 max-w-4xl">
             Start free, upgrade as you grow.
@@ -32,8 +36,8 @@ function Hero() {
           <p className="mt-4 max-w-2xl text-base text-gray-600 dark:text-gray-400">
             Every plan runs an event end to end. Paid plans add more events, a
             lower platform fee, included email credits, and advanced features.
-            The platform fee applies only when you collect payments — free events
-            never incur a fee.
+            The platform fee applies only when you collect payments — free
+            events never incur a fee.
           </p>
         </div>
       </Container>
@@ -144,8 +148,8 @@ function PaymentMethods() {
             How participants pay.
           </Heading>
           <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
-            Powered by BayarCash. Participants pay with Malaysian rails — no card
-            details are handled by GatherHub.
+            Powered by BayarCash. Participants pay with Malaysian rails — no
+            card details are handled by GatherHub.
           </p>
         </div>
 
@@ -212,50 +216,50 @@ function Enterprise() {
   )
 }
 
-function FAQ() {
-  const faqs = [
-    {
-      question: 'Is there a free plan?',
-      answer:
-        'Yes. The Free plan runs an event end to end — up to 2 active events with every core feature and the free add-ons. Upgrade to Pro or Business when you need more events, a lower platform fee, or advanced features.',
-    },
-    {
-      question: 'What do the paid plans cost?',
-      answer:
-        'Pro is RM 99/month and Business is RM 299/month. They bundle more events, additional features, included email credits, and a lower per-ticket platform fee (2% on Pro, 1.5% on Business).',
-    },
-    {
-      question: 'Can I buy a single feature without a plan?',
-      answer:
-        'Features come with plans rather than being sold individually — pick the plan that includes what you need. This keeps pricing simple and predictable.',
-    },
-    {
-      question: 'What if I run free events?',
-      answer:
-        'Free events have no platform fee at all, on any plan. The per-ticket fee only applies when a participant pays for a ticket.',
-    },
-    {
-      question: 'How is the platform fee charged?',
-      answer:
-        'It is calculated per paid ticket as your plan’s percentage plus RM 1, and deducted automatically before funds are transferred to you.',
-    },
-    {
-      question: 'Can I pass the fee to participants?',
-      answer:
-        'Yes. You can absorb the fee or add it to the participant’s total at checkout — it’s your choice per event.',
-    },
-    {
-      question: 'Are refunds charged a fee?',
-      answer:
-        'No. When you issue a refund the platform fee is returned too, and refunds go through a multi-stage approval workflow for transparency.',
-    },
-    {
-      question: 'How do participants pay, and how do I get paid?',
-      answer:
-        'Participants pay via FPX online banking, DuitNow QR, or manual bank transfer (powered by BayarCash). You request payouts from the earnings dashboard, deposited to your bank account after approval.',
-    },
-  ]
+const faqs = [
+  {
+    question: 'Is there a free plan?',
+    answer:
+      'Yes. The Free plan runs an event end to end — up to 2 active events with every core feature and the free add-ons. Upgrade to Pro or Business when you need more events, a lower platform fee, or advanced features.',
+  },
+  {
+    question: 'What do the paid plans cost?',
+    answer:
+      'Pro is RM 99/month and Business is RM 299/month. They bundle more events, additional features, included email credits, and a lower per-ticket platform fee (2% on Pro, 1.5% on Business).',
+  },
+  {
+    question: 'Can I buy a single feature without a plan?',
+    answer:
+      'Features come with plans rather than being sold individually — pick the plan that includes what you need. This keeps pricing simple and predictable.',
+  },
+  {
+    question: 'What if I run free events?',
+    answer:
+      'Free events have no platform fee at all, on any plan. The per-ticket fee only applies when a participant pays for a ticket.',
+  },
+  {
+    question: 'How is the platform fee charged?',
+    answer:
+      'It is calculated per paid ticket as your plan’s percentage plus RM 1, and deducted automatically before funds are transferred to you.',
+  },
+  {
+    question: 'Can I pass the fee to participants?',
+    answer:
+      'Yes. You can absorb the fee or add it to the participant’s total at checkout — it’s your choice per event.',
+  },
+  {
+    question: 'Are refunds charged a fee?',
+    answer:
+      'No. When you issue a refund the platform fee is returned too, and refunds go through a multi-stage approval workflow for transparency.',
+  },
+  {
+    question: 'How do participants pay, and how do I get paid?',
+    answer:
+      'Participants pay via FPX online banking, DuitNow QR, or manual bank transfer (powered by BayarCash). You request payouts from the earnings dashboard, deposited to your bank account after approval.',
+  },
+]
 
+function FAQ() {
   return (
     <div className="bg-white py-24 dark:bg-gray-950">
       <Container>
@@ -305,8 +309,8 @@ function CTA() {
           Ready to get started?
         </Heading>
         <p className="mx-auto mt-6 max-w-xl text-base text-gray-300">
-          Create your account today and run your first event on the free plan. No
-          credit card required.
+          Create your account today and run your first event on the free plan.
+          No credit card required.
         </p>
         <div className="mt-8 flex justify-center gap-4">
           <Button href={`${config.appUrl}/register`}>Start for free</Button>
@@ -319,9 +323,35 @@ function CTA() {
   )
 }
 
+const faqPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+}
+
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Gather Hub',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://gatherhub.app',
+  offers: [
+    { '@type': 'Offer', name: 'Free', price: '0', priceCurrency: 'MYR' },
+    { '@type': 'Offer', name: 'Pro', price: '99', priceCurrency: 'MYR' },
+    { '@type': 'Offer', name: 'Business', price: '299', priceCurrency: 'MYR' },
+  ],
+}
+
 export default function Pricing() {
   return (
     <main className="overflow-hidden bg-white dark:bg-gray-950">
+      <JsonLd schema={faqPageSchema} />
+      <JsonLd schema={softwareApplicationSchema} />
       <Hero />
       <PlanComparison />
       <TransactionFees />

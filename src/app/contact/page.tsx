@@ -11,6 +11,9 @@ import type { Metadata } from 'next'
 import { ContactForm } from './contact-form'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/contact',
+  },
   title: 'Contact Us',
   description:
     'Get in touch with the Gather Hub team. We are here to help you run better events.',

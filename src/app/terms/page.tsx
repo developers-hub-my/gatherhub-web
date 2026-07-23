@@ -5,6 +5,9 @@ import { Heading, Subheading } from '@/components/text'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/terms',
+  },
   title: 'Terms of Service',
   description:
     'Read the terms and conditions for using Gather Hub platform.',

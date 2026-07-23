@@ -33,6 +33,9 @@ import {
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/enterprise',
+  },
   title: 'Enterprise & On-Premise',
   description:
     'Run GatherHub on your own infrastructure. PDPA compliant, SOC 2 aligned, with SSO, audit logging, and dedicated implementation support.',
