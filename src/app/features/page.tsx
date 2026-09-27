@@ -269,7 +269,7 @@ function MainFeatures() {
         {/* Section 5: Certificates & Recognition */}
         <FeatureSection
           title="Certificates & Recognition"
-          description="Generate professional certificates with flexible eligibility rules. Reward participation with verified, QR-verifiable credentials."
+          description="Generate professional certificates with flexible eligibility rules. Recognise participation with certificates that carry a QR code."
           features={[
             {
               name: 'Customizable templates',

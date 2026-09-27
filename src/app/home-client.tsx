@@ -47,16 +47,16 @@ function Hero() {
               People&apos;s Choice booth voting
             </span>
             <h1 className="mt-6 text-5xl/[0.98] font-bold tracking-tighter text-balance text-white sm:text-7xl/[0.95]">
-              Run the day.{' '}
+              Run the day{' '}
               <span className="bg-linear-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent">
-                Prove who was there.
+                seamlessly.
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg/8 text-slate-400">
-              GatherHub takes an event from registration to certificate — and
-              holds up on the day itself: gate scans that keep working when the
-              Wi-Fi doesn&apos;t, a live headcount, and attendance records you
-              can stand behind.
+              GatherHub handles your event from registration to certificate —
+              and keeps the day itself moving: quick check-in at every gate,
+              even when the Wi-Fi drops, a live headcount, and your whole crew
+              on the same page.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Button href={`${config.appUrl}/register`}>
@@ -374,8 +374,8 @@ const stages = [
   {
     key: 'Wrap',
     state: 'Ended',
-    title: 'Prove it happened',
-    body: 'Certificates only for people who attended, a survey, and a one-page PDF summary for your report.',
+    title: 'Wrap it up',
+    body: 'Certificates for everyone who attended, a feedback survey, and a one-page PDF summary for your report.',
     rows: [
       ['Certificates issued', '58'],
       ['Survey responses', '41'],
@@ -594,7 +594,7 @@ function EventDay() {
           <BentoCard
             icon={CameraIcon}
             title="Check-in photo"
-            body="Optional selfie at check-in as attendance proof. Two separate consents, deleted after 30 days. No face matching."
+            body="An optional selfie at check-in — a photo memory of the day. Two separate consents, deleted after 30 days. No face matching."
             className="lg:col-span-2"
           >
             <div className="flex gap-2.5">
@@ -617,8 +617,8 @@ function EventDay() {
           </BentoCard>
           <BentoCard
             icon={CheckBadgeIcon}
-            title="Certificates that check out"
-            body="Issued only to people who were actually scanned in. Each has a QR anyone can scan to verify it's real."
+            title="Certificates in one click"
+            body="Sent to everyone who checked in, right after the event. Each carries a QR code, so recipients can share it with confidence."
             className="lg:col-span-3"
           >
             <div className="flex items-center gap-4 rounded-xl bg-white p-4 text-slate-900">
@@ -629,7 +629,7 @@ function EventDay() {
                 </p>
                 <p className="font-semibold">Nur Aisyah binti Rahman</p>
                 <p className="font-mono text-[11px] text-blue-600">
-                  GH-CERT-2026-0482 · Verified
+                  GH-CERT-2026-0482 · Issued
                 </p>
               </div>
             </div>

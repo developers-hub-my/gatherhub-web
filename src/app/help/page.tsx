@@ -190,7 +190,7 @@ const faqSections = [
       {
         question: 'What types of activities can I create?',
         answer:
-          'Gather Hub supports workshops, seminars, conferences, training sessions, community events, and any type of gathering that requires registration, attendance tracking, and participation proof.',
+          'Gather Hub supports workshops, seminars, conferences, training sessions, community events, and any type of gathering that needs registration, check-in and certificates.',
       },
       {
         question: 'Is there a trial period?',

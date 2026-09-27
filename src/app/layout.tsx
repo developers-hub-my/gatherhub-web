@@ -16,10 +16,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     template: '%s - Gather Hub',
-    default: 'Gather Hub - Event Platform That Proves Participation',
+    default: 'Gather Hub - Event Management, From Sign-up to Wrap-up',
   },
   description:
-    'Run events with clarity and proof. QR check-in, verifiable certificates, and attendance tracking — all free to start.',
+    'Plan, sell, run and wrap up your events in one place — registration, FPX and DuitNow payments, QR check-in and certificates. Free to start.',
   alternates: {
     canonical: '/',
   },
@@ -27,16 +27,16 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Gather Hub',
-    title: 'Gather Hub - Event Platform That Proves Participation',
+    title: 'Gather Hub - Event Management, From Sign-up to Wrap-up',
     description:
-      'Run events with clarity and proof. QR check-in, verifiable certificates, and attendance tracking — all free to start.',
+      'Plan, sell, run and wrap up your events in one place — registration, FPX and DuitNow payments, QR check-in and certificates. Free to start.',
     url: siteUrl,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gather Hub - Event Platform That Proves Participation',
+    title: 'Gather Hub - Event Management, From Sign-up to Wrap-up',
     description:
-      'Run events with clarity and proof. QR check-in, verifiable certificates, and attendance tracking — all free to start.',
+      'Plan, sell, run and wrap up your events in one place — registration, FPX and DuitNow payments, QR check-in and certificates. Free to start.',
   },
 }
 
