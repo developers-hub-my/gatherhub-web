@@ -2,6 +2,13 @@ import { GoogleAnalytics } from '@/components/google-analytics'
 import { ThemeProvider } from '@/components/theme-provider'
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
+import { JetBrains_Mono } from 'next/font/google'
+
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  display: 'swap',
+})
 
 const siteUrl = 'https://gatherhub.app'
 
@@ -39,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={mono.variable} suppressHydrationWarning>
       <head>
         {/* Preload critical font weights for faster text rendering */}
         <link

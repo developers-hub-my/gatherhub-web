@@ -34,6 +34,12 @@
 
 @theme {
   --font-sans: Switzer, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  /* Event-day palette (doc 25) */
+  --color-ink: #0b1220;
+  --color-ink-2: #111a2e;
+  --color-ink-3: #1b2640;
 
   --radius-4xl: 2rem;
 }
