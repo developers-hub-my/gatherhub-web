@@ -3,9 +3,9 @@ import type { Metadata } from 'next'
 import HomeClient from './home-client'
 
 export const metadata: Metadata = {
-  title: 'Gather Hub - Event Platform That Proves Participation',
+  title: 'Gather Hub - Event Management, From Sign-up to Wrap-up',
   description:
-    'Run events with clarity and proof. QR check-in, verifiable certificates, and attendance tracking — all free to start.',
+    'Plan, sell, run and wrap up your events in one place — registration, FPX and DuitNow payments, QR check-in and certificates. Free to start.',
 }
 
 const siteUrl = 'https://gatherhub.app'
@@ -17,7 +17,7 @@ const organizationSchema = {
   url: siteUrl,
   logo: `${siteUrl}/apple-icon.png`,
   description:
-    'Event management platform with QR check-in, verifiable certificates, and attendance tracking.',
+    'Event management platform for registration, payments, QR check-in and certificates.',
 }
 
 const webSiteSchema = {

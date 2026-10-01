@@ -1,941 +1,758 @@
 'use client'
 
-import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
-import { config } from '@/lib/config'
+import { Link } from '@/components/link'
 import { Navbar } from '@/components/navbar'
-import { Heading, Subheading } from '@/components/text'
-import {
-  CheckCircleIcon,
-  ClipboardDocumentListIcon,
-  QrCodeIcon,
-  TicketIcon,
-  ShieldCheckIcon,
-  ClockIcon,
-  CurrencyDollarIcon,
-  UserPlusIcon,
-} from '@heroicons/react/24/outline'
+import { config } from '@/lib/config'
+import { plans } from '@/lib/plans'
 import {
   AcademicCapIcon,
+  ArrowRightIcon,
+  BriefcaseIcon,
+  BuildingLibraryIcon,
   BuildingOffice2Icon,
-  CalendarDaysIcon,
   ChartBarIcon,
-  DocumentCheckIcon,
-  SparklesIcon,
-  UserCircleIcon,
-  UsersIcon,
   CheckBadgeIcon,
-  StarIcon,
-} from '@heroicons/react/24/solid'
-import { motion } from 'framer-motion'
+  CheckIcon,
+  ComputerDesktopIcon,
+  DocumentTextIcon,
+  MicrophoneIcon,
+  QrCodeIcon,
+  TicketIcon,
+  UserGroupIcon,
+} from '@heroicons/react/24/outline'
+import { clsx } from 'clsx'
+import Image from 'next/image'
+
+// Warm landing (doc 25 proposal B). Real content only: photos from G8Deck Uni
+// Discovery at GMI Bangi, events from my.gatherhub.app.
+
+const directoryUrl = 'https://my.gatherhub.app/events'
+const storyUrl =
+  'https://devhub.my/resources/articles/g8deck-uni-discovery-workshop/'
+const photo = (name: string) => `/stories/g8deck-gmi/${name}.webp`
+
+function Serif({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="font-serif text-[1.1em] font-normal tracking-normal text-blue-600 italic dark:text-blue-400">
+      {children}
+    </span>
+  )
+}
+
+function Eyebrow({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
+  return (
+    <p
+      className={clsx(
+        'inline-flex items-center gap-2 text-sm font-semibold text-orange-600 before:h-0.5 before:w-4.5 before:rounded-full before:bg-current dark:text-orange-400',
+        className,
+      )}
+    >
+      {children}
+    </p>
+  )
+}
+
+function H2({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
+  return (
+    <h2
+      className={clsx(
+        'mt-3.5 text-4xl/[1.05] font-semibold tracking-tighter text-balance text-stone-ink sm:text-5xl/[1.04] dark:text-white',
+        className,
+      )}
+    >
+      {children}
+    </h2>
+  )
+}
+
+function CtaButton({
+  href,
+  variant = 'dark',
+  children,
+}: {
+  href: string
+  variant?: 'dark' | 'light'
+  children: React.ReactNode
+}) {
+  return (
+    <Link
+      href={href}
+      className={clsx(
+        'inline-flex h-12.5 items-center gap-2 rounded-2xl px-6 text-[15px] font-semibold transition hover:-translate-y-px',
+        variant === 'dark'
+          ? 'bg-stone-ink text-white hover:shadow-lg hover:shadow-stone-900/30 dark:bg-blue-600'
+          : 'border border-line bg-white text-stone-ink dark:border-white/15 dark:bg-white/5 dark:text-white',
+      )}
+    >
+      {children}
+    </Link>
+  )
+}
+
+const stickers = [
+  {
+    icon: CheckIcon,
+    title: 'Checked in',
+    note: 'Doors open, no queue',
+    tone: 'bg-emerald-100 text-emerald-600',
+    pos: '-left-3.5 bottom-28',
+  },
+  {
+    icon: TicketIcon,
+    title: 'Registration open',
+    note: 'Seats filling up',
+    tone: 'bg-blue-100 text-blue-600',
+    pos: 'left-[44%] -top-2.5',
+  },
+  {
+    icon: CheckBadgeIcon,
+    title: 'Certificates sent',
+    note: 'Right after the event',
+    tone: 'bg-orange-100 text-orange-600',
+    pos: '-right-2.5 top-[270px]',
+  },
+]
 
 function Hero() {
   return (
-    <div className="relative overflow-hidden bg-white dark:bg-gray-950">
-      {/* Modern gradient orbs */}
-      <div className="absolute -top-40 -right-40 size-80 rounded-full bg-blue-100 opacity-60 blur-3xl dark:bg-blue-500/20" />
-      <div className="absolute -bottom-40 -left-40 size-80 rounded-full bg-blue-50 opacity-80 blur-3xl dark:bg-blue-600/10" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 rounded-full bg-sky-50 opacity-50 blur-3xl dark:bg-sky-500/10" />
-
-      <Container className="relative">
+    <div className="bg-paper dark:bg-gray-950">
+      <Container>
         <Navbar />
-        <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="font-display text-5xl/[0.9] font-medium tracking-tight text-balance text-gray-950 dark:text-white sm:text-7xl/[0.85] md:text-8xl/[0.85]">
-              The event platform that proves participation.
+        <div className="grid grid-cols-1 items-center gap-12 pt-12 pb-20 lg:grid-cols-[1fr_1.05fr] lg:pt-16">
+          <div>
+            <Eyebrow>Event management for Malaysia</Eyebrow>
+            <h1 className="mt-4.5 text-5xl/none font-semibold tracking-tighter text-balance text-stone-ink sm:text-7xl/none dark:text-white">
+              Events that run <Serif>seamlessly</Serif>, from sign-up to
+              thank-you.
             </h1>
-          </motion.div>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-8 max-w-xl text-lg/7 font-medium text-gray-600 dark:text-gray-300 sm:text-xl/8"
-          >
-            The event platform that proves participation at every step — from
-            registration to QR check-in to verifiable certificates. Run
-            activities with clarity, track every participant, and validate
-            attendance with proof.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row"
-          >
-            <Button href={`${config.appUrl}/register`}>Start for free</Button>
-            <Button variant="secondary" href="#how-it-works">
-              See how it works
-            </Button>
-          </motion.div>
-        </div>
-      </Container>
-    </div>
-  )
-}
-
-function TrustIndicators() {
-  const stats = [
-    {
-      label: 'Average check-in time',
-      value: '3 sec',
-      icon: ClockIcon,
-    },
-    {
-      label: 'Verifiable certificates',
-      value: '100%',
-      icon: ShieldCheckIcon,
-    },
-    {
-      label: 'Free plan',
-      value: 'RM 0',
-      icon: CurrencyDollarIcon,
-    },
-  ]
-
-  return (
-    <Container className="pb-24">
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-        {stats.map((stat, index) => (
-          <motion.div
-            key={stat.label}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex flex-col items-center text-center"
-          >
-            <div className="mb-3 flex size-12 items-center justify-center rounded-full bg-blue-50 dark:bg-blue-500/20">
-              <stat.icon className="size-6 text-blue-600 dark:text-blue-400" />
+            <p className="mt-5 max-w-xl text-lg/8 text-stone-600 dark:text-gray-400">
+              Registration, payments, check-in, certificates and everything in
+              between — in one place your whole team can use. So on the day, you
+              get to be with your people instead of your spreadsheets.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <CtaButton href={`${config.appUrl}/register`}>
+                Start your first event <ArrowRightIcon className="size-5" />
+              </CtaButton>
+              <CtaButton href="#event-day" variant="light">
+                See how a day runs
+              </CtaButton>
             </div>
-            <div className="text-4xl font-semibold text-gray-950 dark:text-white">
-              {stat.value}
-            </div>
-            <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
-          </motion.div>
-        ))}
-      </div>
-    </Container>
-  )
-}
-
-function ProblemSolution() {
-  return (
-    <Container className="pb-24">
-      <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <Subheading>The Problem</Subheading>
-          <Heading as="h2" className="mt-2">
-            Without proof, participation means nothing.
-          </Heading>
-          <div className="mt-8 space-y-4">
-            {[
-              'Attendance disputes with no verifiable records',
-              'Hours spent manually creating certificates',
-              'Registration scattered across spreadsheets and emails',
-              'No audit trail when stakeholders ask questions',
-            ].map((problem, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="flex items-start gap-3"
-              >
-                <div className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-red-100 dark:bg-red-500/20">
-                  <div className="size-2 rounded-full bg-red-500 dark:bg-red-400" />
-                </div>
-                <p className="text-base text-gray-600 dark:text-gray-300">{problem}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <Subheading>The Solution</Subheading>
-          <Heading as="h2" className="mt-2">
-            Run activities with clarity at every step.
-          </Heading>
-          <div className="mt-8 space-y-4">
-            {[
-              'QR-verified attendance that anyone can validate',
-              'One-click certificate generation with unique IDs',
-              'Centralized registration with real-time tracking',
-              'Complete audit trail and exportable reports',
-            ].map((solution, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="flex items-start gap-3"
-              >
-                <CheckCircleIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
-                <p className="text-base text-gray-600 dark:text-gray-300">{solution}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-    </Container>
-  )
-}
-
-function HowItWorksSection() {
-  const steps = [
-    {
-      number: 1,
-      title: 'Create an activity',
-      description:
-        'Set up your event, workshop, or programme with ticketing options.',
-      icon: CalendarDaysIcon,
-      color: 'bg-blue-600',
-    },
-    {
-      number: 2,
-      title: 'Sell tickets',
-      description: 'Participants register and pay online in real time.',
-      icon: TicketIcon,
-      color: 'bg-blue-500',
-    },
-    {
-      number: 3,
-      title: 'Validate attendance',
-      description: 'Use QR codes or manual check-in to track attendance.',
-      icon: QrCodeIcon,
-      color: 'bg-sky-500',
-    },
-    {
-      number: 4,
-      title: 'Issue proof',
-      description: 'Generate certificates instantly with one click.',
-      icon: DocumentCheckIcon,
-      color: 'bg-blue-500',
-    },
-    {
-      number: 5,
-      title: 'Export reports',
-      description: 'Download complete attendance and payment records.',
-      icon: ChartBarIcon,
-      color: 'bg-blue-600',
-    },
-  ]
-
-  return (
-    <div id="how-it-works" className="scroll-mt-20">
-      <Container className="pb-24">
-        <div className="text-center">
-          <Subheading>How It Works</Subheading>
-          <Heading as="h2" className="mt-2">
-            Five steps to run activities and prove participation.
-          </Heading>
-        </div>
-        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative flex flex-col"
-            >
-              <div
-                className={`mb-4 flex size-14 items-center justify-center rounded-2xl ${step.color} shadow-lg`}
-              >
-                <step.icon className="size-7 text-white" />
-              </div>
-              <p className="text-base font-semibold text-gray-950 dark:text-white">
-                {step.title}
-              </p>
-              <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
-                {step.description}
-              </p>
-              {index < steps.length - 1 && (
-                <div className="absolute -right-4 top-7 hidden lg:block">
-                  <svg
-                    className="size-8 text-gray-300 dark:text-gray-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
+            <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-stone-600 dark:text-gray-400">
+              {['Free plan', 'FPX & DuitNow QR', 'Online or in person'].map(
+                (item) => (
+                  <li key={item} className="flex items-center gap-1.5">
+                    <CheckIcon className="size-4 text-emerald-600" />
+                    {item}
+                  </li>
+                ),
               )}
-            </motion.div>
-          ))}
-        </div>
-      </Container>
-    </div>
-  )
-}
+            </ul>
+          </div>
 
-function CertificateVerification() {
-  return (
-    <div className="relative overflow-hidden bg-linear-to-b from-gray-50 to-white py-24 dark:from-gray-900 dark:to-gray-950">
-      {/* Decorative background */}
-      <div className="absolute top-0 right-0 size-96 rounded-full bg-blue-50 opacity-50 blur-3xl dark:bg-blue-500/10" />
-      <div className="absolute bottom-0 left-0 size-80 rounded-full bg-sky-50 opacity-60 blur-3xl dark:bg-sky-500/10" />
-
-      <Container className="relative">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <Subheading>Verifiable Certificates</Subheading>
-            <Heading as="h2" className="mt-2">
-              Every certificate is authentic and verifiable.
-            </Heading>
-            <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-300">
-              Each certificate includes a unique QR code that links to a
-              verification page. Employers, institutions, and stakeholders can
-              instantly verify authenticity — no phone calls or emails needed.
-            </p>
-            <div className="mt-8 space-y-4">
-              {[
-                {
-                  title: 'Unique certificate ID',
-                  description: 'Every certificate has a unique identifier for tracking',
-                },
-                {
-                  title: 'QR code verification',
-                  description: 'Scan to instantly verify certificate authenticity',
-                },
-                {
-                  title: 'Tamper-proof records',
-                  description: 'All certificates are linked to verified attendance data',
-                },
-              ].map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="flex items-start gap-3"
+          <div className="relative h-[440px] sm:h-[560px]">
+            <figure className="absolute top-7.5 left-0 h-[300px] w-[66%] -rotate-2 overflow-hidden rounded-3xl shadow-2xl shadow-stone-900/30 sm:h-[380px]">
+              <Image
+                src={photo('group')}
+                alt="Group photo at G8Deck Uni Discovery, GMI Bangi"
+                fill
+                priority
+                sizes="(min-width: 1024px) 400px, 66vw"
+                className="object-cover object-[center_65%]"
+              />
+            </figure>
+            <figure className="absolute top-0 right-0 h-[200px] w-[44%] rotate-3 overflow-hidden rounded-3xl border-6 border-white shadow-2xl shadow-stone-900/30 sm:h-[250px] dark:border-gray-800">
+              <Image
+                src={photo('coaching')}
+                alt="Hands-on coaching at the tables"
+                fill
+                sizes="(min-width: 1024px) 270px, 44vw"
+                className="object-cover"
+              />
+            </figure>
+            <figure className="absolute right-6 bottom-0 h-[200px] w-[52%] -rotate-1 overflow-hidden rounded-3xl border-6 border-white shadow-2xl shadow-stone-900/30 sm:h-[250px] dark:border-gray-800">
+              <Image
+                src={photo('demo')}
+                alt="Live demo session on the big screen"
+                fill
+                sizes="(min-width: 1024px) 320px, 52vw"
+                className="object-cover"
+              />
+            </figure>
+            {stickers.map((s) => (
+              <div
+                key={s.title}
+                aria-hidden="true"
+                className={clsx(
+                  'absolute z-10 hidden items-center gap-2.5 rounded-2xl bg-white px-3.5 py-2.5 text-[13px] text-stone-ink shadow-xl shadow-stone-900/25 sm:flex',
+                  s.pos,
+                )}
+              >
+                <span
+                  className={clsx(
+                    'grid size-8 place-items-center rounded-xl',
+                    s.tone,
+                  )}
                 >
-                  <CheckCircleIcon className="mt-0.5 size-5 shrink-0 text-blue-600 dark:text-blue-400" />
-                  <div>
-                    <p className="font-medium text-gray-950 dark:text-white">{item.title}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="relative"
-          >
-            <div className="relative mx-auto max-w-md">
-              {/* Certificate mockup */}
-              <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-xl ring-1 ring-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:ring-gray-700">
-                <div className="flex items-center justify-between border-b border-gray-100 pb-4 dark:border-gray-700">
-                  <div className="text-lg font-semibold text-gray-950 dark:text-white">
-                    Certificate of Completion
-                  </div>
-                  <CheckBadgeIcon className="size-8 text-blue-600 dark:text-blue-400" />
-                </div>
-                <div className="mt-6 space-y-4 text-center">
-                  <p className="text-sm text-gray-500 dark:text-gray-400">This certifies that</p>
-                  <p className="text-xl font-semibold text-gray-950 dark:text-white">
-                    Ahmad bin Abdullah
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    has successfully completed
-                  </p>
-                  <p className="font-medium text-gray-950 dark:text-white">
-                    Professional Development Workshop
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">on 15 January 2025</p>
-                </div>
-                <div className="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 dark:border-gray-700">
-                  <div className="flex items-center gap-2">
-                    <QrCodeIcon className="size-12 text-gray-400 dark:text-gray-500" />
-                    <div className="text-xs text-gray-500 dark:text-gray-400">
-                      <p>Scan to verify</p>
-                      <p className="font-mono">GH-2025-00123</p>
-                    </div>
-                  </div>
-                  <div className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700 dark:bg-green-500/20 dark:text-green-400">
-                    Verified
-                  </div>
-                </div>
+                  <s.icon className="size-5" />
+                </span>
+                <span>
+                  <b className="block text-sm">{s.title}</b>
+                  <span className="text-xs text-stone-500">{s.note}</span>
+                </span>
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -right-4 -top-4 size-24 rounded-full bg-blue-100 opacity-40 blur-2xl dark:bg-blue-500/20" />
-              <div className="absolute -bottom-4 -left-4 size-32 rounded-full bg-sky-100 opacity-40 blur-2xl dark:bg-sky-500/20" />
-            </div>
-          </motion.div>
-        </div>
-      </Container>
-    </div>
-  )
-}
-
-function FeaturesGrid() {
-  const features = [
-    {
-      name: 'Event Management',
-      description:
-        'Create unlimited events with rich descriptions, venue library, event cloning, reusable templates, and a public event directory.',
-      icon: ClipboardDocumentListIcon,
-    },
-    {
-      name: 'QR Code Check-In',
-      description:
-        'Fast, contactless check-in with unique QR codes, multi-level tracking, and virtual event support with secret codes.',
-      icon: QrCodeIcon,
-    },
-    {
-      name: 'Sessions & Activities',
-      description:
-        'Organize multi-track events with time-blocked sessions, speaker assignments, call for papers, and per-session attendance.',
-      icon: CalendarDaysIcon,
-    },
-    {
-      name: 'Certificate Generation',
-      description:
-        'Professional certificates with QR verification, eligibility rules, point-based scoring, and gamification.',
-      icon: DocumentCheckIcon,
-    },
-    {
-      name: 'Engagement Tools',
-      description:
-        'Live polling, Q&A sessions, post-event surveys, social wall, virtual business cards, and gamification.',
-      icon: SparklesIcon,
-    },
-    {
-      name: 'Reports & Analytics',
-      description:
-        'Detailed analytics dashboard, financial reports, email tracking, data export, and organizer payout management.',
-      icon: ChartBarIcon,
-    },
-  ]
-
-  return (
-    <Container className="pb-24">
-      <div className="text-center">
-        <Subheading>Key Features</Subheading>
-        <Heading as="h2" className="mt-2">
-          An event platform built to prove every interaction.
-        </Heading>
-      </div>
-      <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map((feature, index) => (
-          <motion.div
-            key={feature.name}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:shadow-gray-900/50"
-          >
-            <div className="flex size-12 items-center justify-center rounded-xl bg-blue-50 transition-colors group-hover:bg-blue-100 dark:bg-blue-500/20 dark:group-hover:bg-blue-500/30">
-              <feature.icon className="size-6 text-blue-600 dark:text-blue-400" />
-            </div>
-            <p className="mt-6 text-base font-semibold text-gray-950 dark:text-white">
-              {feature.name}
-            </p>
-            <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
-              {feature.description}
-            </p>
-          </motion.div>
-        ))}
-      </div>
-    </Container>
-  )
-}
-
-function TeamManagement() {
-  const roles = [
-    { name: 'Organizer', description: 'Full event control and oversight' },
-    { name: 'Coordinator', description: 'Manage sessions and participants' },
-    { name: 'Staff', description: 'Handle check-in and on-site operations' },
-    { name: 'Volunteer', description: 'Assist with specific tasks' },
-    { name: 'Speaker', description: 'Access to session materials and info' },
-  ]
-
-  const permissions = [
-    'Manage events',
-    'Check in participants',
-    'Generate certificates',
-    'View reports',
-    'Manage crew',
-    'Handle payments',
-  ]
-
-  return (
-    <div className="bg-gray-50 py-24 dark:bg-gray-900">
-      <Container>
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <Subheading>Team Management</Subheading>
-            <Heading as="h2" className="mt-2">
-              Delegate with confidence.
-            </Heading>
-            <p className="mt-6 text-base/7 text-gray-600 dark:text-gray-300">
-              Build your event team with predefined roles or create custom ones.
-              Speakers and sponsors manage their own profiles through
-              self-service portals. Assign granular permissions so everyone has
-              exactly the access they need.
-            </p>
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              {permissions.map((permission, index) => (
-                <motion.div
-                  key={permission}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="flex items-center gap-2"
-                >
-                  <CheckCircleIcon className="size-4 text-blue-600 dark:text-blue-400" />
-                  <span className="text-sm text-gray-600 dark:text-gray-400">{permission}</span>
-                </motion.div>
-              ))}
-            </div>
-            <p className="mt-6 text-sm text-gray-500 dark:text-gray-400">
-              10 granular permissions available for fine-grained access control
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="space-y-3">
-              {roles.map((role, index) => (
-                <motion.div
-                  key={role.name}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700"
-                >
-                  <div className="flex size-10 items-center justify-center rounded-full bg-blue-50 dark:bg-blue-500/20">
-                    <UserCircleIcon className="size-5 text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-gray-950 dark:text-white">{role.name}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{role.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-              <div className="mt-4 rounded-xl border-2 border-dashed border-gray-200 p-4 text-center dark:border-gray-700">
-                <UserPlusIcon className="mx-auto size-6 text-gray-400 dark:text-gray-500" />
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Create custom roles for your specific needs
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </Container>
-    </div>
-  )
-}
-
-function UseCasesSection() {
-  const useCases = [
-    {
-      name: 'Training Providers',
-      tagline: 'Issue CPD certificates automatically',
-      description:
-        'Run professional courses and automatically issue verifiable certificates when participants complete training.',
-      icon: AcademicCapIcon,
-    },
-    {
-      name: 'Corporate L&D',
-      tagline: 'Track employee training completion',
-      description:
-        'Manage internal training programmes with attendance tracking and completion records for HR compliance.',
-      icon: BuildingOffice2Icon,
-    },
-    {
-      name: 'Conferences',
-      tagline: 'Manage multi-track sessions',
-      description:
-        'Organize complex events with parallel sessions, speaker management, and real-time attendance tracking.',
-      icon: UsersIcon,
-    },
-    {
-      name: 'Universities',
-      tagline: 'Workshop attendance with proof',
-      description:
-        'Track student participation in workshops and extracurricular activities with verifiable records.',
-      icon: AcademicCapIcon,
-    },
-    {
-      name: 'Community Events',
-      tagline: 'Free events, free platform',
-      description:
-        'Run meetups and volunteer programmes at no cost. Only pay when you charge for tickets.',
-      icon: UserCircleIcon,
-    },
-  ]
-
-  return (
-    <Container className="pb-24">
-      <div className="text-center">
-        <Subheading>Use Cases</Subheading>
-        <Heading as="h2" className="mt-2 max-w-3xl">
-          Built for every type of event.
-        </Heading>
-        <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600 dark:text-gray-400">
-          Whether you&apos;re running corporate training, academic workshops, or
-          community meetups — this event platform proves participation for all.
-        </p>
-      </div>
-      <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {useCases.map((useCase, index) => (
-          <motion.div
-            key={useCase.name}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 transition-all hover:shadow-md hover:ring-blue-200 dark:bg-gray-800 dark:ring-gray-700 dark:hover:ring-blue-500/30"
-          >
-            <div className="flex size-12 items-center justify-center rounded-xl bg-blue-50 transition-colors group-hover:bg-blue-100 dark:bg-blue-500/20 dark:group-hover:bg-blue-500/30">
-              <useCase.icon className="size-6 text-blue-600 dark:text-blue-400" />
-            </div>
-            <p className="mt-6 text-lg font-semibold text-gray-950 dark:text-white">
-              {useCase.name}
-            </p>
-            <p className="mt-1 text-sm font-medium text-blue-600 dark:text-blue-400">
-              {useCase.tagline}
-            </p>
-            <p className="mt-3 text-sm/6 text-gray-600 dark:text-gray-400">
-              {useCase.description}
-            </p>
-          </motion.div>
-        ))}
-      </div>
-    </Container>
-  )
-}
-
-function Testimonials() {
-  const testimonials = [
-    {
-      quote:
-        'We used to spend 3 days creating certificates manually. Now we generate 500+ certificates in one click after each training session.',
-      author: 'Sarah Lim',
-      role: 'Training Manager',
-      company: 'Professional Development Institute',
-    },
-    {
-      quote:
-        'The QR verification feature is a game-changer. Our HR team can instantly verify training completion without digging through files.',
-      author: 'Ahmad Razak',
-      role: 'HR Director',
-      company: 'Tech Solutions Sdn Bhd',
-    },
-    {
-      quote:
-        'Managing a 3-day conference with 12 parallel tracks was seamless. Real-time check-in data helped us make decisions on the fly.',
-      author: 'Dr. Mei Ling',
-      role: 'Conference Chair',
-      company: 'Malaysian Medical Association',
-    },
-    {
-      quote:
-        'Free for our community meetups, and the certificate feature helps our members build their professional portfolios.',
-      author: 'Ravi Kumar',
-      role: 'Community Lead',
-      company: 'KL Tech Community',
-    },
-  ]
-
-  return (
-    <div className="bg-gray-50 py-24 dark:bg-gray-900">
-      <Container>
-        <div className="text-center">
-          <Subheading>Testimonials</Subheading>
-          <Heading as="h2" className="mt-2">
-            Trusted by event organisers.
-          </Heading>
-        </div>
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.author}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700"
-            >
-              <StarIcon className="size-8 text-yellow-400" />
-              <p className="mt-4 text-base/7 text-gray-600 dark:text-gray-300">
-                &ldquo;{testimonial.quote}&rdquo;
-              </p>
-              <div className="mt-6 flex items-center gap-4">
-                <div className="flex size-12 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-500/20">
-                  <span className="text-lg font-semibold text-blue-600 dark:text-blue-400">
-                    {testimonial.author.charAt(0)}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-950 dark:text-white">
-                    {testimonial.author}
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    {testimonial.role}, {testimonial.company}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </Container>
-    </div>
-  )
-}
-
-function WhyGatherHub() {
-  const reasons = [
-    {
-      title: 'Proof-first design',
-      description:
-        'Every action is recorded and verifiable. Certificates, attendance, payments — all with an audit trail.',
-      icon: DocumentCheckIcon,
-    },
-    {
-      title: 'Start free',
-      description:
-        'A free plan runs your events end to end. Upgrade to Pro or Business for more events, advanced features, and a lower platform fee.',
-      icon: CurrencyDollarIcon,
-    },
-    {
-      title: 'Built for teams',
-      description:
-        'Delegate check-in, certificate generation, and reporting to your crew with role-based permissions.',
-      icon: UsersIcon,
-    },
-    {
-      title: 'No clutter, just results',
-      description:
-        'Simple, focused tools that do exactly what you need. No feature bloat or learning curve.',
-      icon: SparklesIcon,
-    },
-  ]
-
-  return (
-    <div className="relative overflow-hidden bg-gray-900 py-24 sm:py-32">
-      {/* Subtle blue gradient overlay */}
-      <div className="absolute inset-0 bg-linear-to-br from-blue-600/10 via-blue-500/5 to-sky-500/10" />
-      <div className="absolute -top-40 -right-40 size-80 rounded-full bg-blue-500/10 blur-3xl" />
-      <div className="absolute -bottom-40 -left-40 size-80 rounded-full bg-sky-500/10 blur-3xl" />
-
-      <Container className="relative">
-        <div className="text-center">
-          <Subheading dark>Why GatherHub</Subheading>
-          <Heading as="h2" dark className="mt-2">
-            Built for organisers who run activities and need proof.
-          </Heading>
-        </div>
-        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
-          {reasons.map((reason, index) => (
-            <motion.div
-              key={reason.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative rounded-2xl bg-white/5 p-8 backdrop-blur-sm ring-1 ring-white/10 transition-all hover:bg-white/10 hover:ring-blue-500/20"
-            >
-              <div className="flex size-12 items-center justify-center rounded-xl bg-blue-500/20">
-                <reason.icon className="size-6 text-blue-400" />
-              </div>
-              <p className="mt-6 text-lg font-semibold text-white">
-                {reason.title}
-              </p>
-              <p className="mt-2 text-sm/6 text-gray-300">
-                {reason.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </Container>
-    </div>
-  )
-}
-
-function SocialShare() {
-  const shareUrl = 'https://gatherhub.app'
-  const shareText =
-    'Gather Hub — the event platform that proves participation. QR check-in, verifiable certificates, and attendance tracking.'
-
-  const shareLinks = [
-    {
-      name: 'Facebook',
-      href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
-      icon: (props: React.SVGProps<SVGSVGElement>) => (
-        <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M16 8.05C16 3.603 12.418 0 8 0S0 3.604 0 8.05c0 4.016 2.926 7.346 6.75 7.95v-5.624H4.718V8.05H6.75V6.276c0-2.017 1.194-3.131 3.022-3.131.875 0 1.79.157 1.79.157v1.98h-1.008c-.994 0-1.304.62-1.304 1.257v1.51h2.219l-.355 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.95z"
-          />
-        </svg>
-      ),
-    },
-    {
-      name: 'X',
-      href: `https://x.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`,
-      icon: (props: React.SVGProps<SVGSVGElement>) => (
-        <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
-          <path d="M12.6 0h2.454l-5.36 6.778L16 16h-4.937l-3.867-5.594L2.771 16H.316l5.733-7.25L0 0h5.063l3.495 5.114L12.6 0zm-.86 14.376h1.36L4.323 1.539H2.865l8.875 12.837z" />
-        </svg>
-      ),
-    },
-    {
-      name: 'LinkedIn',
-      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
-      icon: (props: React.SVGProps<SVGSVGElement>) => (
-        <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
-          <path d="M14.82 0H1.18A1.169 1.169 0 000 1.154v13.694A1.168 1.168 0 001.18 16h13.64A1.17 1.17 0 0016 14.845V1.15A1.171 1.171 0 0014.82 0zM4.744 13.64H2.369V5.996h2.375v7.644zm-1.18-8.684a1.377 1.377 0 11.52-.106 1.377 1.377 0 01-.527.103l.007.003zm10.075 8.683h-2.375V9.921c0-.885-.015-2.025-1.234-2.025-1.218 0-1.425.966-1.425 1.968v3.775H6.233V5.997H8.51v1.05h.032c.317-.601 1.09-1.235 2.246-1.235 2.405-.005 2.851 1.578 2.851 3.63v4.197z" />
-        </svg>
-      ),
-    },
-    {
-      name: 'WhatsApp',
-      href: `https://wa.me/?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`,
-      icon: (props: React.SVGProps<SVGSVGElement>) => (
-        <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
-          <path d="M13.601 2.326A7.854 7.854 0 008.002 0C3.632 0 .068 3.558.064 7.926a7.9 7.9 0 001.06 3.956L0 16l4.204-1.102a7.933 7.933 0 003.79.965h.004c4.368 0 7.933-3.558 7.937-7.93a7.862 7.862 0 00-2.334-5.607zm-5.6 12.2a6.56 6.56 0 01-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 01-1.007-3.505c0-3.626 2.957-6.579 6.591-6.579a6.56 6.56 0 014.66 1.931 6.557 6.557 0 011.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.644-.182-.066-.315-.099-.448.099-.133.197-.514.644-.63.777-.116.132-.232.148-.43.05-.197-.1-.833-.307-1.587-.98-.587-.523-.983-1.17-1.098-1.367-.115-.198-.012-.305.087-.403.089-.088.197-.231.296-.347.099-.116.132-.198.198-.33.066-.133.033-.248-.016-.348-.05-.099-.449-1.082-.615-1.482-.162-.389-.327-.336-.449-.342l-.382-.007a.733.733 0 00-.529.248c-.182.198-.694.678-.694 1.653s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.472.204.84.326 1.129.418.474.151.906.13 1.247.079.38-.057 1.17-.478 1.335-.94.166-.462.166-.858.116-.94-.05-.084-.182-.133-.38-.232z" />
-        </svg>
-      ),
-    },
-  ]
-
-  return (
-    <Container className="pb-12">
-      <div className="flex flex-col items-center gap-4 text-center">
-        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-          Share Gather Hub with your network
-        </p>
-        <div className="flex items-center gap-4">
-          {shareLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Share on ${link.name}`}
-              className="flex size-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-colors hover:bg-blue-100 hover:text-blue-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-400"
-            >
-              <link.icon className="size-4" />
-            </a>
-          ))}
-        </div>
-      </div>
-    </Container>
-  )
-}
-
-function FinalCTA() {
-  return (
-    <Container className="py-24">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="relative overflow-hidden rounded-3xl bg-gray-900 px-8 py-16 text-center sm:px-16"
-      >
-        {/* Decorative elements */}
-        <div className="absolute -top-20 -right-20 size-60 rounded-full bg-blue-500/20 blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 size-60 rounded-full bg-sky-500/20 blur-3xl" />
-
-        <div className="relative">
-          <Heading as="h2" dark>
-            Create your first event in 5 minutes.
-          </Heading>
-          <p className="mx-auto mt-6 max-w-xl text-base text-gray-300">
-            No credit card required. Start on the free plan. Run your first
-            activity with clarity, prove participation, and manage events with
-            verifiable proof today.
-          </p>
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <Button href={`${config.appUrl}/register`}>
-              Get started for free
-            </Button>
-            <Button variant="secondary" href="/pricing">
-              See pricing plans
-            </Button>
+            ))}
           </div>
         </div>
-      </motion.div>
-    </Container>
+      </Container>
+    </div>
+  )
+}
+
+const audiences = [
+  { icon: AcademicCapIcon, label: 'University workshops' },
+  { icon: BriefcaseIcon, label: 'Training & classes' },
+  { icon: UserGroupIcon, label: 'Community meetups' },
+  { icon: BuildingOffice2Icon, label: 'Company events' },
+  { icon: MicrophoneIcon, label: 'Webinars' },
+]
+
+function MadeFor() {
+  return (
+    <div className="border-y border-line bg-white py-7 dark:border-white/10 dark:bg-gray-900">
+      <Container>
+        <div className="flex flex-wrap items-center gap-7">
+          <p className="text-sm text-stone-600 dark:text-gray-400">
+            Made for people who run
+          </p>
+          <ul className="flex flex-wrap gap-2.5">
+            {audiences.map((a) => (
+              <li
+                key={a.label}
+                className="flex items-center gap-2 rounded-full border border-line bg-paper py-2 pr-3.5 pl-2.5 text-sm font-medium text-stone-ink dark:border-white/10 dark:bg-white/5 dark:text-white"
+              >
+                <a.icon className="size-4.5 text-blue-600 dark:text-blue-400" />
+                {a.label}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Container>
+    </div>
+  )
+}
+
+const day = [
+  {
+    time: '08:30',
+    icon: BuildingOffice2Icon,
+    img: 'opening',
+    title: 'Doors open',
+    body: 'Everyone shows the QR in their email. Crew scan with their own phones.',
+    tag: 'QR check-in',
+  },
+  {
+    time: '09:00',
+    icon: MicrophoneIcon,
+    img: 'handson',
+    title: 'Opening talks',
+    body: 'The agenda is on every phone, so nobody asks "what\'s next?".',
+    tag: 'Sessions & agenda',
+  },
+  {
+    time: '11:00',
+    icon: ChartBarIcon,
+    img: 'demo',
+    title: 'Live demo',
+    body: 'Questions come in from the floor; a quick poll keeps the room involved.',
+    tag: 'Polls & Q&A',
+  },
+  {
+    time: '14:00',
+    icon: ComputerDesktopIcon,
+    img: 'coaching',
+    title: 'Hands-on',
+    body: "Materials open for everyone who's registered, from the same link.",
+    tag: 'Materials',
+  },
+  {
+    time: '17:00',
+    icon: CheckBadgeIcon,
+    img: 'group',
+    title: 'Wrap up',
+    body: 'Group photo, a short feedback survey, and certificates on their way.',
+    tag: 'Certificates & survey',
+  },
+]
+
+function EventDay() {
+  return (
+    <section
+      id="event-day"
+      className="scroll-mt-8 bg-paper py-24 dark:bg-gray-950"
+    >
+      <Container>
+        <Eyebrow>A day with GatherHub</Eyebrow>
+        <H2 className="max-w-3xl">
+          Less work. <Serif>More time</Serif> for your event.
+        </H2>
+        <p className="mt-4 max-w-xl text-lg/8 text-stone-600 dark:text-gray-400">
+          The admin is done before doors open, so the day is yours. Here&apos;s
+          how G8Deck Uni Discovery ran at German-Malaysian Institute, Bangi — 23
+          September 2026.
+        </p>
+        <ol className="relative mt-13 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4 lg:before:absolute lg:before:inset-x-0 lg:before:top-[19px] lg:before:h-0.5 lg:before:bg-[repeating-linear-gradient(90deg,var(--color-line)_0_8px,transparent_8px_14px)]">
+          {day.map((slot) => (
+            <li key={slot.time} className="relative">
+              <span className="relative inline-flex items-center gap-2 bg-paper pr-2.5 font-mono text-xs text-stone-500 dark:bg-gray-950 dark:text-gray-400">
+                <span className="grid size-10 place-items-center rounded-full border-2 border-blue-600 bg-white text-blue-600 dark:bg-gray-900">
+                  <slot.icon className="size-5" />
+                </span>
+                {slot.time}
+              </span>
+              <figure className="relative mt-4 aspect-[4/3] overflow-hidden rounded-2xl bg-paper-2">
+                <Image
+                  src={photo(slot.img)}
+                  alt={slot.title}
+                  fill
+                  sizes="(min-width: 1024px) 230px, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover object-[center_70%]"
+                />
+              </figure>
+              <h3 className="mt-3.5 text-[17px] font-semibold tracking-tight text-stone-ink dark:text-white">
+                {slot.title}
+              </h3>
+              <p className="mt-1.5 text-sm/6 text-stone-600 dark:text-gray-400">
+                {slot.body}
+              </p>
+              <span className="mt-2.5 inline-block rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700 dark:bg-blue-500/15 dark:text-blue-300">
+                {slot.tag}
+              </span>
+            </li>
+          ))}
+        </ol>
+      </Container>
+    </section>
+  )
+}
+
+const features = [
+  {
+    icon: TicketIcon,
+    tone: 'bg-blue-100 text-blue-600',
+    title: 'Registration & tickets',
+    body: 'A clean event page and a form that asks exactly what you need.',
+    points: [
+      'Early bird, waitlist, bundle discounts',
+      'Student and member prices',
+    ],
+  },
+  {
+    icon: QrCodeIcon,
+    tone: 'bg-emerald-100 text-emerald-600',
+    title: 'Check-in that keeps moving',
+    body: 'Any phone becomes a scanner. It carries on even if the hall Wi-Fi drops.',
+    points: [
+      'Several doors, one live headcount',
+      'Walk-ins registered on the spot',
+    ],
+  },
+  {
+    icon: ChartBarIcon,
+    tone: 'bg-orange-100 text-orange-600',
+    title: 'A room that joins in',
+    body: "Polls, Q&A, surveys — and People's Choice voting for showcases and expos.",
+    points: ['Results on the big screen', 'No app to install'],
+  },
+  {
+    icon: CheckBadgeIcon,
+    tone: 'bg-violet-100 text-violet-700',
+    title: 'A tidy finish',
+    body: 'Certificates, a feedback survey and a one-page summary for your report.',
+    points: ['Sent to everyone who attended', 'Payout to your bank account'],
+  },
+]
+
+function Features() {
+  return (
+    <section className="bg-paper pb-24 dark:bg-gray-950">
+      <Container>
+        <Eyebrow>Everything in one place</Eyebrow>
+        <H2>
+          One place for the <Serif>whole</Serif> event.
+        </H2>
+        <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-2">
+          {features.map((f) => (
+            <div
+              key={f.title}
+              className="grid grid-cols-[52px_1fr] gap-4.5 rounded-3xl border border-line bg-white p-7.5 dark:border-white/10 dark:bg-gray-900"
+            >
+              <span
+                className={clsx(
+                  'grid size-13 place-items-center rounded-2xl',
+                  f.tone,
+                )}
+              >
+                <f.icon className="size-6" />
+              </span>
+              <div>
+                <h3 className="text-xl font-semibold tracking-tight text-stone-ink dark:text-white">
+                  {f.title}
+                </h3>
+                <p className="mt-1.5 text-[15px]/6 text-stone-600 dark:text-gray-400">
+                  {f.body}
+                </p>
+                <ul className="mt-3.5 grid gap-2 text-sm text-stone-ink dark:text-gray-200">
+                  {f.points.map((p) => (
+                    <li key={p} className="flex gap-2">
+                      <CheckIcon className="size-4.5 shrink-0 text-emerald-600" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  )
+}
+
+const facts = [
+  ['Where', 'GMI, Bangi'],
+  ['When', '23 Sep 2026'],
+  ['Who', 'Students, lecturers, IT staff'],
+  ['Format', 'Talks + hands-on lab'],
+]
+
+function Story() {
+  return (
+    <section
+      id="story"
+      className="scroll-mt-8 bg-paper px-4 sm:px-6 dark:bg-gray-950"
+    >
+      <div className="mx-auto max-w-7xl rounded-4xl bg-stone-ink py-18 text-stone-100">
+        <Container>
+          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
+            <figure className="relative aspect-[4/3] overflow-hidden rounded-3xl">
+              <Image
+                src={photo('coaching')}
+                alt="Students working with a coach at GMI"
+                fill
+                sizes="(min-width: 1024px) 560px, 100vw"
+                className="object-cover"
+              />
+            </figure>
+            <div>
+              <Eyebrow className="text-orange-300 dark:text-orange-300">
+                Story
+              </Eyebrow>
+              <H2 className="text-white">
+                A full day at GMI, and every student <Serif>left with</Serif> a
+                live app.
+              </H2>
+              <p className="mt-4 text-lg/8 text-stone-400">
+                Developers Hub ran G8Deck Uni Discovery for final-year students,
+                lecturers and IT staff — talks in the morning, hands-on in the
+                afternoon.
+              </p>
+              <dl className="mt-7 grid grid-cols-2 gap-3">
+                {facts.map(([label, value]) => (
+                  <div
+                    key={label}
+                    className="rounded-2xl border border-white/12 p-3.5"
+                  >
+                    <dt className="font-mono text-[11px] tracking-wider text-stone-400 uppercase">
+                      {label}
+                    </dt>
+                    <dd className="mt-1 font-semibold">{value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <a
+                href={storyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-flex items-center gap-1.5 font-semibold text-blue-300 hover:text-blue-200"
+              >
+                Read the full write-up on devhub.my
+                <ArrowRightIcon className="size-4" />
+              </a>
+            </div>
+          </div>
+        </Container>
+      </div>
+    </section>
+  )
+}
+
+const events = [
+  {
+    slug: 'ai-augmented-development-vibe-coding-with-claude-code',
+    title: 'AI-Augmented Development: Vibe Coding with Claude Code',
+    org: 'Developers Hub',
+    place: 'Kulai, Johor',
+    day: '6',
+    month: 'Jun',
+    online: false,
+    image: '/events/vibe-coding-claude-code.jpg',
+  },
+  {
+    slug: 'santai-ramadhan-vibe-code-1-EDSBtl',
+    title: 'Santai Ramadhan: Vibe Code #1',
+    org: 'Cleanique Coders',
+    place: 'Resources',
+    day: '21',
+    month: 'Feb',
+    online: true,
+    image: '/events/santai-ramadhan-vibe-code.jpg',
+  },
+  {
+    slug: 'satu-idea-satu-malam-reka-produk-digital-dengan-ai',
+    title: 'Satu Idea, Satu Malam: Reka Produk Digital dengan AI',
+    org: 'Developers Hub',
+    day: '7',
+    month: 'Feb',
+    online: true,
+    cover: 'Satu Idea, Satu Malam',
+  },
+]
+
+function RecentEvents() {
+  return (
+    <section className="bg-paper py-24 dark:bg-gray-950">
+      <Container>
+        <div className="flex flex-wrap items-end justify-between gap-5">
+          <div>
+            <Eyebrow>Recently on GatherHub</Eyebrow>
+            <H2>
+              Real events, <Serif>real</Serif> organisers.
+            </H2>
+          </div>
+          <CtaButton href={directoryUrl} variant="light">
+            Browse all events
+          </CtaButton>
+        </div>
+        <ul className="mt-11 grid grid-cols-1 gap-5 md:grid-cols-3">
+          {events.map((e) => (
+            <li key={e.slug}>
+              <a
+                href={`${directoryUrl}/${e.slug}`}
+                className="block h-full overflow-hidden rounded-3xl border border-line bg-white transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-900/15 dark:border-white/10 dark:bg-gray-900"
+              >
+                <div className="relative aspect-video bg-paper-2">
+                  {e.image ? (
+                    <Image
+                      src={e.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 768px) 380px, 100vw"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-full items-end bg-linear-to-br from-orange-100 to-sky-100 p-5">
+                      <b className="font-serif text-[26px]/tight font-normal text-stone-ink italic">
+                        {e.cover}
+                      </b>
+                    </div>
+                  )}
+                </div>
+                <div className="px-5 pt-4.5 pb-5.5">
+                  <div className="flex items-center gap-2.5 text-[13px] text-stone-500 dark:text-gray-400">
+                    <span className="rounded-xl border border-line bg-paper px-2.5 py-1 text-center leading-tight dark:border-white/10 dark:bg-white/5">
+                      <b className="block text-lg text-stone-ink dark:text-white">
+                        {e.day}
+                      </b>
+                      <span className="font-mono text-[10px] uppercase">
+                        {e.month}
+                      </span>
+                    </span>
+                    <span>
+                      {e.org}
+                      {e.place && (
+                        <>
+                          <br />
+                          {e.place}
+                        </>
+                      )}
+                    </span>
+                    <span
+                      className={clsx(
+                        'ml-auto rounded-full px-2.5 py-0.5 text-xs font-semibold',
+                        e.online
+                          ? 'bg-emerald-100 text-emerald-700'
+                          : 'bg-blue-100 text-blue-700',
+                      )}
+                    >
+                      {e.online ? 'Online' : 'In person'}
+                    </span>
+                  </div>
+                  <h3 className="mt-3.5 leading-snug font-semibold text-stone-ink dark:text-white">
+                    {e.title}
+                  </h3>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </Container>
+    </section>
+  )
+}
+
+const payments = [
+  { icon: BuildingLibraryIcon, label: 'FPX' },
+  { icon: QrCodeIcon, label: 'DuitNow QR' },
+  { icon: DocumentTextIcon, label: 'Bank transfer & invoices' },
+]
+
+const planHighlights: Record<string, string[]> = {
+  free: [
+    '2 active events, 2 staff',
+    'QR check-in & certificates',
+    'Polls, Q&A, surveys',
+  ],
+  pro: [
+    '20 active events, 10 staff',
+    'Sessions, blast emails, flash sales',
+    '10,000 email credits / month',
+  ],
+  business: [
+    'Unlimited events & staff',
+    '50,000 email credits / month',
+    'Sponsor analytics',
+  ],
+}
+
+// Pricing cards follow proposal C — clearer than B's compact list.
+function Pricing() {
+  return (
+    <section className="bg-paper-2 py-24 dark:bg-gray-900">
+      <Container>
+        <div className="grid grid-cols-1 items-end gap-8 lg:grid-cols-[1.2fr_1fr]">
+          <div>
+            <Eyebrow>Made for Malaysia</Eyebrow>
+            <H2>
+              Get paid the way <Serif>your</Serif> participants pay.
+            </H2>
+            <p className="mt-4 max-w-xl text-lg/8 text-stone-600 dark:text-gray-400">
+              No credit card needed. Free events stay free. Paid tickets carry a
+              small fee that drops as your plan grows.
+            </p>
+          </div>
+          <ul className="flex flex-wrap gap-3.5 lg:justify-end">
+            {payments.map((p) => (
+              <li
+                key={p.label}
+                className="flex items-center gap-2 rounded-xl border border-line bg-white px-4 py-3 text-sm font-semibold text-stone-ink dark:border-white/10 dark:bg-white/5 dark:text-white"
+              >
+                <p.icon className="size-5 text-blue-600 dark:text-blue-400" />
+                {p.label}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-11 grid grid-cols-1 gap-4 lg:grid-cols-3">
+          {plans.map((plan) => (
+            <div
+              key={plan.key}
+              className={clsx(
+                'relative rounded-3xl bg-white p-6.5 dark:bg-gray-950',
+                plan.featured
+                  ? 'border-2 border-blue-600 shadow-xl shadow-blue-600/25'
+                  : 'border border-line dark:border-white/10',
+              )}
+            >
+              {plan.featured && (
+                <span className="absolute top-6 right-6 rounded-full bg-blue-600 px-2.5 py-1 text-xs font-semibold text-white">
+                  Most organisers
+                </span>
+              )}
+              <h3 className="font-semibold text-stone-ink dark:text-white">
+                {plan.name}
+              </h3>
+              <p className="mt-2.5 text-4xl font-bold tracking-tight text-stone-ink dark:text-white">
+                {plan.price}{' '}
+                <small className="text-sm font-medium text-stone-500">
+                  {plan.cadence}
+                </small>
+              </p>
+              <p className="mt-1 font-mono text-xs text-blue-600 dark:text-blue-400">
+                {plan.fee}
+              </p>
+              <ul className="mt-4 grid gap-2.5 text-sm text-stone-ink dark:text-gray-200">
+                {planHighlights[plan.key].map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <CheckIcon className="size-4.5 shrink-0 text-emerald-600" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <Link
+          href="/pricing"
+          className="mt-8 inline-flex items-center gap-1.5 font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400"
+        >
+          Compare every feature <ArrowRightIcon className="size-4" />
+        </Link>
+      </Container>
+    </section>
+  )
+}
+
+function FinalCta() {
+  return (
+    <section className="bg-paper py-28 text-center dark:bg-gray-950">
+      <Container>
+        <h2 className="text-5xl/none font-semibold tracking-tighter text-stone-ink sm:text-6xl/none dark:text-white">
+          Your next event, <Serif>sorted.</Serif>
+        </h2>
+        <p className="mx-auto mt-4.5 max-w-xl text-lg/8 text-stone-600 dark:text-gray-400">
+          Set it up in an afternoon. Run it without the scramble.
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <CtaButton href={`${config.appUrl}/register`}>Start free</CtaButton>
+          <CtaButton href="/contact" variant="light">
+            Talk to us
+          </CtaButton>
+        </div>
+      </Container>
+    </section>
   )
 }
 
 export default function HomeClient() {
   return (
-    <div className="overflow-hidden">
+    <>
       <Hero />
       <main>
-        <div className="bg-linear-to-b from-white from-50% to-gray-50 py-24 dark:from-gray-950 dark:to-gray-900">
-          <TrustIndicators />
-          <ProblemSolution />
-        </div>
-        <div className="bg-white py-24 dark:bg-gray-950">
-          <HowItWorksSection />
-        </div>
-        <CertificateVerification />
-        <div className="bg-white py-24 dark:bg-gray-950">
-          <FeaturesGrid />
-        </div>
-        <TeamManagement />
-        <div className="bg-white py-24 dark:bg-gray-950">
-          <UseCasesSection />
-        </div>
-        <Testimonials />
-        <WhyGatherHub />
-        <FinalCTA />
-        <SocialShare />
+        <MadeFor />
+        <EventDay />
+        <Features />
+        <Story />
+        <RecentEvents />
+        <Pricing />
+        <FinalCta />
       </main>
       <Footer />
-    </div>
+    </>
   )
 }

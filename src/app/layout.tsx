@@ -2,6 +2,21 @@ import { GoogleAnalytics } from '@/components/google-analytics'
 import { ThemeProvider } from '@/components/theme-provider'
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
+import { Instrument_Serif, JetBrains_Mono } from 'next/font/google'
+
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  display: 'swap',
+})
+
+const serif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: 'italic',
+  variable: '--font-instrument',
+  display: 'swap',
+})
 
 const siteUrl = 'https://gatherhub.app'
 
@@ -9,10 +24,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     template: '%s - Gather Hub',
-    default: 'Gather Hub - Event Platform That Proves Participation',
+    default: 'Gather Hub - Event Management, From Sign-up to Wrap-up',
   },
   description:
-    'Run events with clarity and proof. QR check-in, verifiable certificates, and attendance tracking — all free to start.',
+    'Plan, sell, run and wrap up your events in one place — registration, FPX and DuitNow payments, QR check-in and certificates. Free to start.',
   alternates: {
     canonical: '/',
   },
@@ -20,16 +35,16 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Gather Hub',
-    title: 'Gather Hub - Event Platform That Proves Participation',
+    title: 'Gather Hub - Event Management, From Sign-up to Wrap-up',
     description:
-      'Run events with clarity and proof. QR check-in, verifiable certificates, and attendance tracking — all free to start.',
+      'Plan, sell, run and wrap up your events in one place — registration, FPX and DuitNow payments, QR check-in and certificates. Free to start.',
     url: siteUrl,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gather Hub - Event Platform That Proves Participation',
+    title: 'Gather Hub - Event Management, From Sign-up to Wrap-up',
     description:
-      'Run events with clarity and proof. QR check-in, verifiable certificates, and attendance tracking — all free to start.',
+      'Plan, sell, run and wrap up your events in one place — registration, FPX and DuitNow payments, QR check-in and certificates. Free to start.',
   },
 }
 
@@ -39,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${mono.variable} ${serif.variable}`} suppressHydrationWarning>
       <head>
         {/* Preload critical font weights for faster text rendering */}
         <link
