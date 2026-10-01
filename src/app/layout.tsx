@@ -2,11 +2,19 @@ import { GoogleAnalytics } from '@/components/google-analytics'
 import { ThemeProvider } from '@/components/theme-provider'
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
-import { JetBrains_Mono } from 'next/font/google'
+import { Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 
 const mono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrains',
+  display: 'swap',
+})
+
+const serif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: 'italic',
+  variable: '--font-instrument',
   display: 'swap',
 })
 
@@ -46,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={mono.variable} suppressHydrationWarning>
+    <html lang="en" className={`${mono.variable} ${serif.variable}`} suppressHydrationWarning>
       <head>
         {/* Preload critical font weights for faster text rendering */}
         <link
