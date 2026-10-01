@@ -172,7 +172,7 @@ export function ContactForm() {
                 >
                   Privacy Policy
                 </a>{' '}
-                and consent to Gather Hub contacting me about this inquiry.
+                and consent to GatherHub contacting me about this inquiry.
               </label>
             </div>
 

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   title: 'Contact Us',
   description:
-    'Get in touch with the Gather Hub team. We are here to help you run better events.',
+    'Get in touch with the GatherHub team. We are here to help you run better events.',
 }
 
 function Hero() {
@@ -30,7 +30,7 @@ function Hero() {
             We&apos;re here to help.
           </Heading>
           <p className="mt-4 text-base text-gray-600 dark:text-gray-400 max-w-2xl">
-            Have a question about Gather Hub? Need help with your account or
+            Have a question about GatherHub? Need help with your account or
             event setup? Our team is ready to assist you.
           </p>
         </div>
@@ -51,7 +51,7 @@ function ContactInfo() {
       icon: EnvelopeIcon,
       title: 'Sales Inquiries',
       detail: 'sales@gatherhub.app',
-      description: 'Interested in Gather Hub for your organisation?',
+      description: 'Interested in GatherHub for your organisation?',
     },
     {
       icon: ClockIcon,

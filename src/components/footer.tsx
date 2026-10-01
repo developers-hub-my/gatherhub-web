@@ -141,7 +141,7 @@ function SocialLinks() {
 function Copyright() {
   return (
     <div className="text-sm/6 text-gray-950 dark:text-white">
-      &copy; {new Date().getFullYear()} Gather Hub.
+      &copy; {new Date().getFullYear()} GatherHub.
     </div>
   )
 }

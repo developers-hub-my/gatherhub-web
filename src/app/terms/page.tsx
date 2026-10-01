@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
   title: 'Terms of Service',
   description:
-    'Read the terms and conditions for using Gather Hub platform.',
+    'Read the terms and conditions for using GatherHub platform.',
 }
 
 function Section({
@@ -50,13 +50,13 @@ export default function TermsOfService() {
         <div className="prose prose-gray max-w-none">
           <Section title="Agreement to Terms">
             <p>
-              By accessing or using Gather Hub (&quot;the Platform&quot;), you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you disagree with any part of these terms, you do not have permission to access the Platform.
+              By accessing or using GatherHub (&quot;the Platform&quot;), you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you disagree with any part of these terms, you do not have permission to access the Platform.
             </p>
           </Section>
 
           <Section title="Description of Service">
             <p>
-              Gather Hub provides an online platform for managing events, workshops, activities, and related services including:
+              GatherHub provides an online platform for managing events, workshops, activities, and related services including:
             </p>
             <ul className="ml-6 list-disc space-y-2">
               <li>Activity and event creation and management</li>
@@ -113,7 +113,7 @@ export default function TermsOfService() {
 
           <Section title="Refund Policy">
             <p>
-              Refund policies are set by individual event organizers. Gather Hub acts as a platform facilitating transactions between event organizers and participants. Refund requests should be directed to the event organizer.
+              Refund policies are set by individual event organizers. GatherHub acts as a platform facilitating transactions between event organizers and participants. Refund requests should be directed to the event organizer.
             </p>
             <p>
               For platform subscription fees, refunds may be provided at our discretion on a case-by-case basis.
@@ -136,7 +136,7 @@ export default function TermsOfService() {
 
           <Section title="Intellectual Property">
             <p>
-              The Platform and its original content, features, and functionality are owned by Gather Hub and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
+              The Platform and its original content, features, and functionality are owned by GatherHub and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
             </p>
             <p>
               You retain ownership of any content you submit to the Platform. By submitting content, you grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, and display your content in connection with the Platform.
@@ -154,7 +154,7 @@ export default function TermsOfService() {
 
           <Section title="Limitation of Liability">
             <p>
-              In no event shall Gather Hub, its directors, employees, or agents be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, use, or other intangible losses resulting from:
+              In no event shall GatherHub, its directors, employees, or agents be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, use, or other intangible losses resulting from:
             </p>
             <ul className="ml-6 list-disc space-y-2">
               <li>Your use or inability to use the Platform</li>
@@ -172,7 +172,7 @@ export default function TermsOfService() {
 
           <Section title="Indemnification">
             <p>
-              You agree to indemnify and hold harmless Gather Hub and its affiliates, officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising out of or related to:
+              You agree to indemnify and hold harmless GatherHub and its affiliates, officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising out of or related to:
             </p>
             <ul className="ml-6 list-disc space-y-2">
               <li>Your use of the Platform</li>
@@ -193,7 +193,7 @@ export default function TermsOfService() {
 
           <Section title="Governing Law">
             <p>
-              These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which Gather Hub operates, without regard to its conflict of law provisions.
+              These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which GatherHub operates, without regard to its conflict of law provisions.
             </p>
           </Section>
 

@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const alt = 'Gather Hub - Event Management, From Sign-up to Wrap-up'
+export const alt = 'GatherHub - Event Management, From Sign-up to Wrap-up'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -46,7 +46,7 @@ export default function OpenGraphImage() {
         >
           G
         </div>
-        <div style={{ fontSize: '44px', fontWeight: 700 }}>Gather Hub</div>
+        <div style={{ fontSize: '44px', fontWeight: 700 }}>GatherHub</div>
       </div>
       <div
         style={{

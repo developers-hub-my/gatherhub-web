@@ -23,8 +23,8 @@ const siteUrl = 'https://gatherhub.app'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    template: '%s - Gather Hub',
-    default: 'Gather Hub - Event Management, From Sign-up to Wrap-up',
+    template: '%s - GatherHub',
+    default: 'GatherHub - Event Management, From Sign-up to Wrap-up',
   },
   description:
     'Plan, sell, run and wrap up your events in one place — registration, FPX and DuitNow payments, QR check-in and certificates. Free to start.',
@@ -34,15 +34,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Gather Hub',
-    title: 'Gather Hub - Event Management, From Sign-up to Wrap-up',
+    siteName: 'GatherHub',
+    title: 'GatherHub - Event Management, From Sign-up to Wrap-up',
     description:
       'Plan, sell, run and wrap up your events in one place — registration, FPX and DuitNow payments, QR check-in and certificates. Free to start.',
     url: siteUrl,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gather Hub - Event Management, From Sign-up to Wrap-up',
+    title: 'GatherHub - Event Management, From Sign-up to Wrap-up',
     description:
       'Plan, sell, run and wrap up your events in one place — registration, FPX and DuitNow payments, QR check-in and certificates. Free to start.',
   },

@@ -336,7 +336,7 @@ const faqPageSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Gather Hub',
+  name: 'GatherHub',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
   url: 'https://gatherhub.app',

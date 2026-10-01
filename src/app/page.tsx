@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import HomeClient from './home-client'
 
 export const metadata: Metadata = {
-  title: 'Gather Hub - Event Management, From Sign-up to Wrap-up',
+  title: 'GatherHub - Event Management, From Sign-up to Wrap-up',
   description:
     'Plan, sell, run and wrap up your events in one place — registration, FPX and DuitNow payments, QR check-in and certificates. Free to start.',
 }
@@ -13,7 +13,7 @@ const siteUrl = 'https://gatherhub.app'
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Gather Hub',
+  name: 'GatherHub',
   url: siteUrl,
   logo: `${siteUrl}/apple-icon.png`,
   description:
@@ -23,7 +23,7 @@ const organizationSchema = {
 const webSiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Gather Hub',
+  name: 'GatherHub',
   url: siteUrl,
 }
 

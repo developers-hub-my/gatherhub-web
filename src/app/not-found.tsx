@@ -22,7 +22,7 @@ export default function NotFound() {
       name: 'Features',
       href: '/features',
       icon: MagnifyingGlassIcon,
-      description: 'Explore what Gather Hub can do',
+      description: 'Explore what GatherHub can do',
     },
     {
       name: 'Help Center',

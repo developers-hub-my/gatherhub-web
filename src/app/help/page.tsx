@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: 'Help Center',
   description:
-    'Find answers to common questions about using Gather Hub for your events and activities.',
+    'Find answers to common questions about using GatherHub for your events and activities.',
 }
 
 function Hero() {
@@ -36,7 +36,7 @@ function Hero() {
             How can we help you?
           </Heading>
           <p className="mt-4 max-w-2xl text-base text-gray-600 dark:text-gray-400">
-            Find answers to common questions about using Gather Hub. If you
+            Find answers to common questions about using GatherHub. If you
             can&apos;t find what you&apos;re looking for, contact our support
             team.
           </p>
@@ -80,7 +80,7 @@ function Categories() {
     {
       title: 'Getting Started',
       description:
-        'New to Gather Hub? Learn the basics and set up your account.',
+        'New to GatherHub? Learn the basics and set up your account.',
       icon: RocketLaunchIcon,
       href: '#getting-started',
     },
@@ -190,7 +190,7 @@ const faqSections = [
       {
         question: 'What types of activities can I create?',
         answer:
-          'Gather Hub supports workshops, seminars, conferences, training sessions, community events, and any type of gathering that needs registration, check-in and certificates.',
+          'GatherHub supports workshops, seminars, conferences, training sessions, community events, and any type of gathering that needs registration, check-in and certificates.',
       },
       {
         question: 'Is there a trial period?',
@@ -297,7 +297,7 @@ const faqSections = [
       {
         question: 'How does QR code check-in work?',
         answer:
-          'Each participant receives a unique QR code with their registration confirmation. At the event, scan their QR code using the Gather Hub mobile app or web dashboard to mark them as present. The check-in is recorded instantly.',
+          'Each participant receives a unique QR code with their registration confirmation. At the event, scan their QR code using the GatherHub mobile app or web dashboard to mark them as present. The check-in is recorded instantly.',
       },
       {
         question: 'Can I check people in manually?',
@@ -353,7 +353,7 @@ const faqSections = [
       {
         question: 'What automated emails are sent?',
         answer:
-          'Gather Hub automatically sends registration confirmations, payment receipts, event reminders, and certificates. You can customise the timing and content of these emails in your activity settings.',
+          'GatherHub automatically sends registration confirmations, payment receipts, event reminders, and certificates. You can customise the timing and content of these emails in your activity settings.',
       },
       {
         question: 'Can I customise email templates?',
@@ -381,7 +381,7 @@ const faqSections = [
       {
         question: 'What browsers are supported?',
         answer:
-          'Gather Hub works best on the latest versions of Chrome, Firefox, Safari, and Edge. For the best experience, ensure your browser is up to date.',
+          'GatherHub works best on the latest versions of Chrome, Firefox, Safari, and Edge. For the best experience, ensure your browser is up to date.',
       },
       {
         question: 'Is there a mobile app?',
@@ -396,7 +396,7 @@ const faqSections = [
       {
         question: 'Do you have an API?',
         answer:
-          'API Access is a paid add-on currently coming soon. It will provide REST API integration for connecting Gather Hub with external systems. Sign up to be notified when it launches.',
+          'API Access is a paid add-on currently coming soon. It will provide REST API integration for connecting GatherHub with external systems. Sign up to be notified when it launches.',
       },
     ],
   },

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
   title: 'Privacy Policy',
   description:
-    'Learn how Gather Hub collects, uses, and protects your personal information.',
+    'Learn how GatherHub collects, uses, and protects your personal information.',
 }
 
 function Section({
@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
         <div className="prose prose-gray max-w-none">
           <Section title="Introduction">
             <p>
-              Gather Hub (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform.
+              GatherHub (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform.
             </p>
             <p>
               Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the platform.

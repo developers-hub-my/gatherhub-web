@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   title: 'Features',
   description:
-    'Discover all the features that make Gather Hub the best platform for managing events, workshops, and activities.',
+    'Discover all the features that make GatherHub the best platform for managing events, workshops, and activities.',
 }
 
 function Hero() {
@@ -61,7 +61,7 @@ function Hero() {
             Everything you need to run professional events.
           </Heading>
           <Lead className="mt-4 max-w-3xl">
-            From event creation to certificates, Gather Hub provides all the
+            From event creation to certificates, GatherHub provides all the
             tools you need to manage activities efficiently and professionally.
           </Lead>
         </div>

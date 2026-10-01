@@ -1,10 +1,10 @@
-# Gather Hub
+# GatherHub
 
-**Gather Hub** is the operational hub for events and activities — from registration and payment to attendance validation and participation proof.
+**GatherHub** is the operational hub for events and activities — from registration and payment to attendance validation and participation proof.
 
-This repository contains the **marketing website and public landing page** for Gather Hub, built using **Tailwind CSS** and **Next.js**, with optional content management powered by **Sanity**.
+This repository contains the **marketing website and public landing page** for GatherHub, built using **Tailwind CSS** and **Next.js**, with optional content management powered by **Sanity**.
 
-Gather Hub supports a wide range of use cases, including trainings, workshops, seminars, conferences, community events, and corporate programmes.
+GatherHub supports a wide range of use cases, including trainings, workshops, seminars, conferences, community events, and corporate programmes.
 
 ---
 
@@ -36,7 +36,7 @@ If you plan to use the blog or content management features, create a new Sanity 
 ```bash
 npm create sanity@^4.2 -- --env=.env.local --create-project
 
-"Gather Hub Content" --dataset production
+"GatherHub Content" --dataset production
 ```
 
 If prompted:
@@ -95,7 +95,7 @@ This repository is intended for:
 
 ## Branding & Positioning
 
-**Product Name:** Gather Hub
+**Product Name:** GatherHub
 **Domain:** [https://gatherhub.app](https://gatherhub.app)
 
 **Positioning:**
@@ -132,6 +132,6 @@ Ensure you have a valid Tailwind Plus license before using this code in producti
 
 ## About
 
-**Gather Hub** is built and maintained by **Developers Hub**.
+**GatherHub** is built and maintained by **Developers Hub**.
 
 It is designed to help organisations run purposeful gatherings calmly, reliably, and end-to-end — without spreadsheets or manual tracking.
