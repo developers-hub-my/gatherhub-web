@@ -1,3 +1,4 @@
+import { AttributionCapture } from '@/components/attribution-capture'
 import { GoogleAnalytics } from '@/components/google-analytics'
 import { ThemeProvider } from '@/components/theme-provider'
 import '@/styles/tailwind.css'
@@ -54,7 +55,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${mono.variable} ${serif.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${mono.variable} ${serif.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         {/* Preload critical font weights for faster text rendering */}
         <link
@@ -90,6 +95,7 @@ export default function RootLayout({
       <body className="bg-white text-gray-950 antialiased transition-colors dark:bg-gray-950 dark:text-gray-50">
         <ThemeProvider>{children}</ThemeProvider>
         <GoogleAnalytics />
+        <AttributionCapture />
       </body>
     </html>
   )

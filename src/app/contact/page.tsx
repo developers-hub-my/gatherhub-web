@@ -3,8 +3,8 @@ import { Footer } from '@/components/footer'
 import { Navbar } from '@/components/navbar'
 import { Heading, Subheading } from '@/components/text'
 import {
-  EnvelopeIcon,
   ClockIcon,
+  EnvelopeIcon,
   MapPinIcon,
 } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
@@ -24,12 +24,12 @@ function Hero() {
     <div className="bg-white dark:bg-gray-950">
       <Container>
         <Navbar />
-        <div className="pb-16 pt-8">
+        <div className="pt-8 pb-16">
           <Subheading>Contact</Subheading>
           <Heading as="h1" className="mt-2">
             We&apos;re here to help.
           </Heading>
-          <p className="mt-4 text-base text-gray-600 dark:text-gray-400 max-w-2xl">
+          <p className="mt-4 max-w-2xl text-base text-gray-600 dark:text-gray-400">
             Have a question about GatherHub? Need help with your account or
             event setup? Our team is ready to assist you.
           </p>
@@ -84,7 +84,9 @@ function ContactInfo() {
             <p className="mt-2 text-sm font-medium text-gray-900 dark:text-gray-200">
               {method.detail}
             </p>
-            <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">{method.description}</p>
+            <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
+              {method.description}
+            </p>
           </div>
         ))}
       </div>
@@ -131,7 +133,9 @@ function FAQ() {
               <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
                 {faq.question}
               </h3>
-              <p className="mt-3 text-base/7 text-gray-600 dark:text-gray-400">{faq.answer}</p>
+              <p className="mt-3 text-base/7 text-gray-600 dark:text-gray-400">
+                {faq.answer}
+              </p>
             </div>
           ))}
         </div>

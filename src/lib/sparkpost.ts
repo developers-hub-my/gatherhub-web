@@ -16,7 +16,7 @@ interface ContactEmailData {
   message: string
 }
 
-const SUBJECT_LABELS: Record<string, string> = {
+export const SUBJECT_LABELS: Record<string, string> = {
   general: 'General inquiry',
   support: 'Technical support',
   sales: 'Sales and pricing',
