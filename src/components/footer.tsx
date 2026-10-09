@@ -11,7 +11,7 @@ function CallToAction() {
     <div className="relative pt-20 pb-16 text-center sm:py-24">
       <hgroup>
         <Subheading>Get started</Subheading>
-        <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 dark:text-white sm:text-5xl">
+        <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl dark:text-white">
           Ready to run cleaner operations?
         </p>
       </hgroup>
@@ -65,6 +65,7 @@ function Sitemap() {
         <SitemapHeading>Resources</SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="/help">Help center</SitemapLink>
+          <SitemapLink href="/guides">Event-day guides</SitemapLink>
           <SitemapLink href="/contact">Contact</SitemapLink>
         </SitemapLinks>
       </div>
@@ -152,7 +153,7 @@ export function Footer() {
       {/* Decorative gradient */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 left-1/4 size-80 rounded-full bg-blue-50 opacity-50 blur-3xl dark:bg-blue-500/10" />
-        <div className="absolute -bottom-40 right-1/4 size-80 rounded-full bg-sky-50 opacity-50 blur-3xl dark:bg-sky-500/10" />
+        <div className="absolute right-1/4 -bottom-40 size-80 rounded-full bg-sky-50 opacity-50 blur-3xl dark:bg-sky-500/10" />
       </div>
       <Container className="relative">
         <CallToAction />
