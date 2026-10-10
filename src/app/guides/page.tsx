@@ -46,7 +46,7 @@ const guides: Guide[] = [
       },
       {
         title: 'Create the event',
-        body: 'Go to Events → Create. The wizard has three steps: basics, location and category, then review. You land on Event Home, which lists what is left to do.',
+        body: 'Go to Events → Create. The wizard has three steps: basic info (title, dates, visibility), location and category, then review. You land on Event Home, which lists what is left to do.',
       },
       {
         title: 'Add tickets',
@@ -58,11 +58,11 @@ const guides: Guide[] = [
       },
       {
         title: 'Publish',
-        body: 'Publish from Event Home. Registration opens and you can share the event link.',
+        body: 'On Event Home, the Publish step opens a preview of your event page. Publish from there. Registration opens and you can share the event link.',
       },
       {
         title: 'Add your crew',
-        body: 'Go to Run → Crew → Add member, enter their email and pick a role (for example Volunteer for door scanning, Staff for check-in and certificates). People who already use GatherHub are added at once. Everyone else gets an invitation email.',
+        body: 'Go to Crew → Add Member → Invite by Email, enter their email and pick a role (for example Volunteer for door scanning, Staff for check-in and certificates). People who already use GatherHub are added at once. Everyone else gets an invitation email.',
       },
       {
         title: 'Print the Event QR',
@@ -83,23 +83,23 @@ const guides: Guide[] = [
     steps: [
       {
         title: 'Open the invitation email',
-        body: 'Look for "You\'re invited to crew …" and tap View invitation. Check your spam folder if it has not arrived.',
+        body: 'Look for "You\'re invited to join the crew: …" and tap Accept Invitation. Check your spam folder if it has not arrived. The link is valid for 7 days.',
       },
       {
-        title: 'Sign up with the same email',
-        body: 'Create your GatherHub account with the exact email the invitation was sent to. If you already have an account, log in instead.',
+        title: 'Accept, then sign up or log in',
+        body: 'Tap Accept Invitation. If you are not signed in, choose Create Account (your invited email is already filled in, keep it) or Log In.',
       },
       {
-        title: 'Accept',
-        body: 'Accept the invitation. If you are signed in with the matching email, it is accepted for you.',
+        title: 'You are on the crew',
+        body: 'You come straight back to the invitation and it is accepted. Tap Open crew app, and verify your email when asked.',
       },
       {
-        title: 'Open Ops',
-        body: `Go to ${config.appUrl.replace('https://', '')}/ops. Every event you crew is listed there. Add it to your home screen from the browser menu so it opens like an app.`,
+        title: 'Install the crew app',
+        body: `The crew app lives at ${config.appUrl.replace('https://', '')}/ops and lists every event you crew. Add it to your home screen from the browser menu, allow camera access, and open it once on Wi-Fi before the day.`,
       },
       {
-        title: 'Get ready to scan',
-        body: 'Open the event and tap Scan. Allow camera access once. Open it on good Wi-Fi before the day so it loads quickly at the door.',
+        title: 'On the day: Scan',
+        body: 'Open the event and tap Scan. Scanning opens 1 hour before the event starts. Before that, the app opens on the Live view.',
       },
     ],
     tips: [
@@ -116,7 +116,7 @@ const guides: Guide[] = [
     steps: [
       {
         title: 'Open the event page',
-        body: 'Use the link the organiser shared, then pick a ticket type.',
+        body: 'Use the link the organiser shared. Under Get Your Ticket, tap the ticket you want.',
       },
       {
         title: 'Fill in your details',
@@ -124,7 +124,7 @@ const guides: Guide[] = [
       },
       {
         title: 'Pay (paid tickets only)',
-        body: 'Pay with FPX online banking or DuitNow QR. If you leave without paying, we send you a reminder.',
+        body: 'Choose FPX Online Banking or DuitNow QR, then Pay. A bank transfer order waits for the organiser to approve it. If you leave without paying, we send you a reminder.',
       },
       {
         title: 'Get your ticket by email',
@@ -173,7 +173,7 @@ const guides: Guide[] = [
 const gateResults = [
   { result: 'Check-in successful', tone: 'green', action: 'Let them in.' },
   {
-    result: 'Already checked in',
+    result: 'Ticket already checked in',
     tone: 'amber',
     action:
       'Usually a second scan. If it is a different person, the ticket was shared.',
