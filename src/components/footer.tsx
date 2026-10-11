@@ -65,6 +65,9 @@ function Sitemap() {
         <SitemapHeading>Resources</SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="/help">Help center</SitemapLink>
+          <SitemapLink href={`${config.docsUrl}/docs/event-day-guides`}>
+            Event-day guides
+          </SitemapLink>
           <SitemapLink href="/contact">Contact</SitemapLink>
         </SitemapLinks>
       </div>
